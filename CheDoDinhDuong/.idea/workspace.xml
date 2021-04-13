@@ -10,12 +10,499 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0aedd7f9-181f-44ae-b252-8749b2d89da7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/DefaultServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/HomeServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Utilties/ServletUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/Imgs/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/Imgs/logo_dark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/Styles/color_scheme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/Styles/essentials.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/Styles/header-1.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/Styles/layout.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/fonts/et-line.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/fonts/et-line.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/fonts/et-line.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/fonts/et-line.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/fonts/font-icons.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/fonts/font-icons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/fonts/font-icons.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/fonts/font-icons.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/1x1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/avatar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/avatar2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/backgrounds/bg1-min.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/backgrounds/bg2-min.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/backgrounds/blue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/backgrounds/default.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/backgrounds/grey-noise-min.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/bluebar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/buttons/amazon_shop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/buttons/app_store.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/buttons/btn-appstore-dark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/buttons/btn-appstore.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/buttons/btn-googleplay-dark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/buttons/btn-googleplay.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/buttons/google_play.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/caption_bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/cc/American-Express.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/cc/Cash.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/cc/Cirrus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/cc/Delta.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/cc/Diners-Club.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/cc/Discover-Network.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/cc/Discover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/cc/Dollar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/cc/Euro.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/cc/Gift-Card.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/cc/JCB.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/cc/Maestro.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/cc/Mastercard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/cc/PayPal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/cc/Pound.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/cc/Solo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/cc/Switch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/cc/Visa.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/cc/Wirecard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/cc/credit.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/cc/eCheck.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/cc/payments.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/datatable-row-openclose.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/female.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ad.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ae.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/af.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ag.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ai.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/al.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/am.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/an.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ao.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/as.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/at.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/au.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/aw.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ax.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/az.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ba.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/bb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/bd.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/be.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/bf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/bh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/bi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/bj.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/bm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/bn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/bo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/br.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/bs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/bt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/bv.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/bw.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/by.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/bz.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ca.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/catalonia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/cc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/cd.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/cf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/cg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ci.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ck.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/cl.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/cm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/cn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/co.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/cr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/cs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/cu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/cv.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/cx.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/cy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/cz.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/de.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/dj.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/dk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/dm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/do.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/dz.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ec.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ee.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/eg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/eh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/england.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/er.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/es.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/et.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/europeanunion.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/fam.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/fi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/fj.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/fk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/fm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/fo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/fr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ga.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/gb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/gd.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ge.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/gf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/gh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/gi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/gl.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/gm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/gn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/gp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/gq.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/gr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/gs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/gt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/gu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/gw.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/gy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/hk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/hm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/hn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/hr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ht.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/hu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/id.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ie.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/il.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/in.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/io.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/iq.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ir.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/is.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/it.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/jm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/jo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/jp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ke.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/kg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/kh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ki.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/km.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/kn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/kp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/kr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/kw.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ky.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/kz.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/la.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/lb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/lc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/li.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/lk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/lr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ls.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/lt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/lu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/lv.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ly.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ma.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/mc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/md.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/me.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/mg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/mh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/mk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ml.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/mm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/mn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/mo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/mp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/mq.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/mr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ms.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/mt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/mu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/mv.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/mw.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/mx.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/my.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/mz.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/na.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/nc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ne.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/nf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ng.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ni.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/nl.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/no.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/np.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/nr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/nu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/nz.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/om.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/pa.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/pe.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/pf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/pg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ph.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/pk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/pl.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/pm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/pn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/pr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ps.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/pt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/pw.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/py.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/qa.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/re.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/readme.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ro.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/rs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ru.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/rw.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/sa.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/sb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/sc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/scotland.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/sd.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/se.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/sg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/sh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/si.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/sj.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/sk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/sl.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/sm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/sn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/so.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/sr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/st.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/sv.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/sy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/sz.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/tc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/td.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/tf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/tg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/th.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/tj.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/tk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/tl.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/tm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/tn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/to.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/tr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/tt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/tv.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/tw.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/tz.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ua.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ug.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/um.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/us.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/uy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/uz.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/va.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/vc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ve.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/vg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/vi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/vn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/vu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/wales.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/wf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ws.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/ye.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/yt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/za.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/zm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/flags/zw.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/footer_sprite.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/grabbing.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/grain_bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/imgpattern1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/imgpattern2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/lazy-loadimg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/lazy-loadimg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/loaders/1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/loaders/10.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/loaders/10s.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/loaders/1s.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/loaders/2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/loaders/2s.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/loaders/3.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/loaders/3s.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/loaders/4.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/loaders/4s.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/loaders/5.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/loaders/5s.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/loaders/6.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/loaders/6s.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/loaders/7.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/loaders/7s.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/loaders/8.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/loaders/8s.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/loaders/9.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/loaders/9s.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/logo.fla" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/male.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/misc/burger-dark.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/misc/burger-light.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/misc/close-dark.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/misc/close-light.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/misc/icon-amazon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/misc/shadow1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/misc/shadow2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/misc/shadow3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/misc/shop/girl.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/misc/shop/girl2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/misc/shop/shop_modal.fla" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/misc/shop/shop_modal.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/misc/shop/shop_modal_pattern.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/noimage.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/patterns/none.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/patterns/page.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/patterns/parallax_overlay.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/patterns/pattern1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/patterns/pattern10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/patterns/pattern11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/patterns/pattern2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/patterns/pattern3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/patterns/pattern4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/patterns/pattern5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/patterns/pattern6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/patterns/pattern7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/patterns/pattern8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/patterns/pattern9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/playing-dark.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/playing.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/plugins/slider.nivo/bullets.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/submenu_dark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/submenu_inverse_dark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/submenu_inverse_light.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/submenu_light.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/timeline/textline.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/timeline/timeline_left.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/timeline/timeline_right.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/timeline/timeline_top.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/transparent.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/user-min.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/_smarty/world-map.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/logo-footer-dark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/logo-footer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/logo_dark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/logo_light.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/udemy-2-logo-black-and-white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/images/udemy-2-logo-png-transparent.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/js/scripts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/bootstrap/RTL/bootstrap-flipped.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/bootstrap/RTL/bootstrap-flipped.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/bootstrap/RTL/bootstrap-flipped.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/bootstrap/RTL/bootstrap-rtl-merged.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/bootstrap/RTL/bootstrap-rtl-merged.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/bootstrap/RTL/bootstrap-rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/bootstrap/RTL/bootstrap-rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/bootstrap/RTL/bootstrap-rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/bootstrap/RTL/link.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/bootstrap/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/bootstrap/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/bootstrap/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/bootstrap/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/bootstrap/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/bootstrap/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/bootstrap/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/bootstrap/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/bootstrap/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/bootstrap/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/bootstrap/js/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/bootstrap/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/bootstrap/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/bootstrap/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/bootstrap/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/bootstrap/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/bootstrap/js/bootstrap.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/custom.fle_upload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/form.validate/jquery.form.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/form.validate/jquery.validation.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/gmaps.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/jquery.backstretch.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/jquery.mb.YTPlayer.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/jquery.nav.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/jquery/jquery-3.2.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/jquery/jquery-3.2.1.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/jquery/jquery-ui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/jquery/jquery.ui.touch-punch.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/lazyload/jquery.lazyload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/lazyload/jquery.lazyload.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/magnific-popup/jquery.magnific-popup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/magnific-popup/jquery.magnific-popup.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/magnific-popup/magnific-popup.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/mixitup/jquery.mixitup.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/mixitup/readme.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/owl-carousel-2/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/owl-carousel-2/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/owl-carousel-2/assets/ajax-loader.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/owl-carousel-2/assets/owl.carousel.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/owl-carousel-2/assets/owl.carousel.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/owl-carousel-2/assets/owl.theme.default.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/owl-carousel-2/assets/owl.theme.default.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/owl-carousel-2/assets/owl.theme.green.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/owl-carousel-2/assets/owl.theme.green.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/owl-carousel-2/assets/owl.video.play.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/owl-carousel-2/owl.carousel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/owl-carousel-2/owl.carousel.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/owl-carousel/AjaxLoader.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/owl-carousel/grabbing.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/owl-carousel/owl.carousel.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/owl-carousel/owl.carousel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/owl-carousel/owl.carousel.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/owl-carousel/owl.pack.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/owl-carousel/owl.theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/owl-carousel/owl.transitions.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/slimscroll/jquery.slimscroll.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/slimscroll/jquery.slimscroll.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/smoothscroll.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/text-rotator/demo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/text-rotator/jquery.simple-text-rotator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/text-rotator/jquery.simple-text-rotator.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Public/plugins/text-rotator/simpletextrotator.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Views/vwHome/home.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Views/vwHome/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Views/vwNotFound/404.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/main.tag" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/index.jsp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Tag Library Descriptor" />
+        <option value="Jsp File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -39,12 +526,36 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../5.HK5/LTWeb/LTWeb (final Project)/Sdemx-Study-Online-Web-/SdemxStudyOnline" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/Public/Imgs" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Project\ProjectSe\ProjectSE\CheDoDinhDuong\src\main\webapp\Public\Imgs" />
+      <recent name="D:\Project\ProjectSe\ProjectSE\CheDoDinhDuong\src\main\webapp\Public\images\_smarty" />
+      <recent name="D:\Project\ProjectSe\ProjectSE\CheDoDinhDuong\src\main\webapp\Public" />
+      <recent name="D:\Project\ProjectSe\ProjectSE\CheDoDinhDuong\src\main\webapp\Public\plugins\bootstrap\css" />
+      <recent name="D:\Project\ProjectSe\ProjectSE\CheDoDinhDuong\src\main\webapp\Views\Public\Imgs" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Project\ProjectSe\ProjectSE\CheDoDinhDuong\src\main\webapp" />
+      <recent name="D:\Project\ProjectSe\ProjectSE\CheDoDinhDuong\src\main\webapp\Views\Public" />
+    </key>
+  </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 9.0.40" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.40" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/CheDoDinhDuong/" />
       <deployment>
@@ -145,6 +656,7 @@
       <workItem from="1617847379753" duration="3166000" />
       <workItem from="1617850596890" duration="223000" />
       <workItem from="1617850827818" duration="14000" />
+      <workItem from="1618274500092" duration="12112000" />
     </task>
     <servers />
   </component>
