@@ -25,6 +25,8 @@
     <!-- PAGE LEVEL SCRIPTS -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Public/Styles/header-1.css"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Public/Styles/color_scheme.css"/>
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 </head>
