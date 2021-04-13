@@ -26,9 +26,10 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Public/Styles/header-1.css"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Public/Styles/color_scheme.css"/>
     <!-- Font awesome -->
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
 </head>
 <body class="smoothscroll enable-animation">
 <div id="wrapper">
@@ -42,20 +43,15 @@
 
                 <ul class="float-right nav nav-pills nav-second-main">
                     <!-- SEARCH -->
-                    <li class="search">
-                        <a href="javascript:;">
-                            <i class="fa fa-search"></i>
-                        </a>
-                        <div class="search-box">
-                            <form method="post">
-                                <div class="input-group">
-                                    <input type="text" name="src" placeholder="Search" class="form-control"/>
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-primary" type="button" formaction="#">Search</button>
-                                    </span>
-                                </div>
-                            </form>
-                        </div>
+                    <li>
+                        <form class="form-inline my-2 my-lg-0" action="${pageContext.request.contextPath}/Food/Search">
+                            <div class="form-inline my-2 my-lg-0 d-flex justify-content-between" style="border: teal solid 2px; border-radius: 25px" style="width: 180%">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Search"  style="border: none;border-radius: 25px;background-color: transparent" id="txtSearch" name ="search">
+                                <button class="btn  my-2 my-sm-0" type="submit" style="border: none">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </form>
                     </li>
                     <!-- /SEARCH -->
                 </ul>
@@ -366,8 +362,9 @@
     })
 </script>
 <script type="text/javascript">var plugin_path = 'assets/plugins/';</script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/plugins/jquery/jquery-3.2.1.min.js"/>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/scripts.js"/>
+<script type="text/javascript" src="${pageContext.request.contextPath}/Public/plugins/jquery/jquery-3.2.1.min.js"/>
+<script type="text/javascript" src="${pageContext.request.contextPath}/Public/js/scripts.js"/>
+<script type="text/javascript" src="${pageContext.request.contextPath}/Public/plugins/bootstrap/js/bootstrap.bundle.min.js"/>
 
 </body>
 </html>
