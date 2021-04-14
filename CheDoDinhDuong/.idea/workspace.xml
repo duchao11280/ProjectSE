@@ -9,25 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aedd7f9-181f-44ae-b252-8749b2d89da7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AdminServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AdminServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/FoodServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/FoodServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/CategoryModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/CategoryModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/FoodModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/FoodModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/beans/Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/beans/Food.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Public/Styles/layout.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Public/Styles/layout.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Views/vwAdmin/editfood.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Views/vwAdmin/editfood.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Views/vwAdmin/foodmanagement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Views/vwAdmin/foodmanagement.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Views/vwFood/Search.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Views/vwFood/Search.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/main.tag" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/main.tag" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Public/Styles/layout.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Public/Styles/layout.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwAdmin/editfood.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwAdmin/editfood.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwAdmin/foodmanagement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwAdmin/foodmanagement.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwFood/Search.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwFood/Search.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/WEB-INF/tags/main.tag" beforeDir="false" afterPath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/WEB-INF/tags/main.tag" afterDir="false" />
-    </list>
+    <list default="true" id="0aedd7f9-181f-44ae-b252-8749b2d89da7" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -199,6 +181,7 @@
       <workItem from="1618384763418" duration="41000" />
       <workItem from="1618384823842" duration="7774000" />
       <workItem from="1618392797008" duration="11000" />
+      <workItem from="1618393055182" duration="60000" />
     </task>
     <servers />
   </component>
