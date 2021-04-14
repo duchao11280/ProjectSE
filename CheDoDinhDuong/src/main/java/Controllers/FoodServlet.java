@@ -18,15 +18,27 @@ import java.util.Optional;
 @WebServlet(name= "FoodServlet",urlPatterns = "/Food/*")
 public class FoodServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("utf-8");
         String path = request.getPathInfo();
         switch (path) {
             case "/Search":
-                ServletUtils.redirect("/Food/Search", request, response);
+                postSearch(request,response);
                 break;
             default:
                 ServletUtils.redirect("/NotFound", request, response);
                 break;
         }
+    }
+
+    private void postSearch(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String search = request.getParameter("search");
+        List<Food> lstFood = FoodModel.getFoodByString(search);
+        request.setAttribute("lstFood",lstFood);
+        List<Category> listcat = CategoryModel.getAll();
+        request.setAttribute("categoriesWithDetails", listcat);
+        System.out.println(search);
+        ServletUtils.forward("/Views/vwFood/Search.jsp",request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -46,10 +58,9 @@ public class FoodServlet extends HttpServlet {
                 ServletUtils.forward("/Views/vwFood/ByCat.jsp", request, response);
                 break;
             case "/Search":
-                String search = request.getParameter("search");
-                List<Food> listsearch = FoodModel.getFoodByString(search);
-                request.setAttribute("searchfoods", listsearch);
-                ServletUtils.forward("Views/vwFood/Search.jsp", request, response);
+                //String search = request.getParameter("search");
+                System.out.println("search");
+                ServletUtils.forward("/Views/vwFood/Search.jsp",request,response);
                 break;
             case "/Detail":
                 int foodID = Integer.parseInt(request.getParameter("id"));

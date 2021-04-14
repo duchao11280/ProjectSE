@@ -1,14 +1,17 @@
 package beans;
 
+import Models.FoodModel;
+
 public class Food {
     int foodID;
     String foodName,urlImage;
     int catID;
     float glucozo,kcal,lipit,protein,vitA,vitB,vitC,vitD,vitE,kali,fe,na;
+    boolean isDelete;
 
     public Food(int foodID, String foodName, String urlImage, int catID, float glucozo, float kcal,
                 float lipit, float protein, float vitA, float vitB, float vitC, float vitD, float vitE,
-                float kali, float fe, float na) {
+                float kali, float fe, float na, boolean isDelete) {
         this.foodID = foodID;
         this.foodName = foodName;
         this.urlImage = urlImage;
@@ -25,6 +28,7 @@ public class Food {
         this.kali = kali;
         this.fe = fe;
         this.na = na;
+        this.isDelete = isDelete;
     }
 
     public int getFoodID() {
@@ -153,5 +157,17 @@ public class Food {
 
     public void setNa(float na) {
         this.na = na;
+    }
+
+    public String getCatName(){
+        return FoodModel.getCatNameByCatID(catID);
+    }
+
+    public boolean isDelete() {
+        return isDelete;
+    }
+
+    public void setDelete(boolean delete) {
+        isDelete = delete;
     }
 }

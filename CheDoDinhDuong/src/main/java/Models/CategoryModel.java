@@ -59,4 +59,13 @@ public class CategoryModel {
                     .executeUpdate();
         }
     }
+
+    public static int getCatIDByCatName(String catName){
+        final String sql = "select catID from category where catName=:catName";
+        try (Connection con = DBUtils.getConnection()){
+            return con.createQuery(sql)
+                    .addParameter("catName",catName)
+                    .executeScalar(int.class);
+        }
+    }
 }
