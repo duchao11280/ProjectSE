@@ -2,6 +2,63 @@
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
 
 <t:main>
+
+
+    <jsp:attribute name="js">
+
+    <script>
+        $('#frmRegister').on('submit', function (e) {
+            e.preventDefault();
+
+            const username = $('#txtUsername').val();
+            if (username.length === 0) {
+                alert('Invalid username.');
+                return;
+            }
+
+            const password= $('#txtPassword').val();
+            if (password.length === 0) {
+                alert('Invalid password.');
+                return;
+            }
+            const fullname= $('#txtFullname').val();
+            if (password.length === 0) {
+                alert('Invalid password.');
+                return;
+            }
+            const age= $('#txtAge').val();
+            if (password.length === 0) {
+                alert('Invalid password.');
+                return;
+            }
+
+            const confirm= $('#txtConfirm').val();
+            if (confirm.length === 0) {
+                alert('Invalid confirm.');
+                return;
+            }
+            if(password!==confirm){
+                return alert("Password is not match!")
+            }
+
+
+            $.getJSON('${pageContext.request.contextPath}/Account/IsAvailable?user=' + username, function (data) {
+                if (data === true ) {
+                    $('#frmRegister').off('submit').submit();
+                } else {
+                    alert('Not available.');
+                    return false;
+                }
+            });
+        });
+
+
+        $('#txtUsername').select();
+    </script>
+
+</jsp:attribute>
+
+
     <jsp:body>
         -->
         <section class="page-header page-header-xs">
@@ -40,7 +97,7 @@
                         <!-- /ALERT -->
 
                         <!-- register form -->
-                        <form class="m-0 sky-form boxed" action="#" method="post">
+                        <form class="m-0 sky-form boxed"  method="post" id="frmRegister">
                             <header>
                                 <i class="fa fa-users"></i> Register
                             </header>
@@ -48,41 +105,38 @@
                             <fieldset class="m-0">
                                 <label class="input mb-10">
                                     <i class="ico-append fa fa-envelope"></i>
-                                    <input type="text" placeholder="Email address">
+                                    <input type="text" placeholder="Username" name="username" id="txtUsername">
                                     <b class="tooltip tooltip-bottom-right">Needed to verify your account</b>
                                 </label>
 
                                 <label class="input mb-10">
                                     <i class="ico-append fa fa-lock"></i>
-                                    <input type="password" placeholder="Password">
+                                    <input type="password" placeholder="Password" name="password" id="txtPassword">
                                     <b class="tooltip tooltip-bottom-right">Only latin characters and numbers</b>
                                 </label>
 
                                 <label class="input mb-10">
                                     <i class="ico-append fa fa-lock"></i>
-                                    <input type="password" placeholder="Confirm password">
+                                    <input type="password" placeholder="Confirm password" name="confirm" id="txtConfirm">
                                     <b class="tooltip tooltip-bottom-right">Only latin characters and numbers</b>
                                 </label>
 
-                                <div class="row mb-10">
-                                    <div class="col-md-6">
-                                        <label class="input">
-                                            <input type="text" placeholder="First name">
-                                        </label>
-                                    </div>
-                                    <div class="col col-md-6">
-                                        <label class="input">
-                                            <input type="text" placeholder="Last name">
-                                        </label>
-                                    </div>
-                                </div>
+                                <label class="input mb-10">
+                                    <i class="ico-append fa fa-envelope"></i>
+                                    <input type="text" placeholder="FullName" name="name" id="txtFullname">
+                                    <b class="tooltip tooltip-bottom-right">Needed to verify your account</b>
+                                </label>
+                                <label class="input mb-10">
+                                    <i class="ico-append fa fa-envelope"></i>
+                                    <input type="text" placeholder="Age" name="age" id="txtAge">
+                                    <b class="tooltip tooltip-bottom-right">Needed to verify your account</b>
+                                </label>
 
                                 <label class="select mb-10 mt-20">
-                                    <select>
-                                        <option value="0" selected disabled>Gender</option>
-                                        <option value="1">Male</option>
-                                        <option value="2">Female</option>
-                                        <option value="3">Other</option>
+                                    <select name="sex">
+                                        <option value="-1" selected disabled>Gender</option>
+                                        <option value="0">Male</option>
+                                        <option value="1">Female</option>
                                     </select>
                                     <i></i>
                                 </label>

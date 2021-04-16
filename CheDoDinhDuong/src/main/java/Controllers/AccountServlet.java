@@ -1,6 +1,9 @@
 package Controllers;
 
+import Models.UserModel;
 import Utilties.ServletUtils;
+import at.favre.lib.crypto.bcrypt.BCrypt;
+import beans.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,6 +15,57 @@ import java.io.IOException;
 @WebServlet(name = "AccountServlet", urlPatterns = "/Account/*")
 public class AccountServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        String path = request.getPathInfo();
+        switch (path) {
+            case "/Register":
+                postRegister(request, response);
+                break;
+            case "/Login":
+                postLogin(request, response);
+                break;
+            case "/Logout":
+                postLogout(request, response);
+                break;
+            default:
+                ServletUtils.redirect("/NotFound", request, response);
+                break;
+        }
+
+    }
+
+    private void postLogout(HttpServletRequest request, HttpServletResponse response) {
+
+    }
+
+    private void postLogin(HttpServletRequest request, HttpServletResponse response) {
+
+    }
+
+    private void postRegister(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String password = request.getParameter("password");
+        String bcryptHashString = BCrypt.withDefaults().hashToString(12, password.toCharArray());
+
+
+        String username = request.getParameter("username");
+        String name = request.getParameter("name");
+        int age = Integer.parseInt(request.getParameter("age"));
+
+        boolean sex ;
+        String sexx =  (request.getParameter("sex"));
+        if(sexx=="Female") {
+            sex=true;
+        }else
+            sex=false;
+        System.out.println(sex);
+        System.out.println(sexx);
+        double height = 160;
+        double weight = 65;
+        int role=1;
+        User user = new User(-1,role,age,username,bcryptHashString,name,height,weight,sex);
+
+        UserModel.add(user);
+        ServletUtils.redirect("/Home",request,response);
 
     }
 

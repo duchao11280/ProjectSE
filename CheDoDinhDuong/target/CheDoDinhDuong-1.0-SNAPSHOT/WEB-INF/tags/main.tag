@@ -103,12 +103,12 @@
 
 
                             <li class="active">
-                                <a href="login.html">
+                                <a href="${pageContext.request.contextPath}/Account/Login">
                                     LOGIN
                                 </a>
                             </li>
                             <li class="active">
-                                <a href="register.html">
+                                <a href="${pageContext.request.contextPath}/Account/Register">
                                     REGISTER
                                 </a>
                             </li>
