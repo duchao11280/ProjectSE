@@ -24,7 +24,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-9">
+                <div class="col-lg-9">
                     <div class="card">
                         <div class="card-header">
                             <h4>Foods</h4>
@@ -39,23 +39,42 @@
                         <div class="card-body">
                             <div class="row">
                                 <c:forEach var="c" items="${foods}">
-                                    <div class="col-sm-4 mb-3">
+                                    <div class="col-sm-4 mb-3 fullwidth" >
                                         <div class="card">
-                                            <img src="${pageContext.request.contextPath}/Public/Imgs/Food/14.jpg" alt="${c.foodID}" title="${c.foodName}" class="card-img-top"/>
-                                            <div class="card-body">
-                                                <h6 class="card-title">${c.foodName}</h6>
-                                                <h5 class="card-title text-danger">
-                                                    <fmt:formatNumber value="${c.kcal}" type="number"/> Kcal
-                                                </h5>
-                                                <p class="card-text">Protein Lipit Glucozo</p>
-                                            </div>
-                                            <div class="card-footer bg-yellow">
-                                                <a class="btn btn-sm btn-outline-primary" href="${pageContext.request.contextPath}/Food/Detail?id=${c.foodID}" role="button">
-                                                    <i class="fa fa-eye" aria-hidden="true"></i>
-                                                    Details
-                                                </a>
-
-                                            </div>
+                                            <a href="${pageContext.request.contextPath}/Food/Detail?id=${c.foodID}">
+                                                <img src="${pageContext.request.contextPath}/Public/Imgs/Food/14.jpg"
+                                                     alt="${c.foodID}" title="${c.foodName}" class="card-img-top"/>
+                                                <div class="card-body">
+                                                    <h6 class="card-title" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 80%">${c.foodName}</h6>
+                                                    <h5 class="card-title text-danger">
+                                                        <fmt:formatNumber value="${c.kcal}" type="number"/> Kcal/Phần
+                                                    </h5>
+                                                </div>
+                                                <div class="card-footer bg-success">
+                                                    <table class="table table-hover" style="text-align: center">
+                                                        <thead>
+                                                        <tr>
+                                                            <th scope="col">Protein</th>
+                                                            <th scope="col">Lipit</th>
+                                                            <th scope="col">Glucozo</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                    ${c.protein}
+                                                            </td>
+                                                            <td>
+                                                                    ${c.lipit}
+                                                            </td>
+                                                            <td>
+                                                                    ${c.glucozo}
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
                                 </c:forEach>

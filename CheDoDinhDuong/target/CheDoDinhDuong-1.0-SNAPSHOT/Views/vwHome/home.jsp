@@ -46,8 +46,8 @@
                 <div class="row">
                     <div class="col-md-4 col-xs-6">
                         <div class="text-center">
-                            <i class="ico-light ico-lg ico-rounded ico-hover et-search"></i>
-                            <a href="#"><h4>Nutritional information</h4></a>
+                            <a href="${pageContext.request.contextPath}/Food/Nutrition"><i class="ico-light ico-lg ico-rounded ico-hover et-search"></i></a>
+                            <a href="${pageContext.request.contextPath}/Food/Nutrition"><h4>Nutritional information</h4></a>
                             <p>Information of proteins, fats, vitamins, ....</p>
                         </div>
                     </div>

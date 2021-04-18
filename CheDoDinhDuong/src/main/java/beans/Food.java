@@ -9,6 +9,13 @@ public class Food {
     float glucozo,kcal,lipit,protein,vitA,vitB,vitC,vitD,vitE,kali,fe,na;
     boolean isDelete;
 
+    public Food(int foodID, String foodName) {
+        this.foodID = foodID;
+        this.foodName = foodName;
+
+    }
+
+
     public Food(int foodID, String foodName, String urlImage, int catID, float glucozo, float kcal,
                 float lipit, float protein, float vitA, float vitB, float vitC, float vitD, float vitE,
                 float kali, float fe, float na, boolean isDelete) {

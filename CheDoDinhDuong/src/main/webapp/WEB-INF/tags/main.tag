@@ -67,7 +67,7 @@
                     <!-- /SEARCH -->
                 </ul>
 
-                <a class="logo float-left" href="#">
+                <a class="logo float-left" href="${pageContext.request.contextPath}/Home">
                     <img src="${pageContext.request.contextPath}/Public/images/logo_dark.png"/>
                 </a>
                 <div class="navbar-collapse collapse float-right nav-main-collapse">

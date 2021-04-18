@@ -31,11 +31,29 @@ public class FoodModel {
 
         try (Connection con = DBUtils.getConnection()) {
             return con.createQuery(sql)
-                    .addParameter("search","%"+ search + "%")
+                    .addParameter("search", "%"+ search + "%")
+                    .executeAndFetch(Food.class);
+
+        }
+
+    }
+
+    public static List<Food> getListFoodHaveIngredient() {
+        final String sql = "SELECT food.foodID,food.foodName,food.catID,food.glucozo,food.kcal,food.protein,food.lipit,food.vitA,food.vitB,food.vitC,food.vitD,food.vitE,food.kali,food.na,food.fe,food.urlImage\n" +
+                "FROM (SELECT foodID as LFID\n" +
+                "\t\t\t\t\tFrom ingredient\n" +
+                "\t\t\t\t\tGROUP BY foodID) as LFood\n" +
+                "LEFT JOIN food ON LFood.LFID = food.foodID";
+
+        try (Connection con = DBUtils.getConnection()) {
+            return con.createQuery(sql)
                     .executeAndFetch(Food.class);
 
         }
     }
+
+
+
     public static Optional<Food> findByID(int id) {
         String sql = "select * from food where foodID = :foodID";
         try (Connection con = DBUtils.getConnection()) {
@@ -50,6 +68,8 @@ public class FoodModel {
             return Optional.ofNullable(list.get(0));
         }
     }
+
+
     public  static  String getCatNameByCatID(int id){
         String sql="select catName from category where catID = :catID";
         try (Connection con = DBUtils.getConnection()){

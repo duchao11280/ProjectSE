@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : MySQL
+ Source Server         : Duc Hao
  Source Server Type    : MySQL
- Source Server Version : 100417
+ Source Server Version : 100414
  Source Host           : localhost:3306
  Source Schema         : projectse
 
  Target Server Type    : MySQL
- Target Server Version : 100417
+ Target Server Version : 100414
  File Encoding         : 65001
 
- Date: 18/04/2021 15:26:20
+ Date: 18/04/2021 15:34:56
 */
 
 SET NAMES utf8mb4;
@@ -122,7 +122,6 @@ CREATE TABLE `food`  (
 -- ----------------------------
 -- Records of food
 -- ----------------------------
-INSERT INTO `food` VALUES (0, 'foodName', 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, '2', b'0');
 INSERT INTO `food` VALUES (1, 'Bún bò huế', 1, 56.4, 622, 30.6, 30.2, 26.64, NULL, 14.69, NULL, NULL, 348.9, 5, 670.7, NULL, b'0');
 INSERT INTO `food` VALUES (2, 'Trứng cút', 5, 0.1, 17, 1.2, 1.5, 70, NULL, 0, NULL, NULL, 17.6, 0.27, 15.8, NULL, b'0');
 INSERT INTO `food` VALUES (3, 'Cơm', 3, 44.2, 200, 0.6, 4.6, NULL, NULL, NULL, NULL, NULL, 139.8, 0.75, 2.9, NULL, b'0');
@@ -152,16 +151,8 @@ INSERT INTO `food` VALUES (26, 'Vải', 4, 2.1, 9, 0, 0.1, NULL, NULL, 7.56, NUL
 INSERT INTO `food` VALUES (27, 'Thanh long', 4, 49, 225, 0, 7.3, NULL, NULL, 54.05, NULL, NULL, NULL, 3.38, NULL, NULL, b'0');
 INSERT INTO `food` VALUES (28, 'Vú sữa', 4, 18.5, 83, 0, 2, NULL, NULL, 9.85, NULL, NULL, NULL, 0.79, NULL, NULL, b'0');
 INSERT INTO `food` VALUES (29, 'Táo tây', 4, 25.8, 107, 0, 1.1, NULL, NULL, 15.96, NULL, NULL, 232.6, 5.7, 34.2, NULL, b'0');
-INSERT INTO `food` VALUES (30, 'test món mới', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 'sdsd', b'0');
-INSERT INTO `food` VALUES (31, 'test món mới', 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 'sdsd', b'0');
-INSERT INTO `food` VALUES (32, 'test món mới', 2, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 'sdsd', b'0');
-INSERT INTO `food` VALUES (33, 'ăn cơm', 3, 1, 2, 3, 4, 5, NULL, 7, 8, NULL, 0, 12, 4, 'sadsad', b'0');
-INSERT INTO `food` VALUES (34, 'ăn cơm', 3, 1, NULL, 3, 4, 5, NULL, 7, 8, NULL, 0, 12, 4, 'sadsad', b'0');
-INSERT INTO `food` VALUES (35, 'sdas', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', b'0');
-INSERT INTO `food` VALUES (36, 'Dưa hấu', 4, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 11, 12, 'url', b'0');
-INSERT INTO `food` VALUES (37, '213', 1, 0, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', b'1');
-INSERT INTO `food` VALUES (38, 'đây là đồ ăn mới', 4, 0, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'url', b'0');
-INSERT INTO `food` VALUES (111, 'sdasd', 2, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, b'1');
+INSERT INTO `food` VALUES (30, 'Cơm trứng', 3, 44.4, 281, 6.3, 11.9, NULL, NULL, NULL, NULL, NULL, 226, 2.07, 80.3, '', b'0');
+INSERT INTO `food` VALUES (31, 'Bún thịt nướng', 1, NULL, 352, 14, 26.7, NULL, NULL, NULL, 0.159, NULL, 423, 1.1, 62, '', b'0');
 
 -- ----------------------------
 -- Table structure for historyuserbmi
@@ -190,6 +181,7 @@ CREATE TABLE `ingredient`  (
   `foodID` int NOT NULL,
   `ingredientID` int NOT NULL,
   `gram` double NULL DEFAULT NULL,
+  `ingredientName` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   PRIMARY KEY (`foodID`, `ingredientID`) USING BTREE,
   INDEX `FK_ingredient_food_ingre`(`ingredientID`) USING BTREE,
   CONSTRAINT `FK_ingredient_food` FOREIGN KEY (`foodID`) REFERENCES `food` (`foodID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
@@ -199,8 +191,10 @@ CREATE TABLE `ingredient`  (
 -- ----------------------------
 -- Records of ingredient
 -- ----------------------------
-INSERT INTO `ingredient` VALUES (2, 3, 300);
-INSERT INTO `ingredient` VALUES (2, 4, 100);
+INSERT INTO `ingredient` VALUES (30, 3, 300, NULL);
+INSERT INTO `ingredient` VALUES (30, 4, 100, NULL);
+INSERT INTO `ingredient` VALUES (31, 5, 100, NULL);
+INSERT INTO `ingredient` VALUES (31, 6, 100, NULL);
 
 -- ----------------------------
 -- Table structure for suggestmenu
@@ -242,8 +236,9 @@ CREATE TABLE `user`  (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (1, 'sdasd', 'sadsdas', 1, '11111sad', 12, 123, 123, b'1');
-INSERT INTO `user` VALUES (2, 'sdasd', 'sadsdas', 1, '11111sad', 12, 123, 123, b'1');
+INSERT INTO `user` VALUES (1, 'an', '123', 1, 'dinhan', 18, 60, 70, b'0');
+INSERT INTO `user` VALUES (2, 'an', '123', 1, 'dinhan', 18, 60, 70, b'0');
+INSERT INTO `user` VALUES (3, 'anhgfds', '123', 1, 'dinhan', 18, 60, 70, b'0');
 
 -- ----------------------------
 -- Procedure structure for sp_addNewFood
@@ -268,11 +263,11 @@ DROP PROCEDURE IF EXISTS `sp_addNewUser`;
 delimiter ;;
 CREATE PROCEDURE `sp_addNewUser`(in username varchar(20),upassw varchar(255), urole int, ufulln varchar(255), uage int, uheight double, uweight double, usex BIGINT)
 begin
-	declare uID int;
-	set uID = 1;
-	while (exists (select * from `user` where userID = uID)) do set uID = uID + 1;
-	end while;
-	insert into `user` values(uID, username, upassw, urole, ufulln, uage, uheight, uweight, usex);
+    declare uID int;
+    set uID = 1;
+    while (exists (select * from user where userID = uID)) do set uID = uID + 1;
+    end while;
+    insert into user values(uID, username, upassw, urole, ufulln, uage, uheight, uweight, usex);
 end
 ;;
 delimiter ;
