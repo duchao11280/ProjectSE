@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : doan
+ Source Server         : MySQL
  Source Server Type    : MySQL
- Source Server Version : 100418
+ Source Server Version : 100417
  Source Host           : localhost:3306
  Source Schema         : projectse
 
  Target Server Type    : MySQL
- Target Server Version : 100418
+ Target Server Version : 100417
  File Encoding         : 65001
 
- Date: 14/04/2021 19:55:50
+ Date: 18/04/2021 15:26:20
 */
 
 SET NAMES utf8mb4;
@@ -242,9 +242,8 @@ CREATE TABLE `user`  (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (1, 'an', '123', 1, 'dinhan', 18, 60, 70, b'0');
-INSERT INTO `user` VALUES (2, 'an', '123', 1, 'dinhan', 18, 60, 70, b'0');
-INSERT INTO `user` VALUES (3, 'anhgfds', '123', 1, 'dinhan', 18, 60, 70, b'0');
+INSERT INTO `user` VALUES (1, 'sdasd', 'sadsdas', 1, '11111sad', 12, 123, 123, b'1');
+INSERT INTO `user` VALUES (2, 'sdasd', 'sadsdas', 1, '11111sad', 12, 123, 123, b'1');
 
 -- ----------------------------
 -- Procedure structure for sp_addNewFood
@@ -269,11 +268,11 @@ DROP PROCEDURE IF EXISTS `sp_addNewUser`;
 delimiter ;;
 CREATE PROCEDURE `sp_addNewUser`(in username varchar(20),upassw varchar(255), urole int, ufulln varchar(255), uage int, uheight double, uweight double, usex BIGINT)
 begin
-    declare uID int;
-    set uID = 1;
-    while (exists (select * from user where userID = uID)) do set uID = uID + 1;
-    end while;
-    insert into user values(uID, username, upassw, urole, ufulln, uage, uheight, uweight, usex);
+	declare uID int;
+	set uID = 1;
+	while (exists (select * from `user` where userID = uID)) do set uID = uID + 1;
+	end while;
+	insert into `user` values(uID, username, upassw, urole, ufulln, uage, uheight, uweight, usex);
 end
 ;;
 delimiter ;
