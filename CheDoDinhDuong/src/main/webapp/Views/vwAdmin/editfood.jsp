@@ -17,7 +17,13 @@
                 -moz-appearance: textfield;
             }
         </style>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <div class="container mt-50">
+            <div class="row">
+                <div class="text-center" style="width: 100%;">
+                    <img src="${pageContext.request.contextPath}${food.getUrlImage()}" class="img-thumbnail" style="width: 30%" alt="${food.getFoodName()}">
+                </div>
+            </div>
             <form method="post">
                 <div class="form-group row">
                     <label for="foodname" class="col-sm-2 col-form-label">Tên món ăn</label>
@@ -116,8 +122,66 @@
                         <input type="text" class="form-control" id="urlimg" name="urlimg" value="url">
                     </div>
                 </div>
-                <button type="submit" formaction="${pageContext.request.contextPath}/Admin/EditFood?id=${food.getFoodID()}" class="btn btn-primary mt-50 mb-50"><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button>
+<%--                <button id="btnEdit" type="submit" class="btn btn-primary mt-50 mb-50"><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button>--%>
+                <button id="btnEdit" type="submit" formaction="${pageContext.request.contextPath}/Admin/EditFood?id=${food.getFoodID()}" class="btn btn-primary mt-50 mb-50"><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button>
             </form>
         </div>
+        <script>
+            $("#btnEdit").click(function (e){
+                if($("#foodname").val().length == 0){
+                    alert("Please enter food name");
+                    e.preventDefault();
+                    return;
+                }
+                if($("#glucozo").val().length == 0)
+                {
+                    $("#glucozo").val(0);
+                }
+                if($("#kcal").val().length == 0)
+                {
+                    $("#kcal").val(0);
+                }
+                if($("#lipit").val().length == 0)
+                {
+                    $("#lipit").val(0);
+                }
+                if($("#protein").val().length == 0)
+                {
+                    $("#protein").val(0);
+                }
+                if($("#vitaminA").val().length == 0)
+                {
+                    $("#vitaminA").val(0);
+                }
+                if($("#VitaminB").val().length == 0)
+                {
+                    $("#VitaminB").val(0);
+                }
+                if($("#kali").val().length == 0)
+                {
+                    $("#kali").val(0);
+                }
+                if($("#vitaminC").val().length == 0)
+                {
+                    $("#vitaminC").val(0);
+                }
+                if($("#vitaminD").val().length == 0)
+                {
+                    $("#vitaminD").val(0);
+                }
+                if($("#VitaminE").val().length == 0)
+                {
+                    $("#VitaminE").val(0);
+                }
+                if($("#natri").val().length == 0)
+                {
+                    $("#natri").val(0);
+                }
+                if($("#fe").val().length == 0)
+                {
+                    $("#fe").val(0);
+                }
+            })
+        </script>
     </jsp:body>
 </t:main>

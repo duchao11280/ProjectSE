@@ -7,15 +7,23 @@ import beans.Category;
 import beans.Food;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
+import javax.servlet.jsp.PageContext;
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
 @WebServlet(name = "AdminServlet", urlPatterns = "/Admin/*")
+@MultipartConfig(
+        fileSizeThreshold = 2 * 1024 * 1024,
+        maxFileSize = 50 * 1024 * 1024,
+        maxRequestSize = 50 * 1024 * 1024
+)
 public class AdminServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -53,12 +61,30 @@ public class AdminServlet extends HttpServlet {
         String kali = request.getParameter("kali");
         String fe = request.getParameter("fe");
         String natri = request.getParameter("natri");
-        String imgurl = request.getParameter("urlimg");
-        FoodModel.addNewFood(foodName, CategoryModel.getCatIDByCatName(catname),glucozo,kcal,lipit,protein,
-                vitaminA,vitaminB,vitaminC,vitaminD,vitaminE,kali,fe,natri,imgurl);
 //        System.out.println(CategoryModel.getCatIDByCatName(catname));
 //        System.out.println(catname);
-
+        String imgurl="";
+        for (Part part : request.getParts()) {
+            String contentDisp = part.getHeader("content-disposition");
+            //System.out.println(contentDisp);
+            String[] items = contentDisp.split(";");
+            for(String s : items){
+                String tmp = s.trim();
+                if (tmp.startsWith("filename")){
+                    int idx = tmp.indexOf('=') + 2;
+                    String filename = tmp.substring(idx, tmp.length() - 1);
+                    String targetDir = this.getServletContext().getRealPath("Public/Imgs/Food");
+                    String destination = targetDir + "/" + filename;
+//                    System.out.println(destination);
+                    part.write(destination);
+                    imgurl ="/Public/Imgs/Food/"+ filename;
+                }
+            }
+        }
+//        String a= request.getContextPath();
+//        System.out.println(a);
+        FoodModel.addNewFood(foodName, CategoryModel.getCatIDByCatName(catname),glucozo,kcal,lipit,protein,
+                vitaminA,vitaminB,vitaminC,vitaminD,vitaminE,kali,fe,natri,imgurl);
         ServletUtils.redirect("/Admin/FoodManagement",request,response);
     }
 
@@ -85,7 +111,6 @@ public class AdminServlet extends HttpServlet {
         String fe = request.getParameter("fe");
         String natri = request.getParameter("natri");
         String imgurl = request.getParameter("urlimg");
-        System.out.println(kali + " " + fe + " " + natri);
         FoodModel.updateFood(foodID,foodName,CategoryModel.getCatIDByCatName(catname),glucozo,kcal,lipit,protein,
                 vitaminA,vitaminB,vitaminC,vitaminD,vitaminE,kali,fe,natri,imgurl);
         ServletUtils.redirect("/Admin/FoodManagement",request,response);

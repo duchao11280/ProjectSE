@@ -5,6 +5,42 @@
 
 <t:main>
     <jsp:body>
+        <script>
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('.image-upload-wrap').hide();
+
+                        $('.file-upload-image').attr('src', e.target.result);
+                        $('.file-upload-content').show();
+
+                        $('.image-title').html(input.files[0].name);
+                    };
+
+                    reader.readAsDataURL(input.files[0]);
+
+                } else {
+                    removeUpload();
+                }
+            }
+            function removeUpload() {
+                $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+                $('.file-upload-content').hide();
+                $('.image-upload-wrap').show();
+            }
+            $('.image-upload-wrap').bind('dragover', function () {
+                $('.image-upload-wrap').addClass('image-dropping');
+            });
+            $('.image-upload-wrap').bind('dragleave', function () {
+                $('.image-upload-wrap').removeClass('image-dropping');
+            });
+
+        </script>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
         <style>
             /* Chrome, Safari, Edge, Opera */
             input::-webkit-outer-spin-button,
@@ -17,8 +53,119 @@
             input[type=number] {
                 -moz-appearance: textfield;
             }
+            .file-upload {
+                background-color: #ffffff;
+                width: 600px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+
+            .file-upload-btn {
+                width: 100%;
+                margin: 0;
+                color: #fff;
+                background: #1FB264;
+                border: none;
+                padding: 10px;
+                border-radius: 4px;
+                border-bottom: 4px solid #15824B;
+                transition: all .2s ease;
+                outline: none;
+                text-transform: uppercase;
+                font-weight: 700;
+            }
+
+            .file-upload-btn:hover {
+                background: #1AA059;
+                color: #ffffff;
+                transition: all .2s ease;
+                cursor: pointer;
+            }
+
+            .file-upload-btn:active {
+                border: 0;
+                transition: all .2s ease;
+            }
+
+            .file-upload-content {
+                display: none;
+                text-align: center;
+            }
+
+            .file-upload-input {
+                position: absolute;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+                outline: none;
+                opacity: 0;
+                cursor: pointer;
+            }
+
+            .image-upload-wrap {
+                margin-top: 20px;
+                border: 4px dashed #1FB264;
+                position: relative;
+            }
+
+            .image-dropping,
+            .image-upload-wrap:hover {
+                background-color: #1FB264;
+                border: 4px dashed #ffffff;
+            }
+
+            .image-title-wrap {
+                padding: 0 15px 15px 15px;
+                color: #222;
+            }
+
+            .drag-text {
+                text-align: center;
+            }
+
+            .drag-text h3 {
+                font-weight: 100;
+                text-transform: uppercase;
+                color: #15824B;
+                padding: 60px 0;
+            }
+
+            .file-upload-image {
+                max-height: 200px;
+                max-width: 200px;
+                margin: auto;
+                padding: 20px;
+            }
+
+            .remove-image {
+                width: 200px;
+                margin: 0;
+                color: #fff;
+                background: #cd4535;
+                border: none;
+                padding: 10px;
+                border-radius: 4px;
+                border-bottom: 4px solid #b02818;
+                transition: all .2s ease;
+                outline: none;
+                text-transform: uppercase;
+                font-weight: 700;
+            }
+
+            .remove-image:hover {
+                background: #c13b2a;
+                color: #ffffff;
+                transition: all .2s ease;
+                cursor: pointer;
+            }
+
+            .remove-image:active {
+                border: 0;
+                transition: all .2s ease;
+            }
         </style>
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             <div class="container">
                 <div class="row m-30">
                     <div class="col">
@@ -128,15 +275,37 @@
                                                step="0.01">
                                     </div>
                                 </div>
+<%--                                <div class="form-group row">--%>
+<%--                                    <label for="urlimg" class="col-sm-4 col-form-label">Image url</label>--%>
+<%--                                    <div class="col-sm">--%>
+<%--                                        <input type="text" class="form-control" id="urlimg" name="urlimg" value="url">--%>
+<%--                                    </div>--%>
+<%--                                </div>--%>
                                 <div class="form-group row">
-                                    <label for="urlimg" class="col-sm-4 col-form-label">Image url</label>
-                                    <div class="col-sm">
-                                        <input type="text" class="form-control" id="urlimg" name="urlimg" value="url">
+                                    <div class="file-upload">
+                                        <button class="file-upload-btn" type="button"
+                                                onclick="$('.file-upload-input').trigger( 'click' )">Add Image
+                                        </button>
+
+                                        <div class="image-upload-wrap">
+                                            <input id="imgurl" class="file-upload-input" type='file' onchange="readURL(this);"
+                                                   accept="image/*" name="imagefile"/>
+                                            <div class="drag-text">
+                                                <h3>Drag and drop a file or select add Image</h3>
+                                            </div>
+                                        </div>
+                                        <div class="file-upload-content">
+                                            <img class="file-upload-image" src="#" alt="your image"/>
+                                            <div class="image-title-wrap">
+<%--                                                <button type="button" onclick="removeUpload()" class="remove-image">--%>
+<%--                                                    Remove <span class="image-title" name="imagename">Uploaded Image</span></button>--%>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="submit" formaction="${pageContext.request.contextPath}/Admin/AddFood"
+                                <button id="btnAdd" type="submit" formaction="${pageContext.request.contextPath}/Admin/AddFood"
                                         class="btn btn-default">Thêm
                                 </button>
                             </div>
@@ -178,7 +347,67 @@
                 </div>
             </div>
         </form>
-
+        <script>
+            $("#btnAdd").click(function (e){
+                if($("#foodname").val().length == 0){
+                    alert("Bạn chưa nhập tên món ăn");
+                    e.preventDefault();
+                    return;
+                }
+                if($("#glucozo").val().length == 0)
+                {
+                    $("#glucozo").val(0);
+                }
+                if($("#kcal").val().length == 0)
+                {
+                    $("#kcal").val(0);
+                }
+                if($("#lipit").val().length == 0)
+                {
+                    $("#lipit").val(0);
+                }
+                if($("#protein").val().length == 0)
+                {
+                    $("#protein").val(0);
+                }
+                if($("#vitaminA").val().length == 0)
+                {
+                    $("#vitaminA").val(0);
+                }
+                if($("#VitaminB").val().length == 0)
+                {
+                    $("#VitaminB").val(0);
+                }
+                if($("#kali").val().length == 0)
+                {
+                    $("#kali").val(0);
+                }
+                if($("#vitaminC").val().length == 0)
+                {
+                    $("#vitaminC").val(0);
+                }
+                if($("#vitaminD").val().length == 0)
+                {
+                    $("#vitaminD").val(0);
+                }
+                if($("#VitaminE").val().length == 0)
+                {
+                    $("#VitaminE").val(0);
+                }
+                if($("#natri").val().length == 0)
+                {
+                    $("#natri").val(0);
+                }
+                if($("#fe").val().length == 0)
+                {
+                    $("#fe").val(0);
+                }
+                if($("#imgurl").val().length == 0){
+                    alert("Bạn chưa chọn hình ảnh")
+                    e.preventDefault();
+                }
+            })
+        </script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.css">
     </jsp:body>
 </t:main>
