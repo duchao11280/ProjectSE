@@ -39,44 +39,50 @@
                         <div class="card-body">
                             <div class="row">
                                 <c:forEach var="c" items="${lstFood}">
-                                    <div class="col-sm-4 mb-3 fullwidth" >
-                                        <div class="card">
-                                            <a href="${pageContext.request.contextPath}/Food/Detail?id=${c.foodID}">
-                                                <img src="${pageContext.request.contextPath}/Public/Imgs/Food/14.jpg"
-                                                     alt="${c.foodID}" title="${c.foodName}" class="card-img-top"/>
-                                                <div class="card-body">
-                                                    <h6 class="card-title" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 80%">${c.foodName}</h6>
-                                                    <h5 class="card-title text-danger">
-                                                        <fmt:formatNumber value="${c.kcal}" type="number"/> Kcal/Phần
-                                                    </h5>
+                                    <c:choose>
+                                        <c:when test="${c.isDelete() == false}">
+                                            <div class="col-sm-4 mb-3 fullwidth" >
+                                                <div class="card">
+                                                    <a href="${pageContext.request.contextPath}/Food/Detail?id=${c.foodID}">
+                                                        <img src="${pageContext.request.contextPath}${c.getUrlImage()}"
+                                                             alt="${c.foodID}" title="${c.foodName}" class="card-img-top"/>
+                                                        <div class="card-body">
+                                                            <h6 class="card-title" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 80%">${c.foodName}</h6>
+                                                            <h5 class="card-title text-danger">
+                                                                <fmt:formatNumber value="${c.kcal}" type="number"/> Kcal/Phần
+                                                            </h5>
+                                                        </div>
+                                                        <div class="card-footer bg-success">
+                                                            <table class="table table-hover" style="text-align: center">
+                                                                <thead>
+                                                                <tr>
+                                                                    <th scope="col">Protein</th>
+                                                                    <th scope="col">Lipit</th>
+                                                                    <th scope="col">Glucozo</th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                <tr>
+                                                                    <td>
+                                                                            ${c.protein}
+                                                                    </td>
+                                                                    <td>
+                                                                            ${c.lipit}
+                                                                    </td>
+                                                                    <td>
+                                                                            ${c.glucozo}
+                                                                    </td>
+                                                                </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </a>
                                                 </div>
-                                                <div class="card-footer bg-success">
-                                                    <table class="table table-hover" style="text-align: center">
-                                                        <thead>
-                                                        <tr>
-                                                            <th scope="col">Protein</th>
-                                                            <th scope="col">Lipit</th>
-                                                            <th scope="col">Glucozo</th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                        <tr>
-                                                            <td>
-                                                                    ${c.protein}
-                                                            </td>
-                                                            <td>
-                                                                    ${c.lipit}
-                                                            </td>
-                                                            <td>
-                                                                    ${c.glucozo}
-                                                            </td>
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
+                                            </div>
+                                        </c:when>
+                                        <c:otherwise></c:otherwise>
+                                    </c:choose>
+
                                 </c:forEach>
                             </div>
                             </c:otherwise>

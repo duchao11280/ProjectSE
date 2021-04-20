@@ -15,7 +15,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-sm-4">
-                            <img style="max-width: 200px;max-height: 300px" alt="${food.foodName}" title="${food.foodName}" src="${pageContext.request.contextPath}/Public/Imgs/Food/14.jpg">
+                            <img style="max-width: 200px;max-height: 300px" alt="${food.foodName}" title="${food.foodName}" src="${pageContext.request.contextPath}${food.getUrlImage()}">
                             <div>&nbsp;</div>
                             <c:choose>
                                 <c:when test="${ingredientoffood.size() ==0 }"></c:when>

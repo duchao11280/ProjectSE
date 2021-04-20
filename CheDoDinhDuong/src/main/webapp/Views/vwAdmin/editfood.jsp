@@ -119,7 +119,7 @@
                 <div class="form-group row" style="display: none">
                     <label for="urlimg" class="col-sm-2 col-form-label">Image url</label>
                     <div class="col-sm">
-                        <input type="text" class="form-control" id="urlimg" name="urlimg" value="url">
+                        <input type="text" class="form-control" id="urlimg" name="urlimg" value="${food.getUrlImage()}">
                     </div>
                 </div>
 <%--                <button id="btnEdit" type="submit" class="btn btn-primary mt-50 mb-50"><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button>--%>

@@ -39,7 +39,7 @@ public class FoodModel {
     }
 
     public static List<Food> getListFoodHaveIngredient() {
-        final String sql = "SELECT food.foodID,food.foodName,food.catID,food.glucozo,food.kcal,food.protein,food.lipit,food.vitA,food.vitB,food.vitC,food.vitD,food.vitE,food.kali,food.na,food.fe,food.urlImage\n" +
+        final String sql = "SELECT food.foodID,food.foodName,food.catID,food.glucozo,food.kcal,food.protein,food.lipit,food.vitA,food.vitB,food.vitC,food.vitD,food.vitE,food.kali,food.na,food.fe,food.urlImage,food.isDelete\n" +
                 "FROM (SELECT foodID as LFID\n" +
                 "\t\t\t\t\tFrom ingredient\n" +
                 "\t\t\t\t\tGROUP BY foodID) as LFood\n" +
