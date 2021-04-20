@@ -42,7 +42,7 @@
                                     <div class="col-sm-4 mb-3 fullwidth" >
                                         <div class="card">
                                             <a href="${pageContext.request.contextPath}/Food/Detail?id=${c.foodID}">
-                                                <img src="${pageContext.request.contextPath}/Public/Imgs/Food/14.jpg"
+                                                <img src="${pageContext.request.contextPath}${c.getUrlImage()}"
                                                      alt="${c.foodID}" title="${c.foodName}" class="card-img-top"/>
                                                 <div class="card-body">
                                                     <h6 class="card-title" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 80%">${c.foodName}</h6>

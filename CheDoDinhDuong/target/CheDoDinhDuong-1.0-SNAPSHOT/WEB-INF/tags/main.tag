@@ -68,7 +68,7 @@
                 </ul>
 
                 <a class="logo float-left" href="${pageContext.request.contextPath}/Home">
-                    <img src="${pageContext.request.contextPath}/Public/images/logo_dark.png"/>
+                    <img src="${pageContext.request.contextPath}/Public/images/logo.png"/>
                 </a>
                 <div class="navbar-collapse collapse float-right nav-main-collapse">
                     <nav class="nav-main">
@@ -129,7 +129,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <img src="${pageContext.request.contextPath}/Public/images/logo-footer.png" class="footer-logo">
+                    <img src="${pageContext.request.contextPath}/Public/images/logo_light.png" class="footer-logo" style="width: 80%">
                     <p>Contact us to any report</p>
                     <address>
                         <ul class="list-unstyled">
