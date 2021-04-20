@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : Duc Hao
+ Source Server         : MySQL
  Source Server Type    : MySQL
- Source Server Version : 100414
+ Source Server Version : 100417
  Source Host           : localhost:3306
  Source Schema         : projectse
 
  Target Server Type    : MySQL
- Target Server Version : 100414
+ Target Server Version : 100417
  File Encoding         : 65001
 
- Date: 18/04/2021 15:34:56
+ Date: 20/04/2021 10:28:47
 */
 
 SET NAMES utf8mb4;
@@ -122,37 +122,37 @@ CREATE TABLE `food`  (
 -- ----------------------------
 -- Records of food
 -- ----------------------------
-INSERT INTO `food` VALUES (1, 'Bún bò huế', 1, 56.4, 622, 30.6, 30.2, 26.64, NULL, 14.69, NULL, NULL, 348.9, 5, 670.7, NULL, b'0');
-INSERT INTO `food` VALUES (2, 'Trứng cút', 5, 0.1, 17, 1.2, 1.5, 70, NULL, 0, NULL, NULL, 17.6, 0.27, 15.8, NULL, b'0');
-INSERT INTO `food` VALUES (3, 'Cơm', 3, 44.2, 200, 0.6, 4.6, NULL, NULL, NULL, NULL, NULL, 139.8, 0.75, 2.9, NULL, b'0');
-INSERT INTO `food` VALUES (4, 'Trứng gà', 5, 0.2, 81, 5.7, 7.3, 343, NULL, 0, NULL, NULL, 86.2, 1.32, 77.4, NULL, b'0');
-INSERT INTO `food` VALUES (5, 'Bún tươi', 5, NULL, 110, 0, 1.7, NULL, NULL, NULL, NULL, NULL, NULL, 0.2, NULL, NULL, b'0');
-INSERT INTO `food` VALUES (6, 'Thịt heo', 2, NULL, 242, 14, 25, 0.021, NULL, NULL, 0.159, NULL, 423, 0.9, 62, NULL, b'0');
-INSERT INTO `food` VALUES (7, 'Thịt bò nạc', 2, NULL, 250, 15, 26, 0, NULL, 0, 0.021, NULL, 72, 2.6, 318, NULL, b'0');
-INSERT INTO `food` VALUES (8, 'Phở bò tái', 1, 59.3, 413, 11.7, 17.9, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, b'0');
-INSERT INTO `food` VALUES (9, 'Bánh phở', 1, 31.7, 143, 0.4, 3.2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, b'0');
-INSERT INTO `food` VALUES (10, 'Phở gà', 1, 59.3, 458, 16.2, 18.8, 55.8, NULL, 41.52, NULL, NULL, 173.4, 3.6, 255.6, NULL, b'0');
-INSERT INTO `food` VALUES (11, 'Thịt gà', 2, 0, 239, 14, 27, 0.483, NULL, NULL, 0.05, NULL, 223, 1.3, 82, NULL, b'0');
-INSERT INTO `food` VALUES (12, 'Cam', 4, 15.5, 68, 0, 1.7, NULL, NULL, NULL, 73.6, NULL, 198.7, 0.74, 7.4, NULL, b'0');
-INSERT INTO `food` VALUES (13, 'Khế', 4, 1.9, 9, 0, 0.4, 0, NULL, 18.3, NULL, NULL, 0, 0.54, 0, NULL, b'0');
-INSERT INTO `food` VALUES (14, 'Chôm Chôm', 4, 3.3, 14, 0, 0.3, NULL, NULL, NULL, NULL, NULL, NULL, 0.1, NULL, NULL, b'0');
-INSERT INTO `food` VALUES (15, 'Cóc', 4, 7.4, 34, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, 0.92, NULL, NULL, b'0');
-INSERT INTO `food` VALUES (16, 'Củ sắn', 4, 11.1, 52, 0, 1.9, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, b'0');
-INSERT INTO `food` VALUES (17, 'Dâu tây', 4, 2, 11, 0.1, 0.5, NULL, NULL, 15, NULL, NULL, NULL, 0.17, NULL, NULL, b'0');
-INSERT INTO `food` VALUES (18, 'Hồng đỏ', 4, 5.6, 25, 0, 0.6, NULL, NULL, NULL, NULL, NULL, 192.6, 0.18, 3.6, NULL, b'0');
-INSERT INTO `food` VALUES (19, 'Lê', 4, 20.6, 91, 0.4, 1.4, NULL, NULL, NULL, NULL, NULL, 177.8, 4.65, 10.1, NULL, b'0');
-INSERT INTO `food` VALUES (20, 'Hồng xiêm (Saboche) (Lòng mứt)', 4, 11.5, 55, 0.8, 0.6, NULL, NULL, NULL, NULL, NULL, 0, 2.64, 0, NULL, b'0');
-INSERT INTO `food` VALUES (21, 'Mận', 4, 2.5, 11, 0, 0.3, NULL, NULL, 21, NULL, NULL, NULL, 0.35, 0, NULL, b'0');
-INSERT INTO `food` VALUES (22, 'Nhãn', 4, 0.9, 4, 0, 0.1, NULL, NULL, 4.52, NULL, NULL, 17, 0.03, 1.7, NULL, b'0');
-INSERT INTO `food` VALUES (23, 'Ổi', 4, 12.3, 53, 0, 1, NULL, NULL, 99.9, NULL, NULL, 465.6, 2.15, 6.6, NULL, b'0');
-INSERT INTO `food` VALUES (24, 'Quýt', 4, 6.4, 28, 0, 0.6, NULL, NULL, 40.7, NULL, NULL, 82.1, 0.3, 3, NULL, b'0');
-INSERT INTO `food` VALUES (25, 'Xoài', 4, 41.2, 179, 0.8, 1.6, NULL, NULL, 77.7, NULL, NULL, 295.3, 1.04, 0.8, NULL, b'0');
-INSERT INTO `food` VALUES (26, 'Vải', 4, 2.1, 9, 0, 0.1, NULL, NULL, 7.56, NULL, NULL, NULL, 0.1, NULL, NULL, b'0');
-INSERT INTO `food` VALUES (27, 'Thanh long', 4, 49, 225, 0, 7.3, NULL, NULL, 54.05, NULL, NULL, NULL, 3.38, NULL, NULL, b'0');
-INSERT INTO `food` VALUES (28, 'Vú sữa', 4, 18.5, 83, 0, 2, NULL, NULL, 9.85, NULL, NULL, NULL, 0.79, NULL, NULL, b'0');
-INSERT INTO `food` VALUES (29, 'Táo tây', 4, 25.8, 107, 0, 1.1, NULL, NULL, 15.96, NULL, NULL, 232.6, 5.7, 34.2, NULL, b'0');
-INSERT INTO `food` VALUES (30, 'Cơm trứng', 3, 44.4, 281, 6.3, 11.9, NULL, NULL, NULL, NULL, NULL, 226, 2.07, 80.3, '', b'0');
-INSERT INTO `food` VALUES (31, 'Bún thịt nướng', 1, NULL, 352, 14, 26.7, NULL, NULL, NULL, 0.159, NULL, 423, 1.1, 62, '', b'0');
+INSERT INTO `food` VALUES (1, 'Bún bò huế', 1, 56.4, 622, 30.6, 30.2, 26.64, NULL, 14.69, NULL, NULL, 348.9, 5, 670.7, '/Public/Imgs/Food/1.jpg', b'0');
+INSERT INTO `food` VALUES (2, 'Trứng cút', 5, 0.1, 17, 1.2, 1.5, 70, NULL, 0, NULL, NULL, 17.6, 0.27, 15.8, '/Public/Imgs/Food/2.jpg', b'0');
+INSERT INTO `food` VALUES (3, 'Cơm', 3, 44.2, 200, 0.6, 4.6, NULL, NULL, NULL, NULL, NULL, 139.8, 0.75, 2.9, '/Public/Imgs/Food/3.jpg', b'0');
+INSERT INTO `food` VALUES (4, 'Trứng gà', 5, 0.2, 81, 5.7, 7.3, 343, NULL, 0, NULL, NULL, 86.2, 1.32, 77.4, '/Public/Imgs/Food/4.jpg', b'0');
+INSERT INTO `food` VALUES (5, 'Bún tươi', 5, NULL, 110, 0, 1.7, NULL, NULL, NULL, NULL, NULL, NULL, 0.2, NULL, '/Public/Imgs/Food/5.jpg', b'0');
+INSERT INTO `food` VALUES (6, 'Thịt heo', 2, NULL, 242, 14, 25, 0.021, NULL, NULL, 0.159, NULL, 423, 0.9, 62, '/Public/Imgs/Food/6.jpg', b'0');
+INSERT INTO `food` VALUES (7, 'Thịt bò nạc', 2, NULL, 250, 15, 26, 0, NULL, 0, 0.021, NULL, 72, 2.6, 318, '/Public/Imgs/Food/7.jpg', b'0');
+INSERT INTO `food` VALUES (8, 'Phở bò tái', 1, 59.3, 413, 11.7, 17.9, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '/Public/Imgs/Food/8.jpg', b'0');
+INSERT INTO `food` VALUES (9, 'Bánh phở', 1, 31.7, 143, 0.4, 3.2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '/Public/Imgs/Food/9.jpg', b'0');
+INSERT INTO `food` VALUES (10, 'Phở gà', 1, 59.3, 458, 16.2, 18.8, 55.8, NULL, 41.52, NULL, NULL, 173.4, 3.6, 255.6, '/Public/Imgs/Food/1.jpg', b'0');
+INSERT INTO `food` VALUES (11, 'Thịt gà', 2, 0, 239, 14, 27, 0.483, NULL, NULL, 0.05, NULL, 223, 1.3, 82, '/Public/Imgs/Food/1.jpg', b'0');
+INSERT INTO `food` VALUES (12, 'Cam', 4, 15.5, 68, 0, 1.7, NULL, NULL, NULL, 73.6, NULL, 198.7, 0.74, 7.4, '/Public/Imgs/Food/1.jpg', b'0');
+INSERT INTO `food` VALUES (13, 'Khế', 4, 1.9, 9, 0, 0.4, 0, NULL, 18.3, NULL, NULL, 0, 0.54, 0, '/Public/Imgs/Food/1.jpg', b'0');
+INSERT INTO `food` VALUES (14, 'Chôm Chôm', 4, 3.3, 14, 0, 0.3, NULL, NULL, NULL, NULL, NULL, NULL, 0.1, NULL, '/Public/Imgs/Food/1.jpg', b'0');
+INSERT INTO `food` VALUES (15, 'Cóc', 4, 7.4, 34, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, 0.92, NULL, '/Public/Imgs/Food/1.jpg', b'0');
+INSERT INTO `food` VALUES (16, 'Củ sắn', 4, 11.1, 52, 0, 1.9, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '/Public/Imgs/Food/1.jpg', b'0');
+INSERT INTO `food` VALUES (17, 'Dâu tây', 4, 2, 11, 0.1, 0.5, NULL, NULL, 15, NULL, NULL, NULL, 0.17, NULL, '/Public/Imgs/Food/1.jpg', b'0');
+INSERT INTO `food` VALUES (18, 'Hồng đỏ', 4, 5.6, 25, 0, 0.6, 0, 0, 0, 0, 0, 192.6, 0.18, 3.6, '/Public/Imgs/Food/1.jpg', b'0');
+INSERT INTO `food` VALUES (19, 'Lê', 4, 20.6, 91, 0.4, 1.4, NULL, NULL, NULL, NULL, NULL, 177.8, 4.65, 10.1, '/Public/Imgs/Food/1.jpg', b'0');
+INSERT INTO `food` VALUES (20, 'Hồng xiêm (Saboche) (Lòng mứt)', 4, 11.5, 55, 0.8, 0.6, NULL, NULL, NULL, NULL, NULL, 0, 2.64, 0, '/Public/Imgs/Food/1.jpg', b'0');
+INSERT INTO `food` VALUES (21, 'Mận', 4, 2.5, 11, 0, 0.3, NULL, NULL, 21, NULL, NULL, NULL, 0.35, 0, '/Public/Imgs/Food/1.jpg', b'0');
+INSERT INTO `food` VALUES (22, 'Nhãn', 4, 0.9, 4, 0, 0.1, NULL, NULL, 4.52, NULL, NULL, 17, 0.03, 1.7, '/Public/Imgs/Food/1.jpg', b'0');
+INSERT INTO `food` VALUES (23, 'Ổi', 4, 12.3, 53, 0, 1, NULL, NULL, 99.9, NULL, NULL, 465.6, 2.15, 6.6, '/Public/Imgs/Food/1.jpg', b'0');
+INSERT INTO `food` VALUES (24, 'Quýt', 4, 6.4, 28, 0, 0.6, NULL, NULL, 40.7, NULL, NULL, 82.1, 0.3, 3, '/Public/Imgs/Food/1.jpg', b'0');
+INSERT INTO `food` VALUES (25, 'Xoài', 4, 41.2, 179, 0.8, 1.6, NULL, NULL, 77.7, NULL, NULL, 295.3, 1.04, 0.8, '/Public/Imgs/Food/1.jpg', b'0');
+INSERT INTO `food` VALUES (26, 'Vải', 4, 2.1, 9, 0, 0.1, 0, 0, 7.56, 0, 0, 0, 0.1, 0, '/Public/Imgs/Food/1.jpg', b'0');
+INSERT INTO `food` VALUES (27, 'Thanh long', 4, 49, 225, 0, 7.3, NULL, NULL, 54.05, NULL, NULL, NULL, 3.38, NULL, '/Public/Imgs/Food/1.jpg', b'0');
+INSERT INTO `food` VALUES (28, 'Vú sữa', 4, 18.5, 83, 0, 2, NULL, NULL, 9.85, NULL, NULL, NULL, 0.79, NULL, '/Public/Imgs/Food/1.jpg', b'0');
+INSERT INTO `food` VALUES (29, 'Táo tây', 4, 25.8, 107, 0, 1.1, NULL, NULL, 15.96, NULL, NULL, 232.6, 5.7, 34.2, '/Public/Imgs/Food/1.jpg', b'0');
+INSERT INTO `food` VALUES (30, 'Cơm trứng', 3, 44.4, 281, 6.3, 11.9, NULL, NULL, NULL, NULL, NULL, 226, 2.07, 80.3, '/Public/Imgs/Food/1.jpg', b'0');
+INSERT INTO `food` VALUES (31, 'Bún thịt nướng', 1, NULL, 352, 14, 26.7, NULL, NULL, NULL, 0.159, NULL, 423, 1.1, 62, '/Public/Imgs/Food/1.jpg', b'0');
 
 -- ----------------------------
 -- Table structure for historyuserbmi
