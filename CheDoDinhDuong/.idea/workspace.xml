@@ -10,16 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0aedd7f9-181f-44ae-b252-8749b2d89da7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/CalculateServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/Views/vwCalculate/calAll.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/Views/vwCalculate/calBMI.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/Views/vwCalculate/calCALO.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AccountServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AccountServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Views/vwAccount/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Views/vwAccount/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Views/vwHome/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Views/vwHome/home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwAccount/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwAccount/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwHome/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwHome/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Views/vwCalculate/calAll.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Views/vwCalculate/calAll.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Views/vwCalculate/calBMI.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Views/vwCalculate/calBMI.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Views/vwCalculate/calCALO.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Views/vwCalculate/calCALO.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwCalculate/calAll.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwCalculate/calAll.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwCalculate/calBMI.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwCalculate/calBMI.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwCalculate/calCALO.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwCalculate/calCALO.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +206,7 @@
       <workItem from="1618718903783" duration="11822000" />
       <workItem from="1618924343273" duration="5845000" />
       <workItem from="1619494212193" duration="1685000" />
-      <workItem from="1619510492002" duration="3484000" />
+      <workItem from="1619510492002" duration="7999000" />
     </task>
     <servers />
   </component>

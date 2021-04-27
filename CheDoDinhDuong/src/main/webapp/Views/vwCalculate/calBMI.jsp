@@ -95,7 +95,77 @@
 
                 </div>
 
-                day la bmi
+<%--               cal bmi--%>
+                    <div class="container">
+
+                        <div class="row">
+
+                            <!-- LEFT TEXT -->
+                            <div class="col-md-5 offset-md-1">
+
+                                <h2 class="fs-16">IMPORTANT INFORMATION</h2>
+                                <p class="text-muted">BMI là chỉ số khối cơ thể (viết tắt: Body Mass Index), được các bác sĩ và chuyên gia sức khỏe dùng để
+                                    xác định một người nào đó có bị béo phì, thừa cân hay quá gầy không. Thông thường người ta dùng chỉ số này để tính toán
+                                    mức độ béo phì.</p>
+                                <p class="text-muted">Công thức tính BMI: = Cân nặng (kg) / (Chiều cao (m) x Chiều cao (m)).</p>
+
+                            </div>
+                            <!-- /LEFT TEXT -->
+
+
+                            <!-- calculate -->
+                            <div class="col-md-4">
+
+                                <h2 class="fs-16">CALCULATE</h2>
+
+                                <!-- calbmi form -->
+                                <form id="frmCalBmi" method="post" action="#" autocomplete="off">
+                                    <div class="clearfix">
+
+                                        <!-- height -->
+                                        <div class="form-group">
+                                            <input type="text" name="heightbmi" class="form-control" placeholder="Height" required="">
+                                        </div>
+
+                                        <!-- weight -->
+                                        <div class="form-group">
+                                            <input type="text" name="weightbmi" class="form-control" placeholder="Weight" required="">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row">
+
+                                        <div class="col-md-6 col-sm-6 col-xs-6">
+
+
+
+                                        </div>
+
+                                        <div class="col-md-12 col-sm-6 col-xs-6 text-left">
+
+                                            <button class="btn btn-primary">Get Result</button>
+
+                                        </div>
+
+                                    </div>
+
+                                </form>
+
+
+
+                                <div class="alert alert-mini alert-danger mb-30">
+                                    <strong>Oh snap!</strong> bit!
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
 
             </div>
         </section>
