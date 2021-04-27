@@ -23,12 +23,12 @@
             }
             const fullname= $('#txtFullname').val();
             if (password.length === 0) {
-                alert('Invalid password.');
+                alert('Invalid Full name.');
                 return;
             }
             const age= $('#txtAge').val();
             if (password.length === 0) {
-                alert('Invalid password.');
+                alert('Invalid Age.');
                 return;
             }
 

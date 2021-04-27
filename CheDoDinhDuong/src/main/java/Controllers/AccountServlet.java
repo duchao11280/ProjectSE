@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Optional;
 
 @WebServlet(name = "AccountServlet", urlPatterns = "/Account/*")
 public class AccountServlet extends HttpServlet {
@@ -57,8 +59,10 @@ public class AccountServlet extends HttpServlet {
             sex=true;
         }else
             sex=false;
+
         System.out.println(sex);
         System.out.println(sexx);
+        
         double height = 160;
         double weight = 65;
         int role=1;
@@ -83,6 +87,15 @@ public class AccountServlet extends HttpServlet {
                 break;
             case "/Register":
                 ServletUtils.forward("/Views/vwAccount/register.jsp",request,response);
+                break;
+            case "/IsAvailable":
+                String username = request.getParameter("user");
+                Optional<User> user = UserModel.findByUserName(username);
+                PrintWriter out = response.getWriter();
+                response.setContentType("application/json");
+                response.setCharacterEncoding("utf-8");
+                out.print(!user.isPresent());
+                out.flush();
                 break;
             default:
                 ServletUtils.redirect("/NotFound",request,response);
