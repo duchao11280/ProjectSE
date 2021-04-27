@@ -60,7 +60,7 @@
 
 
     <jsp:body>
-        -->
+
         <section class="page-header page-header-xs">
             <div class="container">
 

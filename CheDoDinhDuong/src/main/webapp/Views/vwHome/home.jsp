@@ -17,8 +17,8 @@
                 <div class="row">
                     <div class="col-md-4 col-xs-6">
                         <div class="text-center">
-                            <i class="ico-light ico-lg ico-rounded ico-hover et-tools"></i>
-                            <a href="#"><h4>BMI & Calo calculation</h4></a>
+                            <a href="${pageContext.request.contextPath}/Calculate/All"><i class="ico-light ico-lg ico-rounded ico-hover et-tools"></i></a>
+                            <a href="${pageContext.request.contextPath}/Calculate/All"><h4>BMI & Calo calculation</h4></a>
                             <p>Check body index, thereby suggesting the right nutritional diet.</p>
                         </div>
                     </div>

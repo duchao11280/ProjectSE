@@ -62,7 +62,6 @@ public class AccountServlet extends HttpServlet {
 
         System.out.println(sex);
         System.out.println(sexx);
-        
         double height = 160;
         double weight = 65;
         int role=1;

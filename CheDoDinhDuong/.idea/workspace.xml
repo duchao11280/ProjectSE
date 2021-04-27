@@ -10,10 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0aedd7f9-181f-44ae-b252-8749b2d89da7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/CalculateServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Views/vwCalculate/calAll.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Views/vwCalculate/calBMI.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Views/vwCalculate/calCALO.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AccountServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AccountServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/Views/vwAccount/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Views/vwAccount/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/main.tag" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/main.tag" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Views/vwHome/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Views/vwHome/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwAccount/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwAccount/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwHome/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwHome/home.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +30,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Tag Library Descriptor" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -76,6 +82,17 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 9.0.40" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.40" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/CheDoDinhDuong/Home" />
       <option name="UPDATING_POLICY" value="update-resources" />
@@ -191,7 +208,8 @@
       <workItem from="1618668071296" duration="14223000" />
       <workItem from="1618718903783" duration="11822000" />
       <workItem from="1618924343273" duration="5845000" />
-      <workItem from="1619494212193" duration="1547000" />
+      <workItem from="1619494212193" duration="1685000" />
+      <workItem from="1619510492002" duration="3484000" />
     </task>
     <servers />
   </component>
