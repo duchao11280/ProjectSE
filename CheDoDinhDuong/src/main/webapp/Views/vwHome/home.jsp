@@ -31,8 +31,8 @@
                     </div>
                     <div class="col-md-4 col-xs-6">
                         <div class="text-center">
-                            <i class="ico-light ico-lg ico-rounded ico-hover et-compass"></i>
-                            <a href="#"><h4>Calculate calories in the meal</h4></a>
+                            <a href="${pageContext.request.contextPath}/Food/CalKcal"><i class="ico-light ico-lg ico-rounded ico-hover et-compass"></i></a>
+                            <a href="${pageContext.request.contextPath}/Food/CalKcal"><h4>Calculate calories in the meal</h4></a>
                             <p>Provide a table of nutrition statistics for your meals.</p>
                         </div>
                     </div>

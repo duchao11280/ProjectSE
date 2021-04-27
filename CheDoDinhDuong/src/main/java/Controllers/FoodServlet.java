@@ -7,6 +7,7 @@ import Utilties.ServletUtils;
 import beans.Category;
 import beans.Food;
 import beans.Ingredient;
+import com.google.gson.Gson;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 import java.util.Optional;
 
@@ -69,6 +71,26 @@ public class FoodServlet extends HttpServlet {
                 //String search = request.getParameter("search");
 
                 ServletUtils.forward("/Views/vwFood/Search.jsp",request,response);
+                break;
+            case"/CalKcal":
+                List<Category> listcat2 = CategoryModel.getAll();
+                request.setAttribute("categoriesforcal", listcat2);
+                ServletUtils.forward("/Views/vwFood/CalKcal.jsp",request,response);
+                break;
+            case "/CollectFood":
+                response.setContentType("text/html;charset=UTF-8");
+
+                int catIDCal = Integer.parseInt(request.getParameter("id"));
+                List<Food> listfoodforcal = FoodModel.findByCatID(catIDCal);
+                request.setAttribute("foodsCal", listfoodforcal);
+                System.out.println(listfoodforcal);
+                System.out.println("id ="+ catIDCal);
+                PrintWriter out = response.getWriter();
+                String foodJsonString = new Gson().toJson(listfoodforcal);
+                response.setContentType("application/json");
+                response.setCharacterEncoding("utf-8");
+                out.println(foodJsonString);
+                out.flush();
                 break;
             case "/Detail":
                 int foodID = Integer.parseInt(request.getParameter("id"));

@@ -375,6 +375,19 @@
     $('.search').on("click",function () {
         $('.search-box').css("display","block");
     })
+    $(document).ready(function (){
+        $(".category").change(function (){
+            var idd =  $(".category").val();
+            $.get("${pageContext.request.contextPath}/Food/CollectFood",{id:idd},function(data) {
+                console.log(data);
+                var html="";
+                for(var key in data) {
+                    html += "<option value=" + data[key].foodID  + ">" +data[key].foodName  + "</option>"
+                }
+                document.getElementById("inputSelectFood").innerHTML = html;
+            })
+        })
+    })
 </script>
 <script type="text/javascript">var plugin_path = 'assets/plugins/';</script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/Public/plugins/jquery/jquery-3.2.1.min.js"/>
