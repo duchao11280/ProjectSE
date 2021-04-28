@@ -77,6 +77,17 @@ public class FoodServlet extends HttpServlet {
                 request.setAttribute("categoriesforcal", listcat2);
                 ServletUtils.forward("/Views/vwFood/CalKcal.jsp",request,response);
                 break;
+            case"/SelectFood":
+                response.setContentType("text/html;charset=UTF-8");
+                int idsl = Integer.parseInt(request.getParameter("id"));
+                Optional<Food> food2cal = FoodModel.findByID(idsl);
+                PrintWriter out2cal = response.getWriter();
+                String foodJson2Cal = new Gson().toJson(food2cal);
+                response.setContentType("application/json");
+                response.setCharacterEncoding("utf-8");
+                out2cal.println(foodJson2Cal);
+                out2cal.flush();
+                break;
             case "/CollectFood":
                 response.setContentType("text/html;charset=UTF-8");
 
