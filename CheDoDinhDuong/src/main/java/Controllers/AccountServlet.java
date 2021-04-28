@@ -2,10 +2,12 @@ package Controllers;
 
 import Models.UserModel;
 import Utilties.ServletUtils;
+
 import at.favre.lib.crypto.bcrypt.BCrypt;
 import beans.User;
 
 import javax.servlet.ServletException;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
