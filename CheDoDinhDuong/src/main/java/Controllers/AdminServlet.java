@@ -2,9 +2,12 @@ package Controllers;
 
 import Models.CategoryModel;
 import Models.FoodModel;
+import Models.IngredientModel;
 import Utilties.ServletUtils;
 import beans.Category;
 import beans.Food;
+import beans.Ingredient;
+import com.google.gson.Gson;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -15,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import javax.servlet.jsp.PageContext;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 import java.util.Optional;
 
@@ -38,6 +42,9 @@ public class AdminServlet extends HttpServlet {
                 break;
             case "/EditFood":
                 editFood(request,response);
+                break;
+            case "/AddIngre":
+                addNewIngre(request,response);
                 break;
             default:
                 ServletUtils.redirect("/NotFound",request,response);
@@ -116,6 +123,15 @@ public class AdminServlet extends HttpServlet {
         ServletUtils.redirect("/Admin/FoodManagement",request,response);
     }
 
+    private void addNewIngre(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String foodID = request.getParameter("id");
+        String ingre = request.getParameter("ingre");
+        String gram = request.getParameter("gram");
+        IngredientModel.addNewIngre(foodID,ingre,gram);
+        ServletUtils.redirect("/Admin/EditFood?id="+foodID,request,response);
+    }
+
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getPathInfo();
         if(path==null){
@@ -138,10 +154,12 @@ public class AdminServlet extends HttpServlet {
             case "/EditFood":
                 List<Category> listCat = CategoryModel.getAll();
                 int foodID = Integer.parseInt(request.getParameter("id"));
+                List<Ingredient> ingredientList = IngredientModel.findIngredientByFoodID(foodID);
                 Optional<Food> c = FoodModel.findByID(foodID);
                 if (c.isPresent()) {
                     request.setAttribute("lstCat",listCat);
                     request.setAttribute("food", c.get());
+                    request.setAttribute("ingredientoffood",ingredientList);
                     ServletUtils.forward("/Views/vwAdmin/editfood.jsp", request, response);
                 } else {
                     ServletUtils.redirect("/Admin/MenuManagement", request, response);
@@ -149,6 +167,21 @@ public class AdminServlet extends HttpServlet {
                 break;
             case "/NewFood":
                 ServletUtils.forward("/Views/vwAdmin/newfood.jsp",request,response);
+                break;
+            case "/CheckValidIngre":
+                String fID = request.getParameter("foodid");
+                String ingreID = request.getParameter("ingreid");
+                System.out.println("ingre:" + ingreID);
+                List<Ingredient> lstIngre = IngredientModel.checkIngredient(fID, ingreID);
+                PrintWriter out = response.getWriter();
+                String isExist = new Gson().toJson(false);
+                if(lstIngre.size()!=0){
+                    isExist = new Gson().toJson(true);
+                }
+                response.setContentType("application/json");
+                response.setCharacterEncoding("utf-8");
+                out.println(isExist);
+                out.flush();
                 break;
             default:
                 ServletUtils.redirect("/NotFound",request,response);
