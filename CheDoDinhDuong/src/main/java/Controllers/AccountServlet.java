@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Optional;
@@ -38,12 +39,48 @@ public class AccountServlet extends HttpServlet {
 
     }
 
-    private void postLogout(HttpServletRequest request, HttpServletResponse response) {
+    private void postLogout(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        HttpSession session = request.getSession();
+        session.setAttribute("auth", false);
+        session.setAttribute("authUser", new User());
+
+        String url = request.getHeader("referer");
+        if (url == null) url = "/Home";
+        ServletUtils.redirect(url, request, response);
 
     }
 
-    private void postLogin(HttpServletRequest request, HttpServletResponse response) {
+    private void postLogin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String usernamelogin = request.getParameter("emaillogin");
+        String passwordlogin = request.getParameter("passwordlogin");
 
+        Optional<User> user = UserModel.findByUserName(usernamelogin);
+
+        if (user.isPresent()) {
+            BCrypt.Result resultlogin = BCrypt.verifyer().verify(passwordlogin.toCharArray(), user.get().getPassword());
+            if (resultlogin.verified) {
+
+                HttpSession session = request.getSession();
+                session.setAttribute("auth",true);
+                session.setAttribute("authUser",user.get());
+
+                String url = (String) session.getAttribute("retUrl");
+                if(url ==null){
+                    url = "/Home";
+                }
+                ServletUtils.redirect(url,request,response);
+
+            }else {
+                request.setAttribute("hasError",true);
+                request.setAttribute("errorMessage","Invalid password");
+                ServletUtils.forward("/Views/vwAccount/login.jsp",request,response);
+            }
+        }else {
+            request.setAttribute("hasError",true);
+            request.setAttribute("errorMessage","Invalid login");
+            ServletUtils.forward("/Views/vwAccount/login.jsp",request,response);
+        }
     }
 
     private void postRegister(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -81,9 +118,11 @@ public class AccountServlet extends HttpServlet {
         }
         switch (path){
             case "/Profile":
-                ServletUtils.redirect("/NotFound",request,response);
+                ServletUtils.forward("/Views/vwAccount/profile.jsp",request,response);
                 break;
             case "/Login":
+                request.setAttribute("hasError", false);
+
                 ServletUtils.forward("/Views/vwAccount/login.jsp",request,response);
                 break;
             case "/Register":

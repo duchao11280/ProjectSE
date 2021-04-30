@@ -1,6 +1,8 @@
 <%@tag pageEncoding="utf-8" %>
 <%@attribute name="css" fragment="true" required="false" %>
 <%@attribute name="js" fragment="true" required="false" %>
+<jsp:useBean id="authUser" scope="session" type="beans.User"/>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -83,39 +85,49 @@
                                 </a>
                             </li>
 
-                            <li class="dropdown"><!-- PAGES -->
-                                <a class="dropdown-toggle" href="#">
-                                    OPTION 1
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="dropdown">
+
+
+                            <c:choose>
+                                <c:when test="${auth}">
+                                    <form style="display: inline-block" id="frmLogout" method="post" action="${pageContext.request.contextPath}/Account/Logout"></form>
+
+                                        <li class="dropdown"><!-- PAGES -->
                                         <a class="dropdown-toggle" href="#">
-                                            SUB OPTION 1
+                                            Hi, <b>${authUser.fullName} </b>
                                         </a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="portfolio-single-project.html">SUB SUB OPTION 1</a></li>
-                                            <li><a href="page-category.html">SUB SUB OPTION 2</a></li>
+                                            <li class="dropdown">
+                                                <a  href="${pageContext.request.contextPath}/Account/Profile">
+                                                    Profile
+                                                </a>
+                                                    <%--                                        <ul class="dropdown-menu">--%>
+                                                    <%--                                            <li><a href="portfolio-single-project.html">SUB SUB OPTION 1</a></li>--%>
+                                                    <%--                                            <li><a href="page-category.html">SUB SUB OPTION 2</a></li>--%>
+                                                    <%--                                        </ul>--%>
+                                            </li>
+                                            <li>
+                                                <a href="javascript: $('#frmLogout').submit();">
+                                                    Logout
+                                                </a>
+                                            </li>
                                         </ul>
                                     </li>
-                                    <li>
-                                        <a href="#">
-                                            SUB OPTION 2
+
+
+                                </c:when>
+                                <c:otherwise>
+                                    <li class="active">
+                                        <a href="${pageContext.request.contextPath}/Account/Login">
+                                            LOGIN
                                         </a>
                                     </li>
-                                </ul>
-                            </li>
-
-
-                            <li class="active">
-                                <a href="${pageContext.request.contextPath}/Account/Login">
-                                    LOGIN
-                                </a>
-                            </li>
-                            <li class="active">
-                                <a href="${pageContext.request.contextPath}/Account/Register">
-                                    REGISTER
-                                </a>
-                            </li>
+                                    <li class="active">
+                                        <a href="${pageContext.request.contextPath}/Account/Register">
+                                            REGISTER
+                                        </a>
+                                    </li>
+                                </c:otherwise>
+                            </c:choose>
 
                         </ul>
 
