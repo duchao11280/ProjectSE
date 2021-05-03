@@ -7,53 +7,62 @@
     <jsp:attribute name="js">
 
     <script>
-        $('#frmRegister').on('submit', function (e) {
+        $('#frmCalBmi').on('submit', function (e) {
             e.preventDefault();
 
-            const username = $('#txtUsername').val();
-            if (username.length === 0) {
-                alert('Invalid username.');
+            const heightbmi = $('#txtHeightbmi').val();
+            if (heightbmi.length === 0) {
+                alert('Invalid Height.');
                 return;
             }
 
-            const password= $('#txtPassword').val();
-            if (password.length === 0) {
-                alert('Invalid password.');
-                return;
-            }
-            const fullname= $('#txtFullname').val();
-            if (password.length === 0) {
-                alert('Invalid Full name.');
-                return;
-            }
-            const age= $('#txtAge').val();
-            if (password.length === 0) {
-                alert('Invalid Age.');
+            const weightbmi= $('#txtWeightbmi').val();
+            if (weightbmi.length === 0) {
+                alert('Invalid Weight.');
                 return;
             }
 
-            const confirm= $('#txtConfirm').val();
-            if (confirm.length === 0) {
-                alert('Invalid confirm.');
-                return;
+            var result;
+            result = weightbmi / ((heightbmi/100)*(heightbmi/100));
+
+            var roundstring = result.toFixed(2);
+            var round = Number(roundstring);
+
+            var state;
+            if(result < 18.5)
+            {
+                state = "Thiếu cân";
             }
-            if(password!==confirm){
-                return alert("Password is not match!")
+            else if(result > 18.5 && result < 24.9)
+            {
+                state = "Bình thường";
+            }
+            else if(result > 25 && result < 29.9)
+            {
+                state = "Thừa cân";
+            }
+            else if(result > 30 && result < 34.9)
+            {
+                state = "Béo phì";
+            }
+            else if(result > 35)
+            {
+                state = "Cực kì béo phì";
             }
 
 
-            $.getJSON('${pageContext.request.contextPath}/Account/IsAvailable?user=' + username, function (data) {
-                if (data === true ) {
-                    $('#frmRegister').off('submit').submit();
-                } else {
-                    alert('Not available.');
-                    return false;
-                }
+            $(document).ready(function() {
+                document.getElementById("txtResult").innerHTML  = round + " - " + state;
             });
+
+
+
+
+
         });
 
 
-        $('#txtUsername').select();
+        $('#txtHeightbmi').select();
     </script>
 
 </jsp:attribute>
@@ -107,7 +116,7 @@
                                 <p class="text-muted">BMI là chỉ số khối cơ thể (viết tắt: Body Mass Index), được các bác sĩ và chuyên gia sức khỏe dùng để
                                     xác định một người nào đó có bị béo phì, thừa cân hay quá gầy không. Thông thường người ta dùng chỉ số này để tính toán
                                     mức độ béo phì.</p>
-                                <p class="text-muted">Công thức tính BMI: = Cân nặng (kg) / (Chiều cao (m) x Chiều cao (m)).</p>
+                                <p class="text-muted">Công thức tính BMI: = Cân nặng (kg) / (Chiều cao (cm) x Chiều cao cm)).</p>
 
                             </div>
                             <!-- /LEFT TEXT -->
@@ -119,17 +128,17 @@
                                 <h2 class="fs-16">CALCULATE</h2>
 
                                 <!-- calbmi form -->
-                                <form id="frmCalBmi" method="post" action="#" autocomplete="off">
+                                <form id="frmCalBmi" method="#" action="#" autocomplete="off">
                                     <div class="clearfix">
 
                                         <!-- height -->
                                         <div class="form-group">
-                                            <input type="text" name="heightbmi" class="form-control" placeholder="Height" required="">
+                                            <input id="txtHeightbmi" type="number" name="heightbmi" class="form-control" placeholder="Height (cm)" required="">
                                         </div>
 
                                         <!-- weight -->
                                         <div class="form-group">
-                                            <input type="text" name="weightbmi" class="form-control" placeholder="Weight" required="">
+                                            <input id="txtWeightbmi" type="number" name="weightbmi" class="form-control" placeholder="Weight (kg)" required="">
                                         </div>
 
                                     </div>
@@ -144,7 +153,7 @@
 
                                         <div class="col-md-12 col-sm-6 col-xs-6 text-left">
 
-                                            <button class="btn btn-primary">Get Result</button>
+                                            <button type="submit" class="btn btn-primary">Get Result</button>
 
                                         </div>
 
@@ -152,10 +161,12 @@
 
                                 </form>
 
+                                <div >
+                                    KẾT QUẢ CỦA BẠN:
+                                </div>
 
-
-                                <div class="alert alert-mini alert-danger mb-30">
-                                    <strong>Oh snap!</strong> bit!
+                                <div class="alert alert-mini alert-success mb-30">
+                                    BMI: <strong id="txtResult"></strong>
                                 </div>
 
                             </div>

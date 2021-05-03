@@ -7,53 +7,125 @@
     <jsp:attribute name="js">
 
     <script>
-        $('#frmRegister').on('submit', function (e) {
+        $('#frmCalCalo').on('submit', function (e) {
             e.preventDefault();
 
-            const username = $('#txtUsername').val();
-            if (username.length === 0) {
-                alert('Invalid username.');
+            const heightcalo = $('#txtHeightcalo').val();
+            if (heightcalo.length === 0) {
+                alert('Invalid Height.');
                 return;
             }
 
-            const password= $('#txtPassword').val();
-            if (password.length === 0) {
-                alert('Invalid password.');
+            const weightcalo= $('#txtWeightcalo').val();
+            if (weightcalo.length === 0) {
+                alert('Invalid Weight.');
                 return;
             }
-            const fullname= $('#txtFullname').val();
-            if (password.length === 0) {
-                alert('Invalid Full name.');
-                return;
-            }
-            const age= $('#txtAge').val();
-            if (password.length === 0) {
+            const agecalo= $('#txtAgecalo').val();
+            if (agecalo.length === 0) {
                 alert('Invalid Age.');
                 return;
             }
-
-            const confirm= $('#txtConfirm').val();
-            if (confirm.length === 0) {
-                alert('Invalid confirm.');
+            const sexcalo = $('#txtSexcalo').val();
+            if (sexcalo.length === 0) {
+                alert('Invalid Sex.');
                 return;
             }
-            if(password!==confirm){
-                return alert("Password is not match!")
+            const workcalo= $('#txtWorkcalo').val();
+            if (workcalo.length === 0) {
+                alert('Invalid Work.');
+                return;
+            }
+
+            var resultnam;
+            resultnam = ((10*weightcalo)+(6.25*(heightcalo))-(5*agecalo) + 5) ;
+            var resultnu;
+            resultnu = ((10*weightcalo)+(6.25*(heightcalo))-(5*agecalo) - 161) ;
+            var statecalo;
+            statecalo = "Calo/Ngày"
+
+            if(sexcalo == 0){
+
+                switch (workcalo){
+                    case "0":
+                        resultnam = resultnam * 1.2;
+                        var roundstringcalo = resultnam.toFixed(2);
+                        var roundcalo = Number(roundstringcalo);
+                        $(document).ready(function() {
+                            document.getElementById("txtResultcalo").innerHTML  = roundcalo + "  " + statecalo;
+                        });
+                        break;
+                    case "1":
+                        resultnam = resultnam * 1.3;
+                        var roundstringcalo = resultnam.toFixed(2);
+                        var roundcalo = Number(roundstringcalo);
+                        $(document).ready(function() {
+                            document.getElementById("txtResultcalo").innerHTML  = roundcalo + "  " + statecalo;
+                        });
+                        break;
+                    case "2":
+                        resultnam = resultnam * 1.4;
+                        var roundstringcalo = resultnam.toFixed(2);
+                        var roundcalo = Number(roundstringcalo);
+                        $(document).ready(function() {
+                            document.getElementById("txtResultcalo").innerHTML  = roundcalo + "  " + statecalo;
+                        });
+                        break;
+                    case "3":
+                        resultnam = resultnam * 1.5;
+                        var roundstringcalo = resultnam.toFixed(2);
+                        var roundcalo = Number(roundstringcalo);
+                        $(document).ready(function() {
+                            document.getElementById("txtResultcalo").innerHTML  = roundcalo + "  " + statecalo;
+                        });
+                        break;
+
+                }
+            }
+            else {
+                switch (workcalo) {
+                    case "0":
+                        resultnu = resultnu * 1.2;
+                        var roundstringcalo = resultnu.toFixed(2);
+                        var roundcalo = Number(roundstringcalo);
+                        $(document).ready(function () {
+                            document.getElementById("txtResultcalo").innerHTML = roundcalo + "  " + statecalo;
+                        });
+                        break;
+                    case "1":
+                        resultnu = resultnu * 1.3;
+                        var roundstringcalo = resultnu.toFixed(2);
+                        var roundcalo = Number(roundstringcalo);
+                        $(document).ready(function () {
+                            document.getElementById("txtResultcalo").innerHTML = roundcalo + "  " + statecalo;
+                        });
+                        break;
+                    case "2":
+                        resultnu = resultnu * 1.4;
+                        var roundstringcalo = resultnu.toFixed(2);
+                        var roundcalo = Number(roundstringcalo);
+                        $(document).ready(function () {
+                            document.getElementById("txtResultcalo").innerHTML = roundcalo + "  " + statecalo;
+                        });
+                        break;
+                    case "3":
+                        resultnu = resultnu * 1.5;
+                        var roundstringcalo = resultnu.toFixed(2);
+                        var roundcalo = Number(roundstringcalo);
+                        $(document).ready(function () {
+                            document.getElementById("txtResultcalo").innerHTML = roundcalo + "  " + statecalo;
+                        });
+                        break;
+                }
+
             }
 
 
-            $.getJSON('${pageContext.request.contextPath}/Account/IsAvailable?user=' + username, function (data) {
-                if (data === true ) {
-                    $('#frmRegister').off('submit').submit();
-                } else {
-                    alert('Not available.');
-                    return false;
-                }
-            });
+
         });
 
 
-        $('#txtUsername').select();
+        $('#txtHeightcalo').select();
     </script>
 
 </jsp:attribute>
@@ -110,8 +182,8 @@
                                 hoạt động của cơ thể, nếu dung nạp vượt quá nhu cầu, nó sẽ được dự trữ và tích tụ trong cơ thể dưới
                                 dạng chất béo và chuyển hóa thành mỡ. 7700 Calories tương ứng với một kg mỡ.</p>
 
-                            <p class="text-muted">Công thức tính Calo nam: = ((10 * Cân nặng (kg)) + (6.25 * Chiều cao (m)) - (5 * Tuổi (năm)) + 5) * Hoạt động (120-150%) .</p>
-                            <p class="text-muted">Công thức tính Calo cho nữ: = ((10 * Cân nặng (kg)) + (6.25 * Chiều cao (m)) - (5 * Tuổi (năm)) - 161) * Hoạt động (120-150%) .</p>
+                            <p class="text-muted">Công thức tính Calo nam: = ((10 * Cân nặng (kg)) + (6.25 * Chiều cao (cm)) - (5 * Tuổi (năm)) + 5) * Hoạt động (120-150%) .</p>
+                            <p class="text-muted">Công thức tính Calo cho nữ: = ((10 * Cân nặng (kg)) + (6.25 * Chiều cao (cm)) - (5 * Tuổi (năm)) - 161) * Hoạt động (120-150%) .</p>
 
 
                         </div>
@@ -124,25 +196,25 @@
                             <h2 class="fs-16">CALCULATE</h2>
 
                             <!-- calbmi form -->
-                            <form id="frmCalCalo" method="post" action="#" autocomplete="off">
+                            <form id="frmCalCalo" method="#" action="#" autocomplete="off">
                                 <div class="clearfix">
 
                                     <!-- height -->
                                     <div class="form-group">
-                                        <input type="text" name="heightcalo" class="form-control" placeholder="Height" required="">
+                                        <input  id="txtHeightcalo" type="number" name="heightcalo" class="form-control" placeholder="Height (cm)" required="">
                                     </div>
 
                                     <!-- weight -->
                                     <div class="form-group">
-                                        <input type="text" name="weightcalo" class="form-control" placeholder="Weight" required="">
+                                        <input id="txtWeightcalo" type="number" name="weightcalo" class="form-control" placeholder="Weight (kg)" required="">
                                     </div>
                                     <!-- age -->
                                     <div class="form-group">
-                                        <input type="text" name="agecalo" class="form-control" placeholder="Age" required="">
+                                        <input id="txtAgecalo" type="number" name="agecalo" class="form-control" placeholder="Age" required="">
                                     </div>
 
                                     <div class="form-group">
-                                        <select class="col-md-12"  name="sexcalo">
+                                        <select id="txtSexcalo" class="col-md-12"  name="sexcalo">
                                             <option value="-1" selected disabled>Gender</option>
                                             <option value="0">Male</option>
                                             <option value="1">Female</option>
@@ -150,7 +222,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <select class="col-md-12" name="workcalo">
+                                        <select id="txtWorkcalo" class="col-md-12" name="workcalo">
                                             <option value="-1" selected disabled>Work</option>
                                             <option value="0">Vận động ít</option>
                                             <option value="1">Vận động nhẹ</option>
@@ -176,7 +248,7 @@
 
                                     <div class="col-md-12 col-sm-6 col-xs-6 text-left">
 
-                                        <button class="btn btn-primary">Get Result</button>
+                                        <button type="submit" class="btn btn-primary">Get Result</button>
 
                                     </div>
 
@@ -184,10 +256,12 @@
 
                             </form>
 
+                            <div>
+                                KẾT QUẢ CỦA BẠN:
+                            </div>
 
-
-                            <div class="alert alert-mini alert-danger mb-30">
-                                <strong>Oh snap!</strong> bit!
+                            <div class="alert alert-mini alert-success mb-30">
+                                Nhu cầu năng lượng: <strong id="txtResultcalo"></strong>
                             </div>
 
                         </div>

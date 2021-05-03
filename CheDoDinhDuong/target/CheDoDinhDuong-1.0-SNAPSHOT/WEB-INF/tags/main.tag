@@ -1,6 +1,8 @@
 <%@tag pageEncoding="utf-8" %>
 <%@attribute name="css" fragment="true" required="false" %>
 <%@attribute name="js" fragment="true" required="false" %>
+<jsp:useBean id="authUser" scope="session" type="beans.User"/>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -83,39 +85,49 @@
                                 </a>
                             </li>
 
-                            <li class="dropdown"><!-- PAGES -->
-                                <a class="dropdown-toggle" href="#">
-                                    OPTION 1
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="dropdown">
+
+
+                            <c:choose>
+                                <c:when test="${auth}">
+                                    <form style="display: inline-block" id="frmLogout" method="post" action="${pageContext.request.contextPath}/Account/Logout"></form>
+
+                                        <li class="dropdown"><!-- PAGES -->
                                         <a class="dropdown-toggle" href="#">
-                                            SUB OPTION 1
+                                            Hi, <b>${authUser.fullName} </b>
                                         </a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="portfolio-single-project.html">SUB SUB OPTION 1</a></li>
-                                            <li><a href="page-category.html">SUB SUB OPTION 2</a></li>
+                                            <li class="dropdown">
+                                                <a  href="${pageContext.request.contextPath}/Account/Profile">
+                                                    Profile
+                                                </a>
+                                                    <%--                                        <ul class="dropdown-menu">--%>
+                                                    <%--                                            <li><a href="portfolio-single-project.html">SUB SUB OPTION 1</a></li>--%>
+                                                    <%--                                            <li><a href="page-category.html">SUB SUB OPTION 2</a></li>--%>
+                                                    <%--                                        </ul>--%>
+                                            </li>
+                                            <li>
+                                                <a href="javascript: $('#frmLogout').submit();">
+                                                    Logout
+                                                </a>
+                                            </li>
                                         </ul>
                                     </li>
-                                    <li>
-                                        <a href="#">
-                                            SUB OPTION 2
+
+
+                                </c:when>
+                                <c:otherwise>
+                                    <li class="active">
+                                        <a href="${pageContext.request.contextPath}/Account/Login">
+                                            LOGIN
                                         </a>
                                     </li>
-                                </ul>
-                            </li>
-
-
-                            <li class="active">
-                                <a href="${pageContext.request.contextPath}/Account/Login">
-                                    LOGIN
-                                </a>
-                            </li>
-                            <li class="active">
-                                <a href="${pageContext.request.contextPath}/Account/Register">
-                                    REGISTER
-                                </a>
-                            </li>
+                                    <li class="active">
+                                        <a href="${pageContext.request.contextPath}/Account/Register">
+                                            REGISTER
+                                        </a>
+                                    </li>
+                                </c:otherwise>
+                            </c:choose>
 
                         </ul>
 
@@ -388,6 +400,90 @@
             })
         })
     })
+    var tb=[];
+    $(document).ready(function (){
+
+        var obj;
+        $(".tableCal").css("display","none");
+        $(".add2cal").on('click',function (){
+            var idfood = $(".foodscal").val();
+            if(idfood!= -1){
+                $.get("${pageContext.request.contextPath}/Food/SelectFood",{id:idfood},function(data) {
+
+                    obj = data;
+                    // Check food co trong bang hay chua
+                    var flag = false;
+                    for (var i = 0; i < tb.length; i++) {
+                        if(obj.value.foodID == tb[i].value.foodID){
+                            flag = true;
+                            break;
+                        }
+                    }
+                    console.log(flag);
+                    // food chua co trong bang
+                    if(flag === false){
+                        obj.quantity = 1;
+                        tb.push(obj);
+                    }else{ // san pham da co trong gio hang
+                        tb[i].quantity += 1;
+                    }
+                    console.log(obj.value.foodID);
+                    $(".tableCal").css("display","table");
+                    drawCheckout();
+                })
+            }
+
+        });
+    })
+    function drawCheckout(){
+        $('tbody').empty();
+        var ckUnit = "";
+        var totalKcal = 0;
+        for (var i = 0; i < tb.length; i++) {
+            totalKcal += tb[i].value.kcal * tb[i].quantity;
+
+            $('tbody').append(
+                '<tr>'+
+                '<td >'+tb[i].value.foodID+'</td>'+
+                '<td>'+tb[i].value.foodName +'</td>'+
+                '<td>'+'<img src='+ `"` + "${pageContext.request.contextPath}" +'/' + tb[i].value.urlImage +`"` +' alt="" style="height: 100px;width: 100px">'+'</td>'+
+                '<td><input type="number" onchange="changeUnitQuantity(this,'+ tb[i].value.foodID +
+                ')" name= " " value="'+tb[i].quantity+'" min="1" step="1"><button type="button" onclick="removeUnit('
+                +tb[i].value.foodID+
+                ')" class="btn btn-xs btn-info"><span class="glyphicon glyphicon-remove"></span></button>'
+                +'</td>' +
+                '<td>'+'<b><span class="unit-price">'+tb[i].value.kcal * tb[i].quantity+' Kcal</span></b>' +'</td>'+
+                '</tr>');
+        }
+        ckUnit += '<tr><td colspan="4">Total Kcal</td><td><b>'+totalKcal+' Kcal</b></td></tr>';
+
+        $('tbody').append(ckUnit);
+    }
+    function removeUnit(id){
+        // Check san pham co trong bang hay chua
+        for (var i = 0; i < tb.length; i++) {
+            if(tb[i].value.foodID == id){
+                tb.splice(i, 1);
+                break;
+            }
+        }
+
+        drawCheckout();
+    }
+    function changeUnitQuantity(e, id){
+        var ipValue = e.value;
+        if(ipValue > 0){
+            for (var i = 0; i < tb.length; i++) {
+                if(tb[i].value.foodID == id){
+                    tb[i].quantity = ipValue;
+                    break;
+                }
+            }
+            drawCheckout();
+        }else{
+            removeUnit(id);
+        }
+    }
 </script>
 <script type="text/javascript">var plugin_path = 'assets/plugins/';</script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/Public/plugins/jquery/jquery-3.2.1.min.js"/>

@@ -128,7 +128,7 @@
                                 </label>
                                 <label class="input mb-10">
                                     <i class="ico-append fa fa-envelope"></i>
-                                    <input type="text" placeholder="Age" name="age" id="txtAge">
+                                    <input type="number" placeholder="Age" name="age" id="txtAge">
                                     <b class="tooltip tooltip-bottom-right">Needed to verify your account</b>
                                 </label>
 
@@ -191,7 +191,7 @@
                             </fieldset>
 
                             <footer>
-                                Already have an account? <a href="login.html"><strong>Back to login!</strong></a>
+                                Already have an account? <a href="${pageContext.request.contextPath}/Account/Login"><strong>Back to login!</strong></a>
                             </footer>
 
                         </form>
