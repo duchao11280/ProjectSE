@@ -1,12 +1,8 @@
 package Controllers;
 
-import Models.CategoryModel;
-import Models.FoodModel;
-import Models.IngredientModel;
+import Models.*;
 import Utilties.ServletUtils;
-import beans.Category;
-import beans.Food;
-import beans.Ingredient;
+import beans.*;
 import com.google.gson.Gson;
 
 import javax.servlet.ServletException;
@@ -149,7 +145,7 @@ public class AdminServlet extends HttpServlet {
                 ServletUtils.forward("/Views/vwAdmin/foodmanagement.jsp",request,response);
                 break;
             case "/MenuManagement":
-                ServletUtils.forward("/Views/vwAdmin/menumanagement.jsp",request,response);
+                doMenuManagement(request,response);
                 break;
             case "/EditFood":
                 List<Category> listCat = CategoryModel.getAll();
@@ -187,5 +183,27 @@ public class AdminServlet extends HttpServlet {
                 ServletUtils.redirect("/NotFound",request,response);
                 break;
         }
+    }
+
+    private void doMenuManagement(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<Condition> lstCon = ConditionModel.getAllCondition();
+        request.setAttribute("lstCon",lstCon);
+        String conid = request.getParameter("conid");
+        request.setAttribute("conid",conid);
+        List<SuggestMenu> lstMenu1 = MenuModel.getSuggestMenuByDay(conid,"1");
+        List<SuggestMenu> lstMenu2 = MenuModel.getSuggestMenuByDay(conid,"2");
+        List<SuggestMenu> lstMenu3 = MenuModel.getSuggestMenuByDay(conid,"3");
+        List<SuggestMenu> lstMenu4 = MenuModel.getSuggestMenuByDay(conid,"4");
+        List<SuggestMenu> lstMenu5 = MenuModel.getSuggestMenuByDay(conid,"5");
+        List<SuggestMenu> lstMenu6 = MenuModel.getSuggestMenuByDay(conid,"6");
+        List<SuggestMenu> lstMenu7 = MenuModel.getSuggestMenuByDay(conid,"7");
+        request.setAttribute("lstMenu1",lstMenu1);
+        request.setAttribute("lstMenu2",lstMenu2);
+        request.setAttribute("lstMenu3",lstMenu3);
+        request.setAttribute("lstMenu4",lstMenu4);
+        request.setAttribute("lstMenu5",lstMenu5);
+        request.setAttribute("lstMenu6",lstMenu6);
+        request.setAttribute("lstMenu7",lstMenu7);
+        ServletUtils.forward("/Views/vwAdmin/menumanagement.jsp",request,response);
     }
 }

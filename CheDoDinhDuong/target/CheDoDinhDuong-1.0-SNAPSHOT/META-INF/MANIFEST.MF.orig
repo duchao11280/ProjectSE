@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Created-By: IntelliJ IDEA
+<<<<<<< HEAD
+Built-By: Son Van
+Build-Jdk: version 11.0.9
+=======
+Built-By: AN
+Build-Jdk: Amazon Corretto version 11.0.11
+>>>>>>> 6c110e62f697a6c3376b8be1622bb7078bfd073f
+
