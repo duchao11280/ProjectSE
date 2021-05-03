@@ -11,7 +11,7 @@
  Target Server Version : 100417
  File Encoding         : 65001
 
- Date: 20/04/2021 10:28:47
+ Date: 03/05/2021 20:19:29
 */
 
 SET NAMES utf8mb4;
@@ -122,7 +122,7 @@ CREATE TABLE `food`  (
 -- ----------------------------
 -- Records of food
 -- ----------------------------
-INSERT INTO `food` VALUES (1, 'Bún bò huế', 1, 56.4, 622, 30.6, 30.2, 26.64, NULL, 14.69, NULL, NULL, 348.9, 5, 670.7, '/Public/Imgs/Food/1.jpg', b'0');
+INSERT INTO `food` VALUES (1, 'Bún bò huế', 1, 56.4, 622, 30.6, 30.2, 26.64, 0, 14.69, 0, 0, 348.9, 5, 670.7, '/Public/Imgs/Food/1.jpg', b'0');
 INSERT INTO `food` VALUES (2, 'Trứng cút', 5, 0.1, 17, 1.2, 1.5, 70, NULL, 0, NULL, NULL, 17.6, 0.27, 15.8, '/Public/Imgs/Food/2.jpg', b'0');
 INSERT INTO `food` VALUES (3, 'Cơm', 3, 44.2, 200, 0.6, 4.6, NULL, NULL, NULL, NULL, NULL, 139.8, 0.75, 2.9, '/Public/Imgs/Food/3.jpg', b'0');
 INSERT INTO `food` VALUES (4, 'Trứng gà', 5, 0.2, 81, 5.7, 7.3, 343, NULL, 0, NULL, NULL, 86.2, 1.32, 77.4, '/Public/Imgs/Food/4.jpg', b'0');
@@ -153,6 +153,7 @@ INSERT INTO `food` VALUES (28, 'Vú sữa', 4, 18.5, 83, 0, 2, NULL, NULL, 9.85,
 INSERT INTO `food` VALUES (29, 'Táo tây', 4, 25.8, 107, 0, 1.1, NULL, NULL, 15.96, NULL, NULL, 232.6, 5.7, 34.2, '/Public/Imgs/Food/1.jpg', b'0');
 INSERT INTO `food` VALUES (30, 'Cơm trứng', 3, 44.4, 281, 6.3, 11.9, NULL, NULL, NULL, NULL, NULL, 226, 2.07, 80.3, '/Public/Imgs/Food/1.jpg', b'0');
 INSERT INTO `food` VALUES (31, 'Bún thịt nướng', 1, NULL, 352, 14, 26.7, NULL, NULL, NULL, 0.159, NULL, 423, 1.1, 62, '/Public/Imgs/Food/1.jpg', b'0');
+INSERT INTO `food` VALUES (32, 'test new food', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '/Public/Imgs/Food/bdmt.jpg', b'0');
 
 -- ----------------------------
 -- Table structure for historyuserbmi
@@ -195,13 +196,15 @@ INSERT INTO `ingredient` VALUES (30, 3, 300, NULL);
 INSERT INTO `ingredient` VALUES (30, 4, 100, NULL);
 INSERT INTO `ingredient` VALUES (31, 5, 100, NULL);
 INSERT INTO `ingredient` VALUES (31, 6, 100, NULL);
+INSERT INTO `ingredient` VALUES (32, 5, 123, '');
+INSERT INTO `ingredient` VALUES (32, 15, 10, '');
 
 -- ----------------------------
 -- Table structure for suggestmenu
 -- ----------------------------
 DROP TABLE IF EXISTS `suggestmenu`;
 CREATE TABLE `suggestmenu`  (
-  `ID` int NOT NULL,
+  `ID` int NOT NULL AUTO_INCREMENT,
   `conID` int NULL DEFAULT NULL,
   `dayofweek` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `foodName` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
@@ -210,11 +213,23 @@ CREATE TABLE `suggestmenu`  (
   PRIMARY KEY (`ID`) USING BTREE,
   INDEX `FK_suggestmenu_condition`(`conID`) USING BTREE,
   CONSTRAINT `FK_suggestmenu_condition` FOREIGN KEY (`conID`) REFERENCES `condition` (`conID`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of suggestmenu
 -- ----------------------------
+INSERT INTO `suggestmenu` VALUES (1, 2, '1', 'Bánh mì', 1, '1');
+INSERT INTO `suggestmenu` VALUES (2, 2, '1', 'Cơm tấm', 1, '2');
+INSERT INTO `suggestmenu` VALUES (3, 2, '1', 'Nước cam', 1, '2');
+INSERT INTO `suggestmenu` VALUES (4, 2, '1', 'Quả táo', 1, '3');
+INSERT INTO `suggestmenu` VALUES (5, 2, '1', 'Bún bò huế', 1, '4');
+INSERT INTO `suggestmenu` VALUES (6, 2, '2', 'Hủ tiếu thịt', 1, '1');
+INSERT INTO `suggestmenu` VALUES (7, 2, '2', 'Bát cơm', 3, '2');
+INSERT INTO `suggestmenu` VALUES (8, 2, '2', 'Con tôm rim', 5, '2');
+INSERT INTO `suggestmenu` VALUES (9, 2, '2', 'Miếng đậu hũ chiên', 1, '2');
+INSERT INTO `suggestmenu` VALUES (10, 2, '2', 'Bát canh rau cải', 1, '2');
+INSERT INTO `suggestmenu` VALUES (11, 2, '2', 'Ly chè', 1, '3');
+INSERT INTO `suggestmenu` VALUES (12, 2, '2', 'Bún đậu mắm tôm', 1, '4');
 
 -- ----------------------------
 -- Table structure for user
