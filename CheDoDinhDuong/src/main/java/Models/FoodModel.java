@@ -137,4 +137,22 @@ public class FoodModel {
                     .executeUpdate();
         }
     }
+
+    public static int getFoodIDByName(String name){
+        final String sql="select foodID from food where foodName=:foodName";
+        try (Connection con = DBUtils.getConnection()){
+            return con.createQuery(sql)
+                    .addParameter("foodName",name)
+                    .executeScalar(int.class);
+        }
+    }
+
+    public static String getFoodNameByID(String id){
+        final String sql="select foodName from food where foodID=:foodID";
+        try (Connection con = DBUtils.getConnection()){
+            return con.createQuery(sql)
+                    .addParameter("foodID",id)
+                    .executeScalar(String.class);
+        }
+    }
 }

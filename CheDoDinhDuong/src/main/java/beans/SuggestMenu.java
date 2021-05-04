@@ -1,5 +1,7 @@
 package beans;
 
+import Models.FoodModel;
+
 public class SuggestMenu {
     private int id;
     private int conID;
@@ -63,5 +65,9 @@ public class SuggestMenu {
 
     public String getSession() {
         return session;
+    }
+
+    public int getFoodIDByName(){
+        return FoodModel.getFoodIDByName(foodName);
     }
 }

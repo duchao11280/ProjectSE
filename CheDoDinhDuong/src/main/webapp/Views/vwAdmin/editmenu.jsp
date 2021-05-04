@@ -47,6 +47,9 @@
                                 <tr>
                                     <td colspan="2" class="w-700">${m.getNumber()} ${m.getFoodName()}</td>
                                     <td>
+                                        <a href="${pageContext.request.contextPath}/Admin/EditDetailsMenu?id=${m.getId()}"
+                                           class="btn btn-outline-primary pr-4">
+                                            <i class="fa fa-pencil mt-5" aria-hidden="true"></i></a>
                                         <button type="submit" class="btn btn-outline-danger pr-6 btndelete"
                                                 formaction="${pageContext.request.contextPath}/Admin/DeleteMenu?id=${m.getId()}&conid=${conid}&day=${day}">
                                             <i class="fa fa-trash" aria-hidden="true"></i>
@@ -71,6 +74,9 @@
                                 <tr>
                                     <td colspan="2" class="w-700">${m.getNumber()} ${m.getFoodName()}</td>
                                     <td>
+                                        <a href="${pageContext.request.contextPath}/Admin/EditDetailsMenu?id=${m.getId()}"
+                                           class="btn btn-outline-primary pr-4">
+                                            <i class="fa fa-pencil mt-5" aria-hidden="true"></i></a>
                                         <button type="submit" class="btn btn-outline-danger pr-6 btndelete"
                                                 formaction="${pageContext.request.contextPath}/Admin/DeleteMenu?id=${m.getId()}&conid=${conid}&day=${day}">
                                             <i class="fa fa-trash" aria-hidden="true"></i>
@@ -95,8 +101,11 @@
                                 <tr>
                                     <td colspan="2" class="w-700">${m.getNumber()} ${m.getFoodName()}</td>
                                     <td>
+                                        <a href="${pageContext.request.contextPath}/Admin/EditDetailsMenu?id=${m.getId()}"
+                                           class="btn btn-outline-primary pr-4">
+                                            <i class="fa fa-pencil mt-5" aria-hidden="true"></i></a>
                                         <button type="submit" class="btn btn-outline-danger pr-6 btndelete"
-                                                formaction="${pageContext.request.contextPath}/Admin/DeleteMenu?id=${m.getId()}&conid=${conid}&day=${day}>
+                                                formaction="${pageContext.request.contextPath}/Admin/DeleteMenu?id=${m.getId()}&conid=${conid}&day=${day}">
                                             <i class="fa fa-trash" aria-hidden="true"></i>
                                         </button>
                                     </td>
@@ -119,6 +128,9 @@
                                 <tr>
                                     <td colspan="2" class="w-700">${m.getNumber()} ${m.getFoodName()}</td>
                                     <td>
+                                        <a href="${pageContext.request.contextPath}/Admin/EditDetailsMenu?id=${m.getId()}"
+                                           class="btn btn-outline-primary pr-4">
+                                            <i class="fa fa-pencil mt-5" aria-hidden="true"></i></a>
                                         <button type="submit" class="btn btn-outline-danger pr-6 btndelete"
                                                 formaction="${pageContext.request.contextPath}/Admin/DeleteMenu?id=${m.getId()}&conid=${conid}&day=${day}">
                                             <i class="fa fa-trash" aria-hidden="true"></i>
@@ -159,10 +171,32 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="food" class="col-sm-4 col-form-label">Món ăn: </label>
-                                <div class="col-sm">
-                                    <input  class="form-control" id="food" name="food">
+                            <div class="row ml-1 mr-1">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text"
+                                               for="Cat">Categories</label>
+                                    </div>
+                                    <select class="custom-select category" id="Cat">
+                                        <option value="-1" selected>Choose...</option>
+                                        <c:forEach var="c" items="${lstCat}">
+                                            <option value="${c.getCatID()}">${c.getCatName()}</option>
+                                        </c:forEach>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row ml-1 mr-1">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text" for="FoodByCat">Foods</label>
+                                    </div>
+                                    <select class="custom-select foodscal" id="FoodByCat"
+                                            name="food">
+                                        <option value="-1" selected>Choose...</option>
+                                        <c:forEach var="d" items="${foodsCal}">
+                                            <option value="${d.getFoodID()}">${d.getFoodName()}</option>
+                                        </c:forEach>
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -185,7 +219,8 @@
         </form>
         <script>
             $('#btnAddMenu').click(function (e) {
-                if($('#food').val().length == 0){
+
+                if($('#Cat').val()==-1){
                     alert("Bạn chưa nhập món ăn");
                     e.preventDefault();
                     return;
@@ -195,6 +230,7 @@
                     e.preventDefault();
                     return;
                 }
+
             })
             $('.btndelete').click(function (e) {
                 if (confirm('Bạn có chắc chắn xóa?')) {
@@ -202,6 +238,20 @@
                 } else {
                     e.preventDefault();
                 }
+            })
+            $(document).ready(function () {
+                $("#Cat").change(function () {
+                    var idd = $("#Cat").val();
+                    if (idd != -1) {
+                        $.get("${pageContext.request.contextPath}/Food/CollectFood", {id: idd}, function (data) {
+                            var html = "";
+                            for (var idx in data) {
+                                html += "<option value=" + data[idx].foodID + ">" + data[idx].foodName + "</option>"
+                            }
+                            document.getElementById("FoodByCat").innerHTML = html;
+                        })
+                    }
+                })
             })
         </script>
     </jsp:body>

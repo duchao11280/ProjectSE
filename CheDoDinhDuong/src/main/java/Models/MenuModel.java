@@ -5,6 +5,7 @@ import beans.SuggestMenu;
 import org.sql2o.Connection;
 
 import java.util.List;
+import java.util.Optional;
 
 public class MenuModel {
     public static List<SuggestMenu> getSuggestMenuByDay(String conID, String day){
@@ -35,6 +36,28 @@ public class MenuModel {
         try(Connection con = DBUtils.getConnection()){
             con.createQuery(sql)
                     .addParameter("id",ID)
+                    .executeUpdate();
+        }
+    }
+
+    public static Optional<SuggestMenu> getSuggestMenuByID(String ID){
+        final String sql = "select * from suggestmenu where id = :id";
+        try(Connection con = DBUtils.getConnection()){
+            List<SuggestMenu> lstMenu = con.createQuery(sql).addParameter("id",ID).executeAndFetch(SuggestMenu.class);
+            if (lstMenu.size() == 0) {
+                return Optional.empty();
+            }
+            return Optional.ofNullable(lstMenu.get(0));
+        }
+    }
+
+    public static void updateSuggestMenu(String foodname, String number, String id){
+        final String sql="UPDATE suggestmenu set foodName=:foodName,number=:number WHERE id=:id";
+        try(Connection con = DBUtils.getConnection()){
+            con.createQuery(sql)
+                    .addParameter("foodName",foodname)
+                    .addParameter("number",number)
+                    .addParameter("id",id)
                     .executeUpdate();
         }
     }

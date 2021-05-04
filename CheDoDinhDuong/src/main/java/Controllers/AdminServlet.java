@@ -48,6 +48,9 @@ public class AdminServlet extends HttpServlet {
             case "/DeleteMenu":
                 deleteMenu(request,response);
                 break;
+            case "/EditDetailsMenu":
+                editDetailsMenu(request,response);
+                break;
             default:
                 ServletUtils.redirect("/NotFound",request,response);
                 break;
@@ -138,8 +141,10 @@ public class AdminServlet extends HttpServlet {
         String conid = request.getParameter("conid");
         String day = request.getParameter("day");
         String number =request.getParameter("number");
-        String foodname = request.getParameter("food");
-        MenuModel.addNewSuggestMenu(conid,day,foodname,number,sesstion);
+        String foodid = request.getParameter("food");
+        int fid = Integer.parseInt(foodid);
+        Optional<Food> c = FoodModel.findByID(fid);
+        MenuModel.addNewSuggestMenu(conid,day,c.get().getFoodName(),number,sesstion);
         final String url = "/Admin/EditMenu?conid="+conid+"&day="+day;
         ServletUtils.redirect(url,request,response);
     }
@@ -151,6 +156,15 @@ public class AdminServlet extends HttpServlet {
         MenuModel.deleteSuggestMenuByID(id);
         final String url = "/Admin/EditMenu?conid="+conid+"&day="+day;
         ServletUtils.redirect(url,request,response);
+    }
+
+    private void editDetailsMenu(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String id = request.getParameter("id");
+        String foodID = request.getParameter("food");
+        String number = request.getParameter("number");
+        String foodname = FoodModel.getFoodNameByID(foodID);
+        MenuModel.updateSuggestMenu(foodname,number,id);
+        ServletUtils.redirect("/Admin/EditDetailsMenu?id="+id,request,response);
     }
 
 
@@ -208,6 +222,9 @@ public class AdminServlet extends HttpServlet {
                 out.println(isExist);
                 out.flush();
                 break;
+            case "/EditDetailsMenu":
+                doEditDetailsMenu(request,response);
+                break;
             default:
                 ServletUtils.redirect("/NotFound",request,response);
                 break;
@@ -237,6 +254,8 @@ public class AdminServlet extends HttpServlet {
     }
 
     private void doEditMenu(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<Category> listCat = CategoryModel.getAll();
+        request.setAttribute("lstCat",listCat);
         String conid = request.getParameter("conid");
         String day = request.getParameter("day");
         List<SuggestMenu> lstMenu = MenuModel.getSuggestMenuByDay(conid,day);
@@ -246,5 +265,36 @@ public class AdminServlet extends HttpServlet {
         request.setAttribute("day",day);
         request.setAttribute("lstMenu",lstMenu);
         ServletUtils.forward("/Views/vwAdmin/editmenu.jsp",request,response);
+    }
+
+    private void doEditDetailsMenu(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<Category> listCat = CategoryModel.getAll();
+        request.setAttribute("lstCat",listCat);
+        String id = request.getParameter("id");
+        Optional<SuggestMenu> m = MenuModel.getSuggestMenuByID(id);
+        if (m.isPresent()) {
+            request.setAttribute("menu",m.get());
+            String conditon = ConditionModel.getConditionNameByConID(String.valueOf(m.get().getConID()));
+            request.setAttribute("conditionName",conditon);
+            request.setAttribute("day",m.get().getDayofweek());
+            switch (m.get().getSession()){
+                case "1":
+                    request.setAttribute("session","Bữa sáng");
+                    break;
+                case "2":
+                    request.setAttribute("session","Bữa trưa");
+                    break;
+                case "3":
+                    request.setAttribute("session","Bữa phụ");
+                    break;
+                default:
+                    request.setAttribute("session","Bữa tối");
+                    break;
+            }
+            ServletUtils.forward("/Views/vwAdmin/editdetailsmenu.jsp",request,response);
+        }
+        else{
+            ServletUtils.redirect("/Admin/MenuManagement", request, response);
+        }
     }
 }
