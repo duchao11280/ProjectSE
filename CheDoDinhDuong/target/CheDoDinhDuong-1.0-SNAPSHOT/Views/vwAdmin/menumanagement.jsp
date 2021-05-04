@@ -36,7 +36,7 @@
                 </div>
             </div>
             <div class="row">
-                <table class="table table-bordered">
+                <table class="table table-bordered table-striped">
                     <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -91,7 +91,7 @@
                             </c:forEach>
                         </td>
                         <td>
-                            <a href="${pageContext.request.contextPath}/Admin/EditMenu?id=${f.getFoodID()}"
+                            <a href="${pageContext.request.contextPath}/Admin/EditMenu?conid=${conid}&day=1"
                                class="btn btn-outline-primary pr-4">
                                 <i class="fa fa-pencil mt-5" aria-hidden="true"></i></a>
                         </td>
@@ -139,7 +139,7 @@
                             </c:forEach>
                         </td>
                         <td>
-                            <a href="${pageContext.request.contextPath}/Admin/EditMenu?id=${f.getFoodID()}"
+                            <a href="${pageContext.request.contextPath}/Admin/EditMenu?conid=${conid}&day=2"
                                class="btn btn-outline-primary pr-4">
                                 <i class="fa fa-pencil mt-5" aria-hidden="true"></i></a>
                         </td>
@@ -187,7 +187,7 @@
                             </c:forEach>
                         </td>
                         <td>
-                            <a href="${pageContext.request.contextPath}/Admin/EditMenu?id=${f.getFoodID()}"
+                            <a href="${pageContext.request.contextPath}/Admin/EditMenu?conid=${conid}&day=3"
                                class="btn btn-outline-primary pr-4">
                                 <i class="fa fa-pencil mt-5" aria-hidden="true"></i></a>
                         </td>
@@ -235,7 +235,7 @@
                             </c:forEach>
                         </td>
                         <td>
-                            <a href="${pageContext.request.contextPath}/Admin/EditMenu?id=${f.getFoodID()}"
+                            <a href="${pageContext.request.contextPath}/Admin/EditMenu?conid=${conid}&day=4"
                                class="btn btn-outline-primary pr-4">
                                 <i class="fa fa-pencil mt-5" aria-hidden="true"></i></a>
                         </td>
@@ -283,7 +283,7 @@
                             </c:forEach>
                         </td>
                         <td>
-                            <a href="${pageContext.request.contextPath}/Admin/EditMenu?id=${f.getFoodID()}"
+                            <a href="${pageContext.request.contextPath}/Admin/EditMenu?conid=${conid}&day=5"
                                class="btn btn-outline-primary pr-4">
                                 <i class="fa fa-pencil mt-5" aria-hidden="true"></i></a>
                         </td>
@@ -331,7 +331,7 @@
                             </c:forEach>
                         </td>
                         <td>
-                            <a href="${pageContext.request.contextPath}/Admin/EditMenu?id=${f.getFoodID()}"
+                            <a href="${pageContext.request.contextPath}/Admin/EditMenu?conid=${conid}&day=6"
                                class="btn btn-outline-primary pr-4">
                                 <i class="fa fa-pencil mt-5" aria-hidden="true"></i></a>
                         </td>
@@ -379,7 +379,7 @@
                             </c:forEach>
                         </td>
                         <td>
-                            <a href="${pageContext.request.contextPath}/Admin/EditMenu?id=${f.getFoodID()}"
+                            <a href="${pageContext.request.contextPath}/Admin/EditMenu?conid=${conid}&day=7"
                                class="btn btn-outline-primary pr-4">
                                 <i class="fa fa-pencil mt-5" aria-hidden="true"></i></a>
                         </td>

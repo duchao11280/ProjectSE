@@ -13,4 +13,12 @@ public class ConditionModel {
             return con.createQuery(sql).executeAndFetch(Condition.class);
         }
     }
+    public static String getConditionNameByConID(String id){
+        final String sql = "select conName from `condition` where conID=:conID";
+        try(Connection con = DBUtils.getConnection()){
+            return  con.createQuery(sql)
+                    .addParameter("conID",id)
+                    .executeScalar(String.class);
+        }
+    }
 }

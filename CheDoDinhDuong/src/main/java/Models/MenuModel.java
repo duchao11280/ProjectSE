@@ -16,4 +16,26 @@ public class MenuModel {
                     .executeAndFetch(SuggestMenu.class);
         }
     }
+
+    public static void addNewSuggestMenu(String conID, String day, String foodname, String  number, String session){
+        final String sql = "INSERT into suggestmenu (conID,dayofweek,foodName,number,session)  VALUES (:conID,:day,:foodname,:number,:session)";
+        try(Connection con = DBUtils.getConnection()) {
+            con.createQuery(sql)
+                    .addParameter("conID",conID)
+                    .addParameter("day",day)
+                    .addParameter("foodname",foodname)
+                    .addParameter("number",number)
+                    .addParameter("session",session)
+                    .executeUpdate();
+        }
+    }
+
+    public static void deleteSuggestMenuByID(String ID){
+        final String sql = "Delete from suggestmenu where id = :id";
+        try(Connection con = DBUtils.getConnection()){
+            con.createQuery(sql)
+                    .addParameter("id",ID)
+                    .executeUpdate();
+        }
+    }
 }

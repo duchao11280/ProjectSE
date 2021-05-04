@@ -22,7 +22,7 @@
                 <div class="col-md-4 col-xs-6">
                     <div class="text-center">
                         <i class="ico-light ico-lg ico-rounded ico-hover fa fa-table" aria-hidden="true"></i>
-                        <a href="${pageContext.request.contextPath}/Admin/MenuManagement"> <h4>QUẢN LÝ THỰC ĐƠN</h4></a>
+                        <a href="${pageContext.request.contextPath}/Admin/MenuManagement?conid=1"> <h4>QUẢN LÝ THỰC ĐƠN</h4></a>
                         <p>Thêm, chỉnh sửa hoặc xóa thực đơn mẫu cho người dùng tham khảo</p>
                     </div>
                 </div>

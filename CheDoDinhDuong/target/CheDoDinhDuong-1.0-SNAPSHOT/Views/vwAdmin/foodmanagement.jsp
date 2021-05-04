@@ -334,7 +334,7 @@
                                         <a href="${pageContext.request.contextPath}/Admin/EditFood?id=${f.getFoodID()}"
                                            class="btn btn-outline-primary pr-4">
                                             <i class="fa fa-pencil mt-5" aria-hidden="true"></i></a>
-                                        <button type="submit" class="btn btn-outline-danger pr-6"
+                                        <button type="submit" class="btn btn-outline-danger pr-6 btndelete"
                                                 formaction="${pageContext.request.contextPath}/Admin/DeleteFood?id=${f.getFoodID()}">
                                             <i class="fa fa-trash" aria-hidden="true"></i>
                                         </button>
@@ -404,6 +404,13 @@
                 }
                 if($("#imgurl").val().length == 0){
                     alert("Bạn chưa chọn hình ảnh")
+                    e.preventDefault();
+                }
+            })
+            $('.btndelete').click(function (e) {
+                if (confirm('Bạn có chắc chắn xóa?')) {
+
+                } else {
                     e.preventDefault();
                 }
             })

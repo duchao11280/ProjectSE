@@ -42,6 +42,12 @@ public class AdminServlet extends HttpServlet {
             case "/AddIngre":
                 addNewIngre(request,response);
                 break;
+            case "/AddMenu":
+                addNewMenu(request,response);
+                break;
+            case "/DeleteMenu":
+                deleteMenu(request,response);
+                break;
             default:
                 ServletUtils.redirect("/NotFound",request,response);
                 break;
@@ -127,6 +133,26 @@ public class AdminServlet extends HttpServlet {
         ServletUtils.redirect("/Admin/EditFood?id="+foodID,request,response);
     }
 
+    private void addNewMenu(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String sesstion = request.getParameter("session");
+        String conid = request.getParameter("conid");
+        String day = request.getParameter("day");
+        String number =request.getParameter("number");
+        String foodname = request.getParameter("food");
+        MenuModel.addNewSuggestMenu(conid,day,foodname,number,sesstion);
+        final String url = "/Admin/EditMenu?conid="+conid+"&day="+day;
+        ServletUtils.redirect(url,request,response);
+    }
+
+    private void deleteMenu(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String conid = request.getParameter("conid");
+        String day = request.getParameter("day");
+        String id = request.getParameter("id");
+        MenuModel.deleteSuggestMenuByID(id);
+        final String url = "/Admin/EditMenu?conid="+conid+"&day="+day;
+        ServletUtils.redirect(url,request,response);
+    }
+
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getPathInfo();
@@ -146,6 +172,9 @@ public class AdminServlet extends HttpServlet {
                 break;
             case "/MenuManagement":
                 doMenuManagement(request,response);
+                break;
+            case "/EditMenu":
+                doEditMenu(request,response);
                 break;
             case "/EditFood":
                 List<Category> listCat = CategoryModel.getAll();
@@ -205,5 +234,17 @@ public class AdminServlet extends HttpServlet {
         request.setAttribute("lstMenu6",lstMenu6);
         request.setAttribute("lstMenu7",lstMenu7);
         ServletUtils.forward("/Views/vwAdmin/menumanagement.jsp",request,response);
+    }
+
+    private void doEditMenu(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String conid = request.getParameter("conid");
+        String day = request.getParameter("day");
+        List<SuggestMenu> lstMenu = MenuModel.getSuggestMenuByDay(conid,day);
+        String conName = ConditionModel.getConditionNameByConID(conid);
+        request.setAttribute("conid",conid);
+        request.setAttribute("conditionName",conName);
+        request.setAttribute("day",day);
+        request.setAttribute("lstMenu",lstMenu);
+        ServletUtils.forward("/Views/vwAdmin/editmenu.jsp",request,response);
     }
 }
