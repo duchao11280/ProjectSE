@@ -9,17 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aedd7f9-181f-44ae-b252-8749b2d89da7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AccountServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AccountServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/UserModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Views/vwAccount/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Views/vwAccount/profile.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Views/vwAccount/profilesetting.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Views/vwAccount/profilesetting.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Views/vwCalculate/calBMI.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Views/vwCalculate/calBMI.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Views/vwCalculate/calCALO.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Views/vwCalculate/calCALO.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/main.tag" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/main.tag" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwAccount/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwAccount/profile.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="0aedd7f9-181f-44ae-b252-8749b2d89da7" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -200,6 +190,7 @@
       <workItem from="1619510492002" duration="7999000" />
       <workItem from="1619750659805" duration="7128000" />
       <workItem from="1620706152384" duration="7644000" />
+      <workItem from="1620751538345" duration="1257000" />
     </task>
     <servers />
   </component>

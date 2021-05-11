@@ -12,7 +12,10 @@
         <filter-name>SessionInitFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-
+    <filter-mapping>
+        <filter-name>LayoutFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
     <filter-mapping>
         <filter-name>AuthenticationFilter</filter-name>
         <url-pattern>/Account/Profile</url-pattern>
@@ -20,5 +23,9 @@
     <filter-mapping>
         <filter-name>AuthenticationFilter</filter-name>
         <url-pattern>/Account/ProfileSetting</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <url-pattern>/Food/BuildMenu</url-pattern>
     </filter-mapping>
 </web-app>

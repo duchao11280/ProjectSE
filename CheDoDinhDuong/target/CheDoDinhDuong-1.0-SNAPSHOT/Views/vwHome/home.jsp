@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <t:main>
     <jsp:body>
@@ -33,7 +34,7 @@
                         <div class="text-center">
                             <a href="${pageContext.request.contextPath}/Food/CalKcal"><i class="ico-light ico-lg ico-rounded ico-hover et-compass"></i></a>
                             <a href="${pageContext.request.contextPath}/Food/CalKcal"><h4>Calculate calories in the meal</h4></a>
-                            <p>Provide a table of nutrition statistics for your meals.</p>
+                            <p>Energy absorbed after eating food.</p>
                         </div>
                     </div>
 
@@ -53,9 +54,9 @@
                     </div>
                     <div class="col-md-4 col-xs-6">
                         <div class="text-center">
-                            <i class="ico-light ico-lg ico-rounded ico-hover et-presentation"></i>
-                            <a href="#"> <h4>The amount of nutritional value </h4></a>
-                            <p>Energy absorbed after eating food.</p>
+                            <a href="${pageContext.request.contextPath}/Food/BuildMenu"><i class="ico-light ico-lg ico-rounded ico-hover et-presentation"></i></a>
+                            <a href="${pageContext.request.contextPath}/Food/BuildMenu"> <h4>Build Menu </h4></a>
+                            <p>Develop a menu to calculate and plan deployment to meet your nutritional needs</p>
                         </div>
                     </div>
                     <div class="col-md-4 col-xs-6">

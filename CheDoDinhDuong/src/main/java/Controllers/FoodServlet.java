@@ -8,14 +8,21 @@ import beans.Category;
 import beans.Food;
 import beans.Ingredient;
 import com.google.gson.Gson;
+import filters.AuthenticationFilter;
+import filters.SessionInitFilter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoField;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -73,8 +80,7 @@ public class FoodServlet extends HttpServlet {
                 ServletUtils.forward("/Views/vwFood/Search.jsp",request,response);
                 break;
             case"/CalKcal":
-                List<Category> listcat2 = CategoryModel.getAll();
-                request.setAttribute("categoriesforcal", listcat2);
+
                 ServletUtils.forward("/Views/vwFood/CalKcal.jsp",request,response);
                 break;
             case"/SelectFood":
@@ -94,8 +100,8 @@ public class FoodServlet extends HttpServlet {
                 int catIDCal = Integer.parseInt(request.getParameter("id"));
                 List<Food> listfoodforcal = FoodModel.findByCatID(catIDCal);
                 request.setAttribute("foodsCal", listfoodforcal);
-                System.out.println(listfoodforcal);
-                System.out.println("id ="+ catIDCal);
+//                System.out.println(listfoodforcal);
+//                System.out.println("id ="+ catIDCal);
                 PrintWriter out = response.getWriter();
                 String foodJsonString = new Gson().toJson(listfoodforcal);
                 response.setContentType("application/json");
@@ -115,6 +121,13 @@ public class FoodServlet extends HttpServlet {
                 } else {
                     ServletUtils.redirect("/Home", request, response);
                 }
+                break;
+            case "/BuildMenu":
+                ServletUtils.forward("/Views/vwFood/BuildMenu.jsp",request,response);
+
+                LocalDateTime date = LocalDateTime.now();
+
+                System.out.println(date.get(ChronoField.DAY_OF_WEEK));
                 break;
             default:
                 ServletUtils.redirect("/NotFound", request, response);
