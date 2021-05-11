@@ -1,6 +1,7 @@
 package Models;
 
 import Utilties.DBUtils;
+import beans.Category;
 import beans.User;
 import org.sql2o.Connection;
 
@@ -36,6 +37,20 @@ public class UserModel {
                     .addParameter("height", user.getHeight())
                     .addParameter("weight", user.getWeight())
                     .addParameter("sex", user.isSex())
+                    .executeUpdate();
+        }
+    }
+
+    public static void update(String userName,String fullName, int age,double height,double weight,boolean sex ) {
+        final String sql = "update user set fullName = :fullName, age = :age, height=:height,weight=:weight,sex=:sex where userName = :userName";
+        try (Connection con = DBUtils.getConnection()) {
+            con.createQuery(sql)
+                    .addParameter("userName", userName)
+                    .addParameter("fullName", fullName)
+                    .addParameter("age", age)
+                    .addParameter("height", height)
+                    .addParameter("weight", weight)
+                    .addParameter("sex", sex)
                     .executeUpdate();
         }
     }

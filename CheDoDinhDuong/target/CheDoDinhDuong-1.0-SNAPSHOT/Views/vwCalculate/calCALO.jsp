@@ -201,12 +201,12 @@
 
                                     <!-- height -->
                                     <div class="form-group">
-                                        <input  id="txtHeightcalo" type="number" name="heightcalo" class="form-control" placeholder="Height (cm)" required="">
+                                        <input  id="txtHeightcalo" step="0.5" min="0" type="number" name="heightcalo" class="form-control" placeholder="Height (cm)" required="">
                                     </div>
 
                                     <!-- weight -->
                                     <div class="form-group">
-                                        <input id="txtWeightcalo" type="number" name="weightcalo" class="form-control" placeholder="Weight (kg)" required="">
+                                        <input id="txtWeightcalo" step="0.5" min="0" type="number" name="weightcalo" class="form-control" placeholder="Weight (kg)" required="">
                                     </div>
                                     <!-- age -->
                                     <div class="form-group">

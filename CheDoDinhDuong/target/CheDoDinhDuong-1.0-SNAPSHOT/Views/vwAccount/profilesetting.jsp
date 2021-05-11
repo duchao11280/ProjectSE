@@ -1,8 +1,14 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<jsp:useBean id="authUser" scope="session" type="beans.User"/>
+
 
 <t:main>
+
+
+
+
     <jsp:body>
         <!-- PAGE HEADER
 
@@ -45,8 +51,8 @@
 
                         <div class="thumbnail text-center">
                             <img class="img-fluid" src="${pageContext.request.contextPath}/Public/Imgs/Food/1.jpg" alt="" />
-                            <h2 class="fs-18 mt-10 mb-0">Dinh Tuan An</h2>
-                            <h3 class="fs-11 mt-0 mb-10 text-muted">STUDENT</h3>
+                            <h2 class="fs-18 mt-10 mb-0">${authUser.fullName}</h2>
+                            <h3 class="fs-11 mt-0 mb-10 text-muted">USER</h3>
                         </div>
 
 
@@ -63,7 +69,7 @@
                         <!-- info -->
                         <div class="box-light mb-30">
                             <div class="text-muted">
-                                <h2 class="fs-18 text-muted mb-6"><b>About</b> Dinh Tuan An</h2>
+                                <h2 class="fs-18 text-muted mb-6"><b>About</b> ${authUser.fullName}</h2>
                                 <p>This is your personal information. You can change your info.</p>
 
                                 <ul class="list-unstyled m-0">
@@ -91,39 +97,62 @@
 
                             <!-- info tab -->
                             <div class="tab-pane active" id="info">
-                                <form action="#" method="post">
+                                <form action="#" method="post" id="frmProfilesetting">
+                                    <div class="form-group">
+                                        <label class="form-control-label">UserName</label>
+                                        <input readonly type="text" name="usernameinfo"  class="form-control" value="${authUser.userName}">
+                                    </div>
+
                                     <div class="form-group">
                                         <label class="form-control-label">Full Name</label>
-                                        <input type="text" placeholder="Dinh Tuan An" class="form-control">
+                                        <input type="text" name="fullnameinfo"  class="form-control" value="${authUser.fullName}">
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-control-label">Age</label>
-                                        <input type="number" placeholder="18" class="form-control">
+                                        <input type="number" name="ageinfo" class="form-control" value="${authUser.age}">
                                     </div>
                                     <div class="form-group">
                                         <label class="form-control-label">Height</label>
-                                        <input type="number" placeholder="172 (cm)" class="form-control">
+                                        <input type="number" step="0.5" min="0" name="heightinfo" value="${authUser.height}" class="form-control" >
                                     </div>
                                     <div class="form-group">
                                         <label class="form-control-label">Weight</label>
-                                        <input type="number" placeholder="70 (kg)" class="form-control">
+                                        <input type="number" step="0.5" min="0" name="weightinfo" value="${authUser.weight}" class="form-control">
                                     </div>
 
 
+                                    <c:choose>
+                                        <c:when test="${authUser.sex == false}">
+                                            <div class="form-group">
+                                                <label class="form-control-label">Sex</label>
+                                                <label class="select mb-10 mt-20">
+                                                    <select name="sexinfo">
+                                                        <option value="-1"  disabled>Gender</option>
+                                                        <option value="0" selected>Male</option>
+                                                        <option value="1">Female</option>
+                                                    </select>
+                                                    <i></i>
+                                                </label>
+                                            </div>
+                                        </c:when>
+
+                                        <c:otherwise>
+                                            <div class="form-group">
+                                                <label class="form-control-label">Sex</label>
+                                                <label class="select mb-10 mt-20">
+                                                    <select name="sexinfo" >
+                                                        <option value="-1"  disabled>Gender</option>
+                                                        <option value="0">Male</option>
+                                                        <option value="1" selected>Female</option>
+                                                    </select>
+                                                    <i></i>
+                                                </label>
+                                            </div>
+                                        </c:otherwise>
+                                    </c:choose>
 
 
-                                    <div class="form-group">
-                                        <label class="form-control-label">Sex</label>
-                                        <label class="select mb-10 mt-20">
-                                            <select name="sex">
-                                                <option value="-1" selected disabled>Gender</option>
-                                                <option value="0">Male</option>
-                                                <option value="1">Female</option>
-                                            </select>
-                                            <i></i>
-                                        </label>
-                                    </div>
 
                                     <div class="form-group">
                                         <label class="form-control-label">About</label>
@@ -132,7 +161,7 @@
 
                                     <!--2 cai nut -->
                                     <div class="d-flex justify-content-start">
-                                        <button type="submit" class="btn btn-primary" style="margin-right: 10px;">
+                                        <button type="submit" class="btn btn-primary" style="margin-right: 10px;" formaction="${pageContext.request.contextPath}/Account/Update">
                                             <i class="fa fa-check" aria-hidden="true"></i>
                                             Save Changes
                                         </button>

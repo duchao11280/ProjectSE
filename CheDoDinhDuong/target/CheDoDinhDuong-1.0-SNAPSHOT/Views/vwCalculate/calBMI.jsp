@@ -133,12 +133,12 @@
 
                                         <!-- height -->
                                         <div class="form-group">
-                                            <input id="txtHeightbmi" type="number" name="heightbmi" class="form-control" placeholder="Height (cm)" required="">
+                                            <input id="txtHeightbmi" step="0.5" min="0" type="number" name="heightbmi" class="form-control" placeholder="Height (cm)" required="">
                                         </div>
 
                                         <!-- weight -->
                                         <div class="form-group">
-                                            <input id="txtWeightbmi" type="number" name="weightbmi" class="form-control" placeholder="Weight (kg)" required="">
+                                            <input id="txtWeightbmi" step="0.5" min="0" type="number" name="weightbmi" class="form-control" placeholder="Weight (kg)" required="">
                                         </div>
 
                                     </div>

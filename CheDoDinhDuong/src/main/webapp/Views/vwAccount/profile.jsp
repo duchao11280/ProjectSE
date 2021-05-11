@@ -2,6 +2,10 @@
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
+<jsp:useBean id="authUser" scope="session" type="beans.User"/>
+
+
+
 <t:main>
     <jsp:body>
         <!-- PAGE HEADER
@@ -45,8 +49,8 @@
 
                         <div class="thumbnail text-center">
                             <img class="img-fluid" src="${pageContext.request.contextPath}/Public/Imgs/Food/1.jpg" alt="" />
-                            <h2 class="fs-18 mt-10 mb-0">Dinh Tuan An</h2>
-                            <h3 class="fs-11 mt-0 mb-10 text-muted">STUDENT</h3>
+                            <h2 class="fs-18 mt-10 mb-0">${authUser.fullName}</h2>
+                            <h3 class="fs-11 mt-0 mb-10 text-muted">USER</h3>
                         </div>
 
 
@@ -63,7 +67,7 @@
                         <!-- info -->
                         <div class="box-light mb-30">
                             <div class="text-muted">
-                                <h2 class="fs-18 text-muted mb-6"><b>About</b> Dinh Tuan An</h2>
+                                <h2 class="fs-18 text-muted mb-6"><b>About</b> ${authUser.fullName}</h2>
                                 <p>This is your personal information. You can change your info.</p>
 
                                 <ul class="list-unstyled m-0">
@@ -95,44 +99,62 @@
                                         </h3>
 
                                         <form>
+
                                             <div class="form-group row">
                                                 <label for="staticEmail" class="col-sm-2 col-form-label">Username</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="dayla">
+                                                    <input type="text" name="usernameprofile"  readonly class="form-control-plaintext" id="staticEmail" value="${authUser.userName}">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="staticEmail1" class="col-sm-2 col-form-label">Full Name</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" readonly class="form-control-plaintext" id="staticEmail1" value="dayla">
+                                                    <input type="text" readonly class="form-control-plaintext" id="staticEmail1" value="${authUser.fullName}">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="staticEmail2" class="col-sm-2 col-form-label">Age</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="dayla">
+                                                    <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="${authUser.age}">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="staticEmail3" class="col-sm-2 col-form-label">Height</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" readonly class="form-control-plaintext" id="staticEmail3" value="dayla">
+                                                    <input type="text" readonly class="form-control-plaintext" id="staticEmail3" value="${authUser.height} (cm)">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="staticEmail4" class="col-sm-2 col-form-label">Weight</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" readonly class="form-control-plaintext" id="staticEmail4" value="dayla">
+                                                    <input type="text"  readonly class="form-control-plaintext" id="staticEmail4" value="${authUser.weight} (kg)">
                                                 </div>
                                             </div>
 
+                                        
+                                           <c:choose>
+                                               <c:when test="${authUser.sex == false}">
+                                                   <div class="form-group row">
+                                                       <label for="staticEmail5" class="col-sm-2 col-form-label">Sex</label>
+                                                       <div class="col-sm-10">
+                                                           <input type="text" readonly class="form-control-plaintext" id="staticEmail5" value="Male">
+                                                       </div>
+                                                   </div>
+                                               </c:when>
 
-                                            <div class="form-group row">
-                                                <label for="staticEmail5" class="col-sm-2 col-form-label">Sex</label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" readonly class="form-control-plaintext" id="staticEmail5" value="dayla">
-                                                </div>
-                                            </div>
+                                               <c:otherwise>
+                                                   <div class="form-group row">
+                                                       <label for="staticEmail6" class="col-sm-2 col-form-label">Sex</label>
+                                                       <div class="col-sm-10">
+                                                           <input type="text" readonly class="form-control-plaintext" id="staticEmail6" value="Female">
+                                                       </div>
+                                                   </div>
+                                               </c:otherwise>
+                                           </c:choose>
+
+
+
+
 
                                         </form>
 

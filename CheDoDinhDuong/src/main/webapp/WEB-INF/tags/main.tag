@@ -92,7 +92,7 @@
                                     <form style="display: inline-block" id="frmLogout" method="post" action="${pageContext.request.contextPath}/Account/Logout"></form>
 
                                         <li class="dropdown"><!-- PAGES -->
-                                        <a class="dropdown-toggle" href="#">
+                                        <a class="dropdown-toggle" href="#" name="nametag">
                                             Hi, <b>${authUser.fullName} </b>
                                         </a>
                                         <ul class="dropdown-menu">

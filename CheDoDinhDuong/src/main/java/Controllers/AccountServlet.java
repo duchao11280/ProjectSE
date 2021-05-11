@@ -4,6 +4,7 @@ import Models.UserModel;
 import Utilties.ServletUtils;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
+import beans.Category;
 import beans.User;
 
 import javax.servlet.ServletException;
@@ -32,11 +33,40 @@ public class AccountServlet extends HttpServlet {
             case "/Logout":
                 postLogout(request, response);
                 break;
+            case "/Update":
+                updatePersonInfo(request, response);
+                break;
             default:
                 ServletUtils.redirect("/NotFound", request, response);
                 break;
         }
 
+    }
+
+    private void updatePersonInfo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String usernameinfo = request.getParameter("usernameinfo");
+        String fullnameinfo = request.getParameter("fullnameinfo");
+        int ageinfo = Integer.parseInt(request.getParameter("ageinfo"));
+        float heightinfo = Float.parseFloat(request.getParameter("heightinfo"));
+        float weightinfo = Float.parseFloat(request.getParameter("weightinfo"));
+
+        boolean sexinfo ;
+        String sexxinfo =  request.getParameter("sexinfo");
+        int check = Integer.parseInt(sexxinfo);
+
+        if(check==0){
+            sexinfo=false;
+        }
+        else {
+            sexinfo=true;
+        }
+
+        UserModel.update(usernameinfo,fullnameinfo,ageinfo,heightinfo,weightinfo,sexinfo);
+        Optional<User> useraf = UserModel.findByUserName(usernameinfo);
+        HttpSession session = request.getSession();
+        session.setAttribute("auth",true);
+        session.setAttribute("authUser",useraf.get());
+        ServletUtils.redirect("/Account/Profile", request, response);
     }
 
     private void postLogout(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -69,6 +99,7 @@ public class AccountServlet extends HttpServlet {
                 if(url ==null){
                     url = "/Home";
                 }
+//                request.setAttribute("userafterlogin",user);
                 ServletUtils.redirect(url,request,response);
 
             }else {
@@ -124,6 +155,7 @@ public class AccountServlet extends HttpServlet {
                 ServletUtils.forward("/Views/vwAccount/profilesetting.jsp",request,response);
                 break;
             case "/Login":
+
                 request.setAttribute("hasError", false);
 
                 ServletUtils.forward("/Views/vwAccount/login.jsp",request,response);
