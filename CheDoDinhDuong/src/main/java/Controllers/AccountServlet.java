@@ -101,8 +101,8 @@ public class AccountServlet extends HttpServlet {
 
         System.out.println(sex);
         System.out.println(sexx);
-        double height = 160;
-        double weight = 65;
+        double height = 0;
+        double weight = 0;
         int role=1;
         User user = new User(-1,role,age,username,bcryptHashString,name,height,weight,sex);
 
@@ -119,6 +119,9 @@ public class AccountServlet extends HttpServlet {
         switch (path){
             case "/Profile":
                 ServletUtils.forward("/Views/vwAccount/profile.jsp",request,response);
+                break;
+            case "/ProfileSetting":
+                ServletUtils.forward("/Views/vwAccount/profilesetting.jsp",request,response);
                 break;
             case "/Login":
                 request.setAttribute("hasError", false);

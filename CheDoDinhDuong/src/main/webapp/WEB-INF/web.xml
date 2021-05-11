@@ -17,4 +17,8 @@
         <filter-name>AuthenticationFilter</filter-name>
         <url-pattern>/Account/Profile</url-pattern>
     </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <url-pattern>/Account/ProfileSetting</url-pattern>
+    </filter-mapping>
 </web-app>
