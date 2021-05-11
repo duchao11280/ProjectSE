@@ -235,6 +235,8 @@ public class AdminServlet extends HttpServlet {
         List<Condition> lstCon = ConditionModel.getAllCondition();
         request.setAttribute("lstCon",lstCon);
         String conid = request.getParameter("conid");
+        if(conid==null)
+            conid="1";
         request.setAttribute("conid",conid);
         List<SuggestMenu> lstMenu1 = MenuModel.getSuggestMenuByDay(conid,"1");
         List<SuggestMenu> lstMenu2 = MenuModel.getSuggestMenuByDay(conid,"2");
