@@ -26,7 +26,7 @@ public class UserModel {
     }
 
     public static void add(User user) {
-        final String sql = "Call sp_addNewUser(:username,:password,:role,:name,:age,:height,:weight,:sex)";
+        final String sql = "Call sp_addNewUser(:username,:password,:role,:name,:age,:height,:weight,:sex,:urlimage)";
         try (Connection con = DBUtils.getConnection()) {
             con.createQuery(sql)
                     .addParameter("username", user.getUserName())
@@ -37,6 +37,7 @@ public class UserModel {
                     .addParameter("height", user.getHeight())
                     .addParameter("weight", user.getWeight())
                     .addParameter("sex", user.isSex())
+                    .addParameter("urlimage", user.getUrlImage())
                     .executeUpdate();
         }
     }
@@ -61,6 +62,17 @@ public class UserModel {
             con.createQuery(sql)
                     .addParameter("userName", userName)
                     .addParameter("password", password)
+
+                    .executeUpdate();
+        }
+    }
+
+    public static void updateImage(String userName,String url) {
+        final String sql = "update user set urlImage =:url where userName = :userName";
+        try (Connection con = DBUtils.getConnection()) {
+            con.createQuery(sql)
+                    .addParameter("userName", userName)
+                    .addParameter("url", url)
 
                     .executeUpdate();
         }

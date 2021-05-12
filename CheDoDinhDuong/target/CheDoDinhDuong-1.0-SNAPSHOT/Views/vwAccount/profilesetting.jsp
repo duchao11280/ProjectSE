@@ -2,7 +2,7 @@
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <jsp:useBean id="authUser" scope="session" type="beans.User"/>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <t:main>
 
@@ -48,6 +48,167 @@
 </jsp:attribute>
 
     <jsp:body>
+        <script>
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('.image-upload-wrap').hide();
+
+                        $('.file-upload-image').attr('src', e.target.result);
+                        $('.file-upload-content').show();
+
+                        $('.image-title').html(input.files[0].name);
+                    };
+
+                    reader.readAsDataURL(input.files[0]);
+
+                } else {
+                    removeUpload();
+                }
+            }
+            function removeUpload() {
+                $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+                $('.file-upload-content').hide();
+                $('.image-upload-wrap').show();
+            }
+            $('.image-upload-wrap').bind('dragover', function () {
+                $('.image-upload-wrap').addClass('image-dropping');
+            });
+            $('.image-upload-wrap').bind('dragleave', function () {
+                $('.image-upload-wrap').removeClass('image-dropping');
+            });
+
+        </script>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <style>
+            /* Chrome, Safari, Edge, Opera */
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            /* Firefox */
+            input[type=number] {
+                -moz-appearance: textfield;
+            }
+            .file-upload {
+                background-color: #ffffff;
+                width: 600px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+
+            .file-upload-btn {
+                width: 100%;
+                margin: 0;
+                color: #fff;
+                background: #1FB264;
+                border: none;
+                padding: 10px;
+                border-radius: 4px;
+                border-bottom: 4px solid #15824B;
+                transition: all .2s ease;
+                outline: none;
+                text-transform: uppercase;
+                font-weight: 700;
+            }
+
+            .file-upload-btn:hover {
+                background: #1AA059;
+                color: #ffffff;
+                transition: all .2s ease;
+                cursor: pointer;
+            }
+
+            .file-upload-btn:active {
+                border: 0;
+                transition: all .2s ease;
+            }
+
+            .file-upload-content {
+                display: none;
+                text-align: center;
+            }
+
+            .file-upload-input {
+                position: absolute;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+                outline: none;
+                opacity: 0;
+                cursor: pointer;
+            }
+
+            .image-upload-wrap {
+                margin-top: 20px;
+                border: 4px dashed #1FB264;
+                position: relative;
+            }
+
+            .image-dropping,
+            .image-upload-wrap:hover {
+                background-color: #1FB264;
+                border: 4px dashed #ffffff;
+            }
+
+            .image-title-wrap {
+                padding: 0 15px 15px 15px;
+                color: #222;
+            }
+
+            .drag-text {
+                text-align: center;
+            }
+
+            .drag-text h3 {
+                font-weight: 100;
+                text-transform: uppercase;
+                color: #15824B;
+                padding: 60px 0;
+            }
+
+            .file-upload-image {
+                max-height: 200px;
+                max-width: 200px;
+                margin: auto;
+                padding: 20px;
+            }
+
+            .remove-image {
+                width: 200px;
+                margin: 0;
+                color: #fff;
+                background: #cd4535;
+                border: none;
+                padding: 10px;
+                border-radius: 4px;
+                border-bottom: 4px solid #b02818;
+                transition: all .2s ease;
+                outline: none;
+                text-transform: uppercase;
+                font-weight: 700;
+            }
+
+            .remove-image:hover {
+                background: #c13b2a;
+                color: #ffffff;
+                transition: all .2s ease;
+                cursor: pointer;
+            }
+
+            .remove-image:active {
+                border: 0;
+                transition: all .2s ease;
+            }
+        </style>
+
         <!-- PAGE HEADER
 
         CLASSES:
@@ -88,7 +249,7 @@
                     <div class="col-lg-3 col-md-3 col-sm-4">
 
                         <div class="thumbnail text-center">
-                            <img class="img-fluid" src="${pageContext.request.contextPath}/Public/Imgs/Food/1.jpg" alt="" />
+                            <img  class="img-fluid" src="${pageContext.request.contextPath}${authUser.urlImage}" alt="" />
                             <h2 class="fs-18 mt-10 mb-0">${authUser.fullName}</h2>
                             <h3 class="fs-11 mt-0 mb-10 text-muted">USER</h3>
                         </div>
@@ -214,48 +375,45 @@
                             <!-- avatar tab -->
                             <div class="tab-pane fade" id="avatar">
 
-                                <form class="clearfix" action="#" method="post" enctype="multipart/form-data">
+                                <%--<form id="frmAvatar" class="clearfix" action="#" method="post" enctype="multipart/form-data">
+
+                                    <input type="text" name="test"  class="form-control" value="">
+
                                     <div class="form-group">
+                                        <label class="form-control-label">Username</label>
+                                        <input type="text" name="usernameimage" readonly class="form-control" value="${authUser.userName}">
+                                    </div>
+                                    <!-- drag image content-->
+                                    <div class="form-group row">
+                                        <div class="file-upload">
+                                            <button class="file-upload-btn" type="button"
+                                                    onclick="$('.file-upload-input').trigger( 'click' )">Add Image
+                                            </button>
 
-                                        <div class="row">
+                                            <div class="image-upload-wrap">
 
-                                            <div class="col-md-3 col-sm-4">
 
-                                                <div class="thumbnail">
-                                                    <img  class="img-fluid" src="https://images.unsplash.com/photo-1498462440456-0dba182e775b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" alt="" />
+                                                <input id="imgurl" class="file-upload-input" type='file' onchange="readURL(this);"
+                                                       accept="image/*" name="imagefile"/>
+
+
+                                                <div class="drag-text">
+                                                    <h3>Drag and drop a file or select add Image</h3>
                                                 </div>
-
                                             </div>
-
-                                            <div class="col-md-9 col-sm-8">
-
-                                                <div class="sky-form m-0">
-                                                    <label class="label">Select File</label>
-                                                    <label for="file" class="input input-file">
-                                                        <div class="button">
-                                                            <input type="file" id="file" onchange="this.parentNode.nextSibling.value = this.value">Browse
-                                                        </div><input type="text" readonly>
-                                                    </label>
+                                            <div class="file-upload-content">
+                                                <img class="file-upload-image" src="#" alt="your image"/>
+                                                <div class="image-title-wrap">
+                                                        &lt;%&ndash;                                                <button type="button" onclick="removeUpload()" class="remove-image">&ndash;%&gt;
+                                                        &lt;%&ndash;                                                    Remove <span class="image-title" name="imagename">Uploaded Image</span></button>&ndash;%&gt;
                                                 </div>
-
-                                                <a href="#" class="btn btn-danger btn-sm rad-0"><i class="fa fa-times"></i> Remove Avatar</a>
-
-                                                <div class="clearfix mt-20">
-                                                    <span class="badge badge-warning">NOTE! </span>
-                                                    <p>
-                                                        Chỉ nhận ảnh file jpg
-                                                    </p>
-                                                </div>
-
                                             </div>
-
                                         </div>
-
                                     </div>
 
                                     <!--2 cai nut -->
                                     <div class="d-flex justify-content-start">
-                                        <button type="submit" class="btn btn-primary" style="margin-right: 10px;">
+                                        <button id="btnAdd" type="submit" class="btn btn-primary" style="margin-right: 10px;" formaction="${pageContext.request.contextPath}/Account/AddImage">
                                             <i class="fa fa-check" aria-hidden="true"></i>
                                             Save Changes
                                         </button>
@@ -266,6 +424,56 @@
                                     </div>
 
                                 </form>
+                                <script>
+                                    $("#btnAdd").click(function (e){
+
+                                        if($("#imgurl").val().length == 0){
+                                            alert("Bạn chưa chọn hình ảnh")
+                                            e.preventDefault();
+                                        }
+                                    })
+                                </script>
+--%>
+                                <form method="post" enctype="multipart/form-data">
+                                    <input type="text" name="test"  readonly class="form-control" value="${authUser.userName}">
+
+                                    <div class="form-group row">
+                                        <div class="file-upload">
+                                            <button class="file-upload-btn" type="button"
+                                                    onclick="$('.file-upload-input').trigger( 'click' )">Add Image
+                                            </button>
+
+                                            <div class="image-upload-wrap">
+
+
+                                                <input id="imgurl" class="file-upload-input" type='file' onchange="readURL(this);"
+                                                       accept="image/*" name="imagefile"/>
+
+
+                                                <div class="drag-text">
+                                                    <h3>Drag and drop a file or select add Image</h3>
+                                                </div>
+                                            </div>
+                                            <div class="file-upload-content">
+                                                <img class="file-upload-image" src="#" alt="your image"/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <button id="btnAdd" type="submit" class="btn btn-primary" style="margin-right: 10px;" formaction="${pageContext.request.contextPath}/Account/AddImage">
+                                        <i class="fa fa-check" aria-hidden="true"></i>
+                                        Save Changes
+                                    </button>
+                                </form>
+                                    <script>
+                                        $("#btnAdd").click(function (e){
+
+                                            if($("#imgurl").val().length == 0){
+                                                alert("Bạn chưa chọn hình ảnh")
+                                                e.preventDefault();
+                                            }
+                                        })
+                                    </script>
 
                             </div>
 

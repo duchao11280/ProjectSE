@@ -9,16 +9,19 @@ import beans.User;
 
 import javax.servlet.ServletException;
 
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Optional;
 
 @WebServlet(name = "AccountServlet", urlPatterns = "/Account/*")
+@MultipartConfig(
+        fileSizeThreshold = 2 * 1024 * 1024,
+        maxFileSize = 50 * 1024 * 1024,
+        maxRequestSize = 50 * 1024 * 1024
+)
 public class AccountServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -39,12 +42,54 @@ public class AccountServlet extends HttpServlet {
             case "/ChangePassword":
                 ChangePassword(request, response);
                 break;
+            case "/AddImage":
+                addImage(request, response);
+                break;
             default:
                 ServletUtils.redirect("/NotFound", request, response);
                 break;
         }
 
     }
+    private void addImage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+//        String usernameimage = request.getParameter("usernameimage");
+        String test = request.getParameter("test");
+        String imagefile = request.getParameter("imagefile");
+
+        String imgurl="";
+
+        for (Part part : request.getParts()) {
+            String contentDisp = part.getHeader("content-disposition");
+            System.out.println(contentDisp);
+
+            String[] items = contentDisp.split(";");
+            for(String s : items){
+                String tmp = s.trim();
+                if (tmp.startsWith("filename")){
+                    int idx = tmp.indexOf('=') + 2;
+                    String filename = tmp.substring(idx, tmp.length() - 1);
+                    String targetDir = this.getServletContext().getRealPath("Public/Imgs/Avts");
+                    String destination = targetDir + "/" + filename;
+
+                    part.write(destination);
+                    imgurl ="/Public/Imgs/Avts/"+ filename;
+
+                }
+            }
+        }
+
+        UserModel.updateImage(test,imgurl);
+
+        Optional<User> useraf = UserModel.findByUserName(test);
+        HttpSession session = request.getSession();
+        session.setAttribute("auth",true);
+        session.setAttribute("authUser",useraf.get());
+        ServletUtils.redirect("/Account/Profile", request, response);
+
+    }
+
+
     private void ChangePassword(HttpServletRequest request, HttpServletResponse response) throws  ServletException, IOException{
 
         String curusername = request.getParameter("curusername");
@@ -172,7 +217,8 @@ public class AccountServlet extends HttpServlet {
         double height = 0;
         double weight = 0;
         int role=1;
-        User user = new User(-1,role,age,username,bcryptHashString,name,height,weight,sex);
+        String urlImage = null;
+        User user = new User(-1,role,age,username,bcryptHashString,name,height,weight,sex,urlImage);
 
         UserModel.add(user);
         ServletUtils.redirect("/Home",request,response);

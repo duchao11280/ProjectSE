@@ -48,7 +48,7 @@
                     <div class="col-lg-3 col-md-3 col-sm-4">
 
                         <div class="thumbnail text-center">
-                            <img class="img-fluid" src="${pageContext.request.contextPath}/Public/Imgs/Food/1.jpg" alt="" />
+                            <img  class="img-fluid" src="${pageContext.request.contextPath}${authUser.urlImage}" alt="" />
                             <h2 class="fs-18 mt-10 mb-0">${authUser.fullName}</h2>
                             <h3 class="fs-11 mt-0 mb-10 text-muted">USER</h3>
                         </div>

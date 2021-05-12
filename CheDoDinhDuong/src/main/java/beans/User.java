@@ -6,11 +6,12 @@ public class User {
     String userName,password,fullName;
     double height,weight;
     boolean sex;
+    String urlImage;
 
     public User() {
     }
 
-    public User(int userID, int role, int age, String userName, String password, String fullName, double height, double weight, boolean sex) {
+    public User(int userID, int role, int age, String userName, String password, String fullName, double height, double weight, boolean sex, String urlImage) {
         this.userID = userID;
         this.role = role;
         this.age = age;
@@ -20,9 +21,8 @@ public class User {
         this.height = height;
         this.weight = weight;
         this.sex = sex;
+        this.urlImage = urlImage;
     }
-
-
 
     public int getUserID() {
         return userID;
@@ -96,6 +96,14 @@ public class User {
         this.sex = sex;
     }
 
+    public String getUrlImage() {
+        return urlImage;
+    }
+
+    public void setUrlImage(String urlImage) {
+        this.urlImage = urlImage;
+    }
+
     @Override
     public String toString() {
         return "User {" +
@@ -108,6 +116,7 @@ public class User {
                 ", weight=" + weight +
                 ", sex=" + sex +
                 ", role=" + role +
+                ", urlimage=" + urlImage +
                 '}';
     }
 
