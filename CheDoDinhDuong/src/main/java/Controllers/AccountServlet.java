@@ -36,9 +36,46 @@ public class AccountServlet extends HttpServlet {
             case "/Update":
                 updatePersonInfo(request, response);
                 break;
+            case "/ChangePassword":
+                ChangePassword(request, response);
+                break;
             default:
                 ServletUtils.redirect("/NotFound", request, response);
                 break;
+        }
+
+    }
+    private void ChangePassword(HttpServletRequest request, HttpServletResponse response) throws  ServletException, IOException{
+
+        String curusername = request.getParameter("curusername");
+        String curpassword = request.getParameter("curpassword");
+        String newpassword = request.getParameter("newpassword");
+        String renewpassword = request.getParameter("renewpassword");
+
+
+        HttpSession session = request.getSession();
+        session.getAttribute("auth");
+        User u = (User)  session.getAttribute("authUser");
+        BCrypt.Result resultlogin = BCrypt.verifyer().verify(curpassword.toCharArray(), u.getPassword());
+        if(resultlogin.verified){
+
+            String bcryptHashString = BCrypt.withDefaults().hashToString(12, newpassword.toCharArray());
+            UserModel.updatePassword(curusername,bcryptHashString);
+            /*Optional<User> useraf = UserModel.findByUserName(curusername);
+            session.setAttribute("authUser",useraf.get());*/
+            /*postLogout(request,response);
+            ServletUtils.redirect("/Account/Login", request, response);*/
+            Optional<User> useraf = UserModel.findByUserName(curusername);
+            session.setAttribute("auth",true);
+            session.setAttribute("authUser",useraf.get());
+            postLogout(request,response);
+        }
+        else {
+            System.out.println("ok mat khau khong giong nhau");
+            request.setAttribute("hasError",true);
+            request.setAttribute("errorMessage","Invalid password");
+            ServletUtils.forward("/Views/vwAccount/profilesetting.jsp",request,response);
+
         }
 
     }

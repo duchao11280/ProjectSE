@@ -55,4 +55,15 @@ public class UserModel {
         }
     }
 
+    public static void updatePassword(String userName,String password) {
+        final String sql = "update user set password =:password where userName = :userName";
+        try (Connection con = DBUtils.getConnection()) {
+            con.createQuery(sql)
+                    .addParameter("userName", userName)
+                    .addParameter("password", password)
+
+                    .executeUpdate();
+        }
+    }
+
 }

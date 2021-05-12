@@ -6,8 +6,46 @@
 
 <t:main>
 
+<jsp:attribute name="js">
+
+    <script>
+        $('#frmChangePassword').on('submit', function (e) {
 
 
+            const curpassword= $('#txtCurpassword').val();
+            if (curpassword.length === 0) {
+                alert('Invalid current password.');
+                e.preventDefault();
+                return;
+            }
+
+            const password= $('#txtNewpassword').val();
+            if (password.length === 0) {
+                alert('Invalid new password.');
+                e.preventDefault();
+                return;
+            }
+
+            const confirm= $('#txtRenewpassword').val();
+            if (confirm.length === 0) {
+                alert('Invalid confirm.');
+                e.preventDefault();
+                return;
+            }
+            if(password!==confirm){
+                e.preventDefault();
+                return alert("Password is not match!")
+
+            }
+
+
+
+        });
+
+
+    </script>
+
+</jsp:attribute>
 
     <jsp:body>
         <!-- PAGE HEADER
@@ -234,24 +272,39 @@
                             <!-- password tab -->
                             <div class="tab-pane fade" id="password">
 
-                                <form action="#" method="post">
+                                <form action="#" method="post" id="frmChangePassword">
+
+                                    <c:if test="${hasError}">
+                                        <!-- ALERT -->
+                                        <div class="alert alert-mini alert-danger mb-30" role="alert">
+                                            <strong>Mat khau hien tai nhap sai</strong> ${errorMessage}
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div><!-- /ALERT -->
+
+                                    </c:if>
+                                    <div class="form-group">
+                                        <label class="form-control-label">Username</label>
+                                        <input type="text" name="curusername" id="txtCurusername" readonly class="form-control" value="${authUser.userName}">
+                                    </div>
 
                                     <div class="form-group">
                                         <label class="form-control-label">Current Password</label>
-                                        <input type="password" class="form-control">
+                                        <input type="password" name="curpassword" class="form-control" id="txtCurpassword">
                                     </div>
                                     <div class="form-group">
                                         <label class="form-control-label">New Password</label>
-                                        <input type="password" class="form-control">
+                                        <input type="password" name="newpassword" class="form-control" id="txtNewpassword">
                                     </div>
                                     <div class="form-group">
                                         <label class="form-control-label">Re-type New Password</label>
-                                        <input type="password" class="form-control">
+                                        <input type="password" name="renewpassword" class="form-control" id="txtRenewpassword">
                                     </div>
 
                                     <!--2 cai nut -->
                                     <div class="d-flex justify-content-start">
-                                        <button type="submit" class="btn btn-primary" style="margin-right: 10px;">
+                                        <button type="submit" class="btn btn-primary" style="margin-right: 10px;" formaction="${pageContext.request.contextPath}/Account/ChangePassword">
                                             <i class="fa fa-check" aria-hidden="true"></i>
                                             Change Password
                                         </button>
