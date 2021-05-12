@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : MySQL
+ Source Server         : projectse
  Source Server Type    : MySQL
- Source Server Version : 100417
+ Source Server Version : 100418
  Source Host           : localhost:3306
  Source Schema         : projectse
 
  Target Server Type    : MySQL
- Target Server Version : 100417
+ Target Server Version : 100418
  File Encoding         : 65001
 
- Date: 03/05/2021 20:19:29
+ Date: 12/05/2021 17:25:21
 */
 
 SET NAMES utf8mb4;
@@ -245,15 +245,14 @@ CREATE TABLE `user`  (
   `height` double NULL DEFAULT NULL,
   `weight` double NULL DEFAULT NULL,
   `sex` bit(1) NULL DEFAULT NULL,
+  `urlImage` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   PRIMARY KEY (`userID`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (1, 'an', '123', 1, 'dinhan', 18, 60, 70, b'0');
-INSERT INTO `user` VALUES (2, 'an', '123', 1, 'dinhan', 18, 60, 70, b'0');
-INSERT INTO `user` VALUES (3, 'anhgfds', '123', 1, 'dinhan', 18, 60, 70, b'0');
+INSERT INTO `user` VALUES (1, 'an', '$2a$12$7BEOsKjqsbmfwMd1qPIHcuqbU7JX1vNWC5NyHUyPevTWTn2aeYRue', 1, 'Dinh Tuan An', 21, 0, 0, b'0', '/Public/Imgs/Avts/14.jpg');
 
 -- ----------------------------
 -- Procedure structure for sp_addNewFood
@@ -276,13 +275,13 @@ delimiter ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `sp_addNewUser`;
 delimiter ;;
-CREATE PROCEDURE `sp_addNewUser`(in username varchar(20),upassw varchar(255), urole int, ufulln varchar(255), uage int, uheight double, uweight double, usex BIGINT)
+CREATE PROCEDURE `sp_addNewUser`(in username varchar(20),upassw varchar(255), urole int, ufulln varchar(255), uage int, uheight double, uweight double, usex BIGINT,uurlimage varchar(255))
 begin
     declare uID int;
     set uID = 1;
     while (exists (select * from user where userID = uID)) do set uID = uID + 1;
     end while;
-    insert into user values(uID, username, upassw, urole, ufulln, uage, uheight, uweight, usex);
+    insert into user values(uID, username, upassw, urole, ufulln, uage, uheight, uweight, usex,uurlimage);
 end
 ;;
 delimiter ;
