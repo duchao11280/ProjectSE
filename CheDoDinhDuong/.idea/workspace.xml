@@ -9,13 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aedd7f9-181f-44ae-b252-8749b2d89da7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AccountServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AccountServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/UserModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Views/vwAccount/profilesetting.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Views/vwAccount/profilesetting.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
-    </list>
+    <list default="true" id="0aedd7f9-181f-44ae-b252-8749b2d89da7" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

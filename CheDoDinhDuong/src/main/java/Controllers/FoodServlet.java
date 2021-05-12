@@ -7,6 +7,7 @@ import Utilties.ServletUtils;
 import beans.Category;
 import beans.Food;
 import beans.Ingredient;
+import beans.User;
 import com.google.gson.Gson;
 import filters.AuthenticationFilter;
 import filters.SessionInitFilter;
@@ -19,10 +20,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.time.LocalDate;
+
 import java.time.LocalDateTime;
+
 import java.time.temporal.ChronoField;
-import java.util.Date;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -35,6 +37,9 @@ public class FoodServlet extends HttpServlet {
         switch (path) {
             case "/Search":
                 postSearch(request,response);
+                break;
+            case"/BuildMenu":
+                postBuildMenu(request,response);
                 break;
             default:
                 ServletUtils.redirect("/NotFound", request, response);
@@ -51,7 +56,17 @@ public class FoodServlet extends HttpServlet {
         System.out.println(search);
         ServletUtils.forward("/Views/vwFood/Search.jsp",request,response);
     }
+    private void postBuildMenu(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("authUser");
 
+        String date = request.getParameter("dtpkCustomMenu").replace("T"," ");
+        int foodID = Integer.parseInt(request.getParameter("foodIdBuild"));
+        int number = Integer.parseInt(request.getParameter("numberBuild"));
+        FoodModel.addCustomMenu(user.getUserID(),foodID,date,number);
+        System.out.println(user.getUserID()+"     "+ date+"+"+foodID+"+"+number);
+        ServletUtils.forward("/Views/vwFood/BuildMenu.jsp",request,response);
+    }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getPathInfo();
         List<Category> listcat = CategoryModel.getAll();
