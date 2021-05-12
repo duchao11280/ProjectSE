@@ -1,6 +1,7 @@
 package Controllers;
 
 import Models.CategoryModel;
+import Models.CustomMenuModel;
 import Models.FoodModel;
 import Models.IngredientModel;
 import Utilties.ServletUtils;
@@ -9,8 +10,7 @@ import beans.Food;
 import beans.Ingredient;
 import beans.User;
 import com.google.gson.Gson;
-import filters.AuthenticationFilter;
-import filters.SessionInitFilter;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,6 +25,8 @@ import java.time.LocalDateTime;
 
 import java.time.temporal.ChronoField;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -63,7 +65,9 @@ public class FoodServlet extends HttpServlet {
         String date = request.getParameter("dtpkCustomMenu").replace("T"," ");
         int foodID = Integer.parseInt(request.getParameter("foodIdBuild"));
         int number = Integer.parseInt(request.getParameter("numberBuild"));
-        FoodModel.addCustomMenu(user.getUserID(),foodID,date,number);
+        CustomMenuModel.addCustomMenu(user.getUserID(),foodID,date,number);
+
+
         System.out.println(user.getUserID()+"     "+ date+"+"+foodID+"+"+number);
         ServletUtils.forward("/Views/vwFood/BuildMenu.jsp",request,response);
     }

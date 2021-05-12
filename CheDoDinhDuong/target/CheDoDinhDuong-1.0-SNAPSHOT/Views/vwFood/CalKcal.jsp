@@ -6,7 +6,14 @@
 <t:main>
     <jsp:body>
         <div class="container-fluid mt-3">
-            <h3>Calculate calories in the meal</h3>
+            <div class="row m-50">
+                <div class="col">
+                    <div class="text-center">
+                        <h3>Calculate calories in the meal</h3>
+                    </div>
+                </div>
+            </div>
+
             <table class="table">
                 <thead>
                 <tr>

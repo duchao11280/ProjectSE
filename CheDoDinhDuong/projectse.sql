@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : projectse
+ Source Server         : Duc Hao
  Source Server Type    : MySQL
- Source Server Version : 100418
+ Source Server Version : 100414
  Source Host           : localhost:3306
  Source Schema         : projectse
 
  Target Server Type    : MySQL
- Target Server Version : 100418
+ Target Server Version : 100414
  File Encoding         : 65001
 
- Date: 12/05/2021 17:25:21
+ Date: 12/05/2021 18:48:52
 */
 
 SET NAMES utf8mb4;
@@ -90,6 +90,17 @@ CREATE TABLE `custommenu`  (
 -- ----------------------------
 -- Records of custommenu
 -- ----------------------------
+INSERT INTO `custommenu` VALUES (1, 1, '2021-06-01 13:10:00', 8);
+INSERT INTO `custommenu` VALUES (1, 4, '2021-05-12 13:13:00', 4);
+INSERT INTO `custommenu` VALUES (1, 4, '2021-05-31 13:10:00', 6);
+INSERT INTO `custommenu` VALUES (1, 6, '2021-05-10 16:38:00', 1);
+INSERT INTO `custommenu` VALUES (1, 6, '2021-05-12 14:36:00', 3);
+INSERT INTO `custommenu` VALUES (1, 7, '2021-05-13 14:48:00', 23);
+INSERT INTO `custommenu` VALUES (1, 11, '2021-05-22 14:17:00', 1);
+INSERT INTO `custommenu` VALUES (1, 12, '2021-05-31 13:10:00', 2);
+INSERT INTO `custommenu` VALUES (1, 12, '2021-06-02 19:00:00', 1);
+INSERT INTO `custommenu` VALUES (1, 30, '2021-05-13 14:16:00', 3);
+INSERT INTO `custommenu` VALUES (1, 30, '2021-05-17 14:17:00', 3);
 
 -- ----------------------------
 -- Table structure for food
@@ -153,7 +164,6 @@ INSERT INTO `food` VALUES (28, 'Vú sữa', 4, 18.5, 83, 0, 2, NULL, NULL, 9.85,
 INSERT INTO `food` VALUES (29, 'Táo tây', 4, 25.8, 107, 0, 1.1, NULL, NULL, 15.96, NULL, NULL, 232.6, 5.7, 34.2, '/Public/Imgs/Food/1.jpg', b'0');
 INSERT INTO `food` VALUES (30, 'Cơm trứng', 3, 44.4, 281, 6.3, 11.9, NULL, NULL, NULL, NULL, NULL, 226, 2.07, 80.3, '/Public/Imgs/Food/1.jpg', b'0');
 INSERT INTO `food` VALUES (31, 'Bún thịt nướng', 1, NULL, 352, 14, 26.7, NULL, NULL, NULL, 0.159, NULL, 423, 1.1, 62, '/Public/Imgs/Food/1.jpg', b'0');
-INSERT INTO `food` VALUES (32, 'test new food', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '/Public/Imgs/Food/bdmt.jpg', b'0');
 
 -- ----------------------------
 -- Table structure for historyuserbmi
@@ -196,8 +206,6 @@ INSERT INTO `ingredient` VALUES (30, 3, 300, NULL);
 INSERT INTO `ingredient` VALUES (30, 4, 100, NULL);
 INSERT INTO `ingredient` VALUES (31, 5, 100, NULL);
 INSERT INTO `ingredient` VALUES (31, 6, 100, NULL);
-INSERT INTO `ingredient` VALUES (32, 5, 123, '');
-INSERT INTO `ingredient` VALUES (32, 15, 10, '');
 
 -- ----------------------------
 -- Table structure for suggestmenu
@@ -253,6 +261,23 @@ CREATE TABLE `user`  (
 -- Records of user
 -- ----------------------------
 INSERT INTO `user` VALUES (1, 'an', '$2a$12$7BEOsKjqsbmfwMd1qPIHcuqbU7JX1vNWC5NyHUyPevTWTn2aeYRue', 1, 'Dinh Tuan An', 21, 0, 0, b'0', '/Public/Imgs/Avts/14.jpg');
+
+-- ----------------------------
+-- Procedure structure for add_custom_menu
+-- ----------------------------
+DROP PROCEDURE IF EXISTS `add_custom_menu`;
+delimiter ;;
+CREATE PROCEDURE `add_custom_menu`(IN useridd int(11), foodidd int(11), dtpk VARCHAR(50), numbercustom int(11))
+BEGIN
+	
+	IF ((select count(*) from custommenu where userID = useridd and foodID = foodidd and datetime = CONVERT(dtpk,DATETIME))>0)
+		THEN UPDATE custommenu set number = number + numbercustom WHERE userID = useridd and foodID = foodidd and datetime = CONVERT(dtpk,DATETIME);
+	ELSE
+		INSERT into custommenu VALUES(useridd,foodidd,dtpk,numbercustom);
+	end if;
+END
+;;
+delimiter ;
 
 -- ----------------------------
 -- Procedure structure for sp_addNewFood

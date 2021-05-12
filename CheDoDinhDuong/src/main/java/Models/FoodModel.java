@@ -102,17 +102,7 @@ public class FoodModel {
                     .executeUpdate();
         }
     }
-    public static void addCustomMenu(int userid,int foodid,String dtpk,int number) {
-        String sql = "call add_custom_menu(:userid,:foodid,:dtpk,:number)";
-        try (Connection con = DBUtils.getConnection()) {
-            con.createQuery(sql)
-                    .addParameter("userid", userid)
-                    .addParameter("foodid", foodid)
-                    .addParameter("dtpk", dtpk)
-                    .addParameter("number", number)
-                    .executeUpdate();
-        }
-    }
+
     public static void deleteFood(String foodID){
         String sql = " UPDATE food set isDelete=1 where foodID=:foodID";
         try(Connection con = DBUtils.getConnection()){

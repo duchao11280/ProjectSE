@@ -28,4 +28,8 @@
         <filter-name>AuthenticationFilter</filter-name>
         <url-pattern>/Food/BuildMenu</url-pattern>
     </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <url-pattern>/Menu/MyMenu</url-pattern>
+    </filter-mapping>
 </web-app>

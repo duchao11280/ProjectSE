@@ -1,16 +1,20 @@
 package Controllers;
 
 import Models.ConditionModel;
+import Models.CustomMenuModel;
 import Models.MenuModel;
 import Utilties.ServletUtils;
 import beans.Condition;
+import beans.CustomMenu;
 import beans.SuggestMenu;
+import beans.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
@@ -26,12 +30,22 @@ public class MenuServlet extends HttpServlet {
             case "/SuggestMenu":
                 doSuggestMenu(request,response);
                 break;
+            case "/MyMenu":
+                getMyMenu(request,response);
+                break;
             default:
                 ServletUtils.redirect("/NotFound",request,response);
         }
 
     }
-
+    private void getMyMenu(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("authUser");
+        List<CustomMenu> lstCusMenu = CustomMenuModel.getMenuFromNowByUserID(user.getUserID());
+        request.setAttribute("lstCusMenu",lstCusMenu);
+        System.out.println(lstCusMenu);
+        ServletUtils.forward("/Views/vwMenu/MyMenu.jsp",request,response);
+    }
     private void doSuggestMenu(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
         List<Condition> lstCon = ConditionModel.getAllCondition();
         request.setAttribute("lstCon",lstCon);

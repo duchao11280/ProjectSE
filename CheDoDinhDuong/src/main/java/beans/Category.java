@@ -24,4 +24,12 @@ public class Category {
     public void setCatName(String catName) {
         CatName = catName;
     }
+
+    @Override
+    public String toString() {
+        return "Category{" +
+                "CatID=" + CatID +
+                ", CatName='" + CatName + '\'' +
+                '}';
+    }
 }

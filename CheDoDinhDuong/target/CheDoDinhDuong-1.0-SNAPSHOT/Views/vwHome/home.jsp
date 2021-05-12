@@ -61,8 +61,8 @@
                     </div>
                     <div class="col-md-4 col-xs-6">
                         <div class="text-center">
-                            <i class="ico-light ico-lg ico-rounded ico-hover et-alarmclock"></i>
-                            <a href="#"> <h4>Today what do eat</h4></a>
+                            <a href="${pageContext.request.contextPath}/Menu/MyMenu"><i class="ico-light ico-lg ico-rounded ico-hover et-alarmclock"></i></a>
+                            <a href="${pageContext.request.contextPath}/Menu/MyMenu"> <h4>Today what do eat</h4></a>
                             <p>Suggestions for meals today.</p>
                         </div>
                     </div>
