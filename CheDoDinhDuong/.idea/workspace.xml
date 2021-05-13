@@ -9,20 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aedd7f9-181f-44ae-b252-8749b2d89da7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/beans/History.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/Views/vwAccount/history.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AccountServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AccountServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/UserModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Views/vwAccount/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Views/vwAccount/profile.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Views/vwAccount/profilesetting.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Views/vwAccount/profilesetting.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwAccount/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwAccount/profile.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwAccount/profilesetting.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwAccount/profilesetting.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0aedd7f9-181f-44ae-b252-8749b2d89da7" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -219,6 +206,7 @@
       <workItem from="1620819442588" duration="795000" />
       <workItem from="1620872455521" duration="18893000" />
       <workItem from="1620891910150" duration="529000" />
+      <workItem from="1620893317122" duration="6282000" />
     </task>
     <servers />
   </component>

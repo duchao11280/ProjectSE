@@ -27,4 +27,25 @@ public class CustomMenuModel {
         }
 
     }
+    public static List<CustomMenu> getDateFromNowByUserID(int userid){
+        String sql =  "SELECT datetime as datetime\n" +
+                "from custommenu\n" +
+                "WHere userID = :userid and DATEDIFF(datetime,NOW())>0 GROUP BY DATE(datetime) ORDER BY datetime";
+        try (Connection con =DBUtils.getConnection()){
+            return con.createQuery(sql)
+                    .addParameter("userid",userid)
+                    .executeAndFetch(CustomMenu.class);
+        }
+
+    }
+    public static List<CustomMenu> getDateforloopFromNowByUserID(int userid) {
+        String sql = "SELECT datetime as datetime\n" +
+                "from custommenu\n" +
+                "WHere userID = :userid and DATEDIFF(datetime,NOW())>0 GROUP BY datetime ORDER BY datetime";
+        try (Connection con = DBUtils.getConnection()) {
+            return con.createQuery(sql)
+                    .addParameter("userid", userid)
+                    .executeAndFetch(CustomMenu.class);
+        }
+    }
 }

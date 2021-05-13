@@ -43,7 +43,11 @@ public class MenuServlet extends HttpServlet {
         User user = (User) session.getAttribute("authUser");
         List<CustomMenu> lstCusMenu = CustomMenuModel.getMenuFromNowByUserID(user.getUserID());
         request.setAttribute("lstCusMenu",lstCusMenu);
-        System.out.println(lstCusMenu);
+        List<CustomMenu> lstDate = CustomMenuModel.getDateFromNowByUserID(user.getUserID());
+        request.setAttribute("lstDate",lstDate);
+        List<CustomMenu> lstDate2loop = CustomMenuModel.getDateforloopFromNowByUserID(user.getUserID());
+        request.setAttribute("lstDate2loop",lstDate2loop);
+        System.out.println(lstDate);
         ServletUtils.forward("/Views/vwMenu/MyMenu.jsp",request,response);
     }
     private void doSuggestMenu(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {

@@ -1,5 +1,7 @@
 package beans;
 
+import Models.FoodModel;
+
 import java.util.Date;
 
 public class CustomMenu {
@@ -13,6 +15,15 @@ public class CustomMenu {
         this.foodID = foodID;
         this.datetime = datetime;
         this.number = number;
+    }
+
+    public CustomMenu(int userID, Date datetime) {
+        this.userID = userID;
+        this.datetime = datetime;
+    }
+
+    public CustomMenu(Date datetime) {
+        this.datetime = datetime;
     }
 
     public int getUserID() {
@@ -56,4 +67,5 @@ public class CustomMenu {
                 ", number=" + number +
                 '}';
     }
+    public String getFoodNamebyFoodID(){ return FoodModel.getFoodNameByID(String.valueOf(this.foodID));}
 }
