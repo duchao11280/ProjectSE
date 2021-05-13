@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : Duc Hao
+ Source Server         : projectse
  Source Server Type    : MySQL
- Source Server Version : 100414
+ Source Server Version : 100418
  Source Host           : localhost:3306
  Source Schema         : projectse
 
  Target Server Type    : MySQL
- Target Server Version : 100414
+ Target Server Version : 100418
  File Encoding         : 65001
 
- Date: 12/05/2021 18:48:52
+ Date: 13/05/2021 14:58:12
 */
 
 SET NAMES utf8mb4;
@@ -91,11 +91,14 @@ CREATE TABLE `custommenu`  (
 -- Records of custommenu
 -- ----------------------------
 INSERT INTO `custommenu` VALUES (1, 1, '2021-06-01 13:10:00', 8);
+INSERT INTO `custommenu` VALUES (1, 1, '2021-06-02 14:50:00', 9999);
+INSERT INTO `custommenu` VALUES (1, 3, '2021-06-02 14:50:00', 100000);
 INSERT INTO `custommenu` VALUES (1, 4, '2021-05-12 13:13:00', 4);
 INSERT INTO `custommenu` VALUES (1, 4, '2021-05-31 13:10:00', 6);
 INSERT INTO `custommenu` VALUES (1, 6, '2021-05-10 16:38:00', 1);
 INSERT INTO `custommenu` VALUES (1, 6, '2021-05-12 14:36:00', 3);
 INSERT INTO `custommenu` VALUES (1, 7, '2021-05-13 14:48:00', 23);
+INSERT INTO `custommenu` VALUES (1, 7, '2021-05-22 09:21:00', 66);
 INSERT INTO `custommenu` VALUES (1, 11, '2021-05-22 14:17:00', 1);
 INSERT INTO `custommenu` VALUES (1, 12, '2021-05-31 13:10:00', 2);
 INSERT INTO `custommenu` VALUES (1, 12, '2021-06-02 19:00:00', 1);
@@ -170,19 +173,27 @@ INSERT INTO `food` VALUES (31, 'Bún thịt nướng', 1, NULL, 352, 14, 26.7, N
 -- ----------------------------
 DROP TABLE IF EXISTS `historyuserbmi`;
 CREATE TABLE `historyuserbmi`  (
-  `historyID` int NOT NULL,
+  `historyID` int NOT NULL AUTO_INCREMENT,
   `userID` int NULL DEFAULT NULL,
   `weight` double NULL DEFAULT NULL,
   `height` double NULL DEFAULT NULL,
-  `dateUpdate` date NULL DEFAULT NULL,
+  `dateUpdate` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`historyID`) USING BTREE,
   INDEX `FK_historyuserbmi_user`(`userID`) USING BTREE,
   CONSTRAINT `FK_historyuserbmi_user` FOREIGN KEY (`userID`) REFERENCES `user` (`userID`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of historyuserbmi
 -- ----------------------------
+INSERT INTO `historyuserbmi` VALUES (8, 1, 555, 555, '2021-05-13 14:38:25');
+INSERT INTO `historyuserbmi` VALUES (9, 1, 555, 555, '2021-05-13 14:38:34');
+INSERT INTO `historyuserbmi` VALUES (10, 1, 222, 111, '2021-05-13 14:39:14');
+INSERT INTO `historyuserbmi` VALUES (11, 1, 999, 999, '2021-05-13 14:46:46');
+INSERT INTO `historyuserbmi` VALUES (12, 1, 999, 999, '2021-05-13 14:55:49');
+INSERT INTO `historyuserbmi` VALUES (13, 1, 77, 77, '2021-05-13 14:56:19');
+INSERT INTO `historyuserbmi` VALUES (14, 1, 99, 99, '2021-05-13 14:56:34');
+INSERT INTO `historyuserbmi` VALUES (15, 1, 99, 99, '2021-05-13 14:56:41');
 
 -- ----------------------------
 -- Table structure for ingredient
@@ -260,7 +271,7 @@ CREATE TABLE `user`  (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (1, 'an', '$2a$12$7BEOsKjqsbmfwMd1qPIHcuqbU7JX1vNWC5NyHUyPevTWTn2aeYRue', 1, 'Dinh Tuan An', 21, 0, 0, b'0', '/Public/Imgs/Avts/14.jpg');
+INSERT INTO `user` VALUES (1, 'an', '$2a$12$7BEOsKjqsbmfwMd1qPIHcuqbU7JX1vNWC5NyHUyPevTWTn2aeYRue', 1, 'Dinh Tuan An', 21, 99, 99, b'0', '/Public/Imgs/Avts/14.jpg');
 
 -- ----------------------------
 -- Procedure structure for add_custom_menu
