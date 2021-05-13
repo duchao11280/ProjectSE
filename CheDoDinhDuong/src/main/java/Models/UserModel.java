@@ -1,8 +1,7 @@
 package Models;
 
 import Utilties.DBUtils;
-import beans.Category;
-import beans.User;
+import beans.*;
 import org.sql2o.Connection;
 
 import java.util.List;
@@ -25,6 +24,19 @@ public class UserModel {
         }
     }
 
+    public static List<History> getHistorybyUserId(int id){
+        final String sql = "SELECT *\n" +
+                "FROM historyuserbmi as h\n" +
+                "where h.userId = :id";
+        try (Connection con = DBUtils.getConnection()) {
+            return con.createQuery(sql)
+                    .addParameter("id", id)
+                    .executeAndFetch(History.class);
+
+        }
+    }
+
+
     public static void add(User user) {
         final String sql = "Call sp_addNewUser(:username,:password,:role,:name,:age,:height,:weight,:sex,:urlimage)";
         try (Connection con = DBUtils.getConnection()) {
@@ -38,6 +50,20 @@ public class UserModel {
                     .addParameter("weight", user.getWeight())
                     .addParameter("sex", user.isSex())
                     .addParameter("urlimage", user.getUrlImage())
+                    .executeUpdate();
+        }
+    }
+
+    public static void addHistorytodb(History h) {
+        final String sql = "INSERT INTO historyuserbmi (userID, weight, height, dateUpdate) VALUES (:userID,:weight,:height,CONVERT(:dateUpdate,datetime) )";
+        try (Connection con = DBUtils.getConnection()) {
+            con.createQuery(sql)
+
+                    .addParameter("userID", h.getUserID())
+                    .addParameter("weight", h.getWeight())
+                    .addParameter("height", h.getHeight())
+                    .addParameter("dateUpdate",  h.getDateUpdate() )
+
                     .executeUpdate();
         }
     }

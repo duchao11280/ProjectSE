@@ -7,6 +7,8 @@
 
 
 <t:main>
+
+
     <jsp:body>
         <!-- PAGE HEADER
 
@@ -57,9 +59,10 @@
 
                         <!-- SIDE NAV -->
                         <ul class="side-nav list-group mb-60" id="sidebar-nav">
-                            <li class="list-group-item active"><a href="${pageContext.request.contextPath}/Account/Profile"><i class="fa fa-eye"></i> PROFILE</a></li>
+                            <li class="list-group-item "><a href="${pageContext.request.contextPath}/Account/Profile"><i class="fa fa-eye"></i> PROFILE</a></li>
                             <li class="list-group-item"><a href="${pageContext.request.contextPath}/Account/ProfileSetting"><i class="fa fa-gears"></i> SETTINGS</a></li>
-                            <li class="list-group-item"><a href="${pageContext.request.contextPath}/Account/History"><i class="fa fa-gears"></i> HISTORY </a></li>
+                            <li class="list-group-item active" ><a href="${pageContext.request.contextPath}/Account/History"><i class="fa fa-gears"></i> HISTORY </a></li>
+
                         </ul>
                         <!-- /SIDE NAV -->
 
@@ -100,24 +103,13 @@
 
                                         <form>
 
-                                            <div class="form-group row">
+                                            <%--<div class="form-group row">
                                                 <label for="staticEmail" class="col-sm-2 col-form-label">Username</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" name="usernameprofile"  readonly class="form-control-plaintext" id="staticEmail" value="${authUser.userName}">
                                                 </div>
                                             </div>
-                                            <div class="form-group row">
-                                                <label for="staticEmail1" class="col-sm-2 col-form-label">Full Name</label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" readonly class="form-control-plaintext" id="staticEmail1" value="${authUser.fullName}">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="staticEmail2" class="col-sm-2 col-form-label">Age</label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="${authUser.age}">
-                                                </div>
-                                            </div>
+
                                             <div class="form-group row">
                                                 <label for="staticEmail3" class="col-sm-2 col-form-label">Height</label>
                                                 <div class="col-sm-10">
@@ -130,29 +122,46 @@
                                                     <input type="text"  readonly class="form-control-plaintext" id="staticEmail4" value="${authUser.weight} (kg)">
                                                 </div>
                                             </div>
+                                            <div class="form-group row">
+                                                <label for="staticEmail5" class="col-sm-2 col-form-label">Date Update</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text"  readonly class="form-control-plaintext" id="staticEmail5" value="05/13/2018">
+                                                </div>
+                                            </div>--%>
+                                                <c:choose>
+                                                    <c:when test="${lsthistory.size() == 0}">
+                                                        <div class="card-body">
+                                                            <p class="card-text">Không có dữ liệu.</p>
+                                                        </div>
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        <div class="card-body">
+                                                            <table class="table table-hover">
+                                                                <thead>
+                                                                <tr>
+                                                                    <th scope="col">#</th>
+                                                                    <th scope="col">weight</th>
+                                                                    <th scope="col">height</th>
+                                                                    <th scope="col">date update</th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                <c:forEach var="c" items="${lsthistory}">
+                                                                    <tr>
+                                                                        <th scope="row"></th>
+                                                                        <td>${c.getWeight()}</td>
+                                                                        <td>${c.getHeight()}</td>
+                                                                        <td>${c.getDateUpdate()}
+                                                                        </td>
 
-                                        
-                                           <c:choose>
-                                               <c:when test="${authUser.sex == false}">
-                                                   <div class="form-group row">
-                                                       <label for="staticEmail5" class="col-sm-2 col-form-label">Sex</label>
-                                                       <div class="col-sm-10">
-                                                           <input type="text" readonly class="form-control-plaintext" id="staticEmail5" value="Male">
-                                                       </div>
-                                                   </div>
-                                               </c:when>
 
-                                               <c:otherwise>
-                                                   <div class="form-group row">
-                                                       <label for="staticEmail6" class="col-sm-2 col-form-label">Sex</label>
-                                                       <div class="col-sm-10">
-                                                           <input type="text" readonly class="form-control-plaintext" id="staticEmail6" value="Female">
-                                                       </div>
-                                                   </div>
-                                               </c:otherwise>
-                                           </c:choose>
-
-
+                                                                    </tr>
+                                                                </c:forEach>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </c:otherwise>
+                                                </c:choose>
 
 
 
@@ -181,3 +190,4 @@
 
     </jsp:body>
 </t:main>
+

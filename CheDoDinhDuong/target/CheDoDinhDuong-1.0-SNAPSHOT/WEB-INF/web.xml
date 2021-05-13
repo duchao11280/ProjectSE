@@ -26,6 +26,10 @@
     </filter-mapping>
     <filter-mapping>
         <filter-name>AuthenticationFilter</filter-name>
+        <url-pattern>/Account/History</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
         <url-pattern>/Food/BuildMenu</url-pattern>
     </filter-mapping>
     <filter-mapping>

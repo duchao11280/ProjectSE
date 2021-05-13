@@ -97,7 +97,7 @@
                         <div class="form-group">
                             <div class='mb-3 input-group  d-flex align-items-center' id='numberBuild'>
                                 Number: &nbsp;
-                                <input type="text" class="form-control numberBM" name="numberBuild"/>
+                                <input type="number" class="form-control numberBM" name="numberBuild"/>
                             </div>
                         </div>
                         <div class="d-flex justify-content-center">

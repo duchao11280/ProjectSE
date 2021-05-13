@@ -5,7 +5,9 @@ import Utilties.ServletUtils;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
 import beans.Category;
+import beans.History;
 import beans.User;
+import com.google.gson.Gson;
 
 import javax.servlet.ServletException;
 
@@ -14,6 +16,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Optional;
 
 @WebServlet(name = "AccountServlet", urlPatterns = "/Account/*")
@@ -126,6 +133,29 @@ public class AccountServlet extends HttpServlet {
     }
 
     private void updatePersonInfo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        String usernameold = request.getParameter("usernameinfo");
+        Optional<User> userold = UserModel.findByUserName(usernameold);
+        int olduserid = userold.get().getUserID();
+        double oldweight = userold.get().getWeight();
+        double oldheight = userold.get().getHeight();
+
+        long millis = System.currentTimeMillis();
+        java.sql.Date dtnow = new java.sql.Date(millis);
+
+
+
+        History history = new History(-1,olduserid,oldweight,oldheight,dtnow);
+
+        System.out.println(history);
+
+
+        UserModel.addHistorytodb(history);
+
+
+
+
+
         String usernameinfo = request.getParameter("usernameinfo");
         String fullnameinfo = request.getParameter("fullnameinfo");
         int ageinfo = Integer.parseInt(request.getParameter("ageinfo"));
@@ -143,8 +173,11 @@ public class AccountServlet extends HttpServlet {
             sexinfo=true;
         }
 
+
+
         UserModel.update(usernameinfo,fullnameinfo,ageinfo,heightinfo,weightinfo,sexinfo);
         Optional<User> useraf = UserModel.findByUserName(usernameinfo);
+        System.out.println(useraf);
         HttpSession session = request.getSession();
         session.setAttribute("auth",true);
         session.setAttribute("authUser",useraf.get());
@@ -231,6 +264,40 @@ public class AccountServlet extends HttpServlet {
             path="/Profile";
         }
         switch (path){
+
+            case "/HistorySelected":
+                response.setContentType("text/html;charset=utf-8");
+
+                HttpSession session2 = request.getSession();
+                User u2 = (User)  session2.getAttribute("authUser");
+                List<History> lst2 = UserModel.getHistorybyUserId(u2.getUserID());
+
+                PrintWriter writer  = response.getWriter();
+                String ggson = new Gson().toJson(lst2);
+                response.setContentType("application/json");
+                response.setCharacterEncoding("utf-8");
+                writer.println(ggson);
+                writer.flush();
+
+                request.setAttribute("lsthistory",lst2);
+
+                break;
+            case "/History":
+                HttpSession session = request.getSession();
+                User u = (User)  session.getAttribute("authUser");
+                List<History> lst = UserModel.getHistorybyUserId(u.getUserID());
+
+                /*PrintWriter writer  = response.getWriter();
+                String ggson = new Gson().toJson(lst);
+                response.setContentType("application/json");
+                response.setCharacterEncoding("utf-8");
+                writer.println(ggson);
+                writer.flush();*/
+
+                System.out.println(lst);
+                request.setAttribute("lsthistory",lst);
+                ServletUtils.forward("/Views/vwAccount/history.jsp",request,response);
+                break;
             case "/Profile":
                 ServletUtils.forward("/Views/vwAccount/profile.jsp",request,response);
                 break;
