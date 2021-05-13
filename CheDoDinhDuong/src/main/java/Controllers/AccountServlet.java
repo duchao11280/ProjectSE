@@ -1,10 +1,12 @@
 package Controllers;
 
+import Models.CustomMenuModel;
 import Models.UserModel;
 import Utilties.ServletUtils;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
 import beans.Category;
+import beans.CustomMenu;
 import beans.History;
 import beans.User;
 import com.google.gson.Gson;
@@ -257,7 +259,18 @@ public class AccountServlet extends HttpServlet {
         ServletUtils.redirect("/Home",request,response);
 
     }
-
+    private void getMyMenu(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("authUser");
+        List<CustomMenu> lstCusMenu = CustomMenuModel.getMenuFromNowByUserID(user.getUserID());
+        request.setAttribute("lstCusMenu",lstCusMenu);
+        List<CustomMenu> lstDate = CustomMenuModel.getDateFromNowByUserID(user.getUserID());
+        request.setAttribute("lstDate",lstDate);
+        List<CustomMenu> lstDate2loop = CustomMenuModel.getDateforloopFromNowByUserID(user.getUserID());
+        request.setAttribute("lstDate2loop",lstDate2loop);
+        System.out.println(lstDate);
+        ServletUtils.forward("/Views/vwAccount/MyMenu.jsp",request,response);
+    }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getPathInfo();
         if(path == null){
@@ -265,22 +278,8 @@ public class AccountServlet extends HttpServlet {
         }
         switch (path){
 
-            case "/HistorySelected":
-                response.setContentType("text/html;charset=utf-8");
-
-                HttpSession session2 = request.getSession();
-                User u2 = (User)  session2.getAttribute("authUser");
-                List<History> lst2 = UserModel.getHistorybyUserId(u2.getUserID());
-
-                PrintWriter writer  = response.getWriter();
-                String ggson = new Gson().toJson(lst2);
-                response.setContentType("application/json");
-                response.setCharacterEncoding("utf-8");
-                writer.println(ggson);
-                writer.flush();
-
-                request.setAttribute("lsthistory",lst2);
-
+            case "/MyMenu":
+                getMyMenu(request,response);
                 break;
             case "/History":
                 HttpSession session = request.getSession();

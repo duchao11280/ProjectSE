@@ -30,26 +30,13 @@ public class MenuServlet extends HttpServlet {
             case "/SuggestMenu":
                 doSuggestMenu(request,response);
                 break;
-            case "/MyMenu":
-                getMyMenu(request,response);
-                break;
+
             default:
                 ServletUtils.redirect("/NotFound",request,response);
         }
 
     }
-    private void getMyMenu(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        User user = (User) session.getAttribute("authUser");
-        List<CustomMenu> lstCusMenu = CustomMenuModel.getMenuFromNowByUserID(user.getUserID());
-        request.setAttribute("lstCusMenu",lstCusMenu);
-        List<CustomMenu> lstDate = CustomMenuModel.getDateFromNowByUserID(user.getUserID());
-        request.setAttribute("lstDate",lstDate);
-        List<CustomMenu> lstDate2loop = CustomMenuModel.getDateforloopFromNowByUserID(user.getUserID());
-        request.setAttribute("lstDate2loop",lstDate2loop);
-        System.out.println(lstDate);
-        ServletUtils.forward("/Views/vwMenu/MyMenu.jsp",request,response);
-    }
+
     private void doSuggestMenu(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
         List<Condition> lstCon = ConditionModel.getAllCondition();
         request.setAttribute("lstCon",lstCon);

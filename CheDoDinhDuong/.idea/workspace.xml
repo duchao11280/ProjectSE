@@ -74,11 +74,23 @@
       <recent name="D:\Project\ProjectSe\ProjectSE\CheDoDinhDuong\src\main\webapp\Views\Public\Imgs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Study\ProjectSE\ProjectSE\CheDoDinhDuong\src\main\webapp\Views\vwAccount" />
       <recent name="D:\Project\ProjectSe\ProjectSE\CheDoDinhDuong\src\main\webapp" />
       <recent name="D:\Project\ProjectSe\ProjectSE\CheDoDinhDuong\src\main\webapp\Views\Public" />
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 9.0.40" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.40" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/CheDoDinhDuong/Home" />
       <option name="UPDATING_POLICY" value="update-resources" />
@@ -206,7 +218,7 @@
       <workItem from="1620819442588" duration="795000" />
       <workItem from="1620872455521" duration="18893000" />
       <workItem from="1620891910150" duration="529000" />
-      <workItem from="1620893317122" duration="6282000" />
+      <workItem from="1620893317122" duration="10317000" />
     </task>
     <servers />
   </component>

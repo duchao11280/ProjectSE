@@ -261,7 +261,7 @@
                             <li class="list-group-item "><a href="${pageContext.request.contextPath}/Account/Profile"><i class="fa fa-eye"></i> PROFILE</a></li>
                             <li class="list-group-item active"><a href="${pageContext.request.contextPath}/Account/ProfileSetting"><i class="fa fa-gears"></i> SETTINGS</a></li>
                             <li class="list-group-item"><a href="${pageContext.request.contextPath}/Account/History"><i class="fa fa-gears"></i> HISTORY </a></li>
-
+                            <li class="list-group-item"><a href="${pageContext.request.contextPath}/Account/MyMenu"><i class="fa fa-gears"></i> MY MENU</a></li>
                         </ul>
                         <!-- /SIDE NAV -->
 
