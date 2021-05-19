@@ -256,7 +256,7 @@ public class AccountServlet extends HttpServlet {
         User user = new User(-1,role,age,username,bcryptHashString,name,height,weight,sex,urlImage);
 
         UserModel.add(user);
-        ServletUtils.redirect("/Home",request,response);
+        ServletUtils.redirect("/Account/Login",request,response);
 
     }
     private void getMyMenu(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
@@ -306,11 +306,41 @@ public class AccountServlet extends HttpServlet {
             case "/Login":
 
                 request.setAttribute("hasError", false);
+                HttpSession session2 = request.getSession();
+                boolean auth = (boolean) session2.getAttribute("auth");
+                if(auth==true){
+                    String url = (String) session2.getAttribute("retUrl");
+                    if(url ==null){
+                            url = "/Home";
+                    }
+                    ServletUtils.redirect(url,request,response);
+                }
+                else
+                {
+                    ServletUtils.forward("/Views/vwAccount/login.jsp",request,response);
+                }
 
-                ServletUtils.forward("/Views/vwAccount/login.jsp",request,response);
+
+
                 break;
             case "/Register":
-                ServletUtils.forward("/Views/vwAccount/register.jsp",request,response);
+
+                request.setAttribute("hasError", false);
+                HttpSession session3 = request.getSession();
+                boolean auth2 = (boolean) session3.getAttribute("auth");
+                if(auth2==true){
+                    String url = (String) session3.getAttribute("retUrl");
+                    if(url ==null){
+                        url = "/Home";
+                    }
+                    ServletUtils.redirect(url,request,response);
+                }
+                else
+                {
+                    ServletUtils.forward("/Views/vwAccount/register.jsp",request,response);
+                }
+
+
                 break;
             case "/IsAvailable":
                 String username = request.getParameter("user");
