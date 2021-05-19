@@ -9,7 +9,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aedd7f9-181f-44ae-b252-8749b2d89da7" name="Default Changelist" comment="" />
+    <list default="true" id="0aedd7f9-181f-44ae-b252-8749b2d89da7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Views/vwAdmin/usermanagement.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectse.sql" beforeDir="false" afterPath="$PROJECT_DIR$/projectse.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AdminServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AdminServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/UserModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Views/vwAdmin/editdetailsmenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Views/vwAdmin/editdetailsmenu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Views/vwAdmin/editfood.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Views/vwAdmin/editfood.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Views/vwAdmin/editmenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Views/vwAdmin/editmenu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Views/vwAdmin/foodmanagement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Views/vwAdmin/foodmanagement.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Views/vwAdmin/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Views/vwAdmin/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Views/vwAdmin/menumanagement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Views/vwAdmin/menumanagement.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwAdmin/editdetailsmenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwAdmin/editdetailsmenu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwAdmin/editfood.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwAdmin/editfood.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwAdmin/editmenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwAdmin/editmenu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwAdmin/foodmanagement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwAdmin/foodmanagement.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwAdmin/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwAdmin/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwAdmin/menumanagement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/CheDoDinhDuong-1.0-SNAPSHOT/Views/vwAdmin/menumanagement.jsp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,8 +38,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Tag Library Descriptor" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -80,6 +99,19 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 9.0.40" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.40" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/CheDoDinhDuong/Home" />
       <option name="UPDATING_POLICY" value="update-resources" />
@@ -210,6 +242,8 @@
       <workItem from="1620893317122" duration="10477000" />
       <workItem from="1621174981170" duration="856000" />
       <workItem from="1621387118862" duration="1101000" />
+      <workItem from="1621390743719" duration="6741000" />
+      <workItem from="1621408476124" duration="6658000" />
     </task>
     <servers />
   </component>
@@ -227,5 +261,16 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Controllers/AdminServlet.java</url>
+          <line>284</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

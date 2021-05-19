@@ -11,7 +11,7 @@
  Target Server Version : 100417
  File Encoding         : 65001
 
- Date: 19/05/2021 11:17:00
+ Date: 19/05/2021 16:06:24
 */
 
 SET NAMES utf8mb4;
@@ -274,8 +274,10 @@ CREATE TABLE `user`  (
 -- Records of user
 -- ----------------------------
 INSERT INTO `user` VALUES (1, 'admin', '$2a$12$k7R6T5SFTn5SX5b4ymC3YOLaVr68PidMrbKZEojiOJYWbd6j9ICzi', 0, 'Adminitration', 0, 0, 0, b'0', '/Public/Imgs/Avts/14.jpg', b'0');
-INSERT INTO `user` VALUES (2, 'haohao', '$2a$12$ojpT8.k7p13z4UBOCplS9.FLJDVrlGV1dgyDEEPfL6vNaN7sVkbFu', 1, 'Duc Hao', 21, 0, 0, b'0', NULL, b'0');
-INSERT INTO `user` VALUES (3, 'ldthang7410', '$2a$12$qRHqc/Onk/q3hIyvaVAWs.0u.mxKpVlc8kG//jO3x4zBsdFtv8VVO', 1, '123', 21, 0, 0, b'0', NULL, b'0');
+INSERT INTO `user` VALUES (2, 'zhaohao', '$2a$12$ojpT8.k7p13z4UBOCplS9.FLJDVrlGV1dgyDEEPfL6vNaN7sVkbFu', 1, 'Duc Hao', 15, 0, 0, b'0', NULL, b'0');
+INSERT INTO `user` VALUES (3, 'ldthang7410', '$2a$12$qRHqc/Onk/q3hIyvaVAWs.0u.mxKpVlc8kG//jO3x4zBsdFtv8VVO', 1, '123', 21, 0, 0, b'0', NULL, b'1');
+INSERT INTO `user` VALUES (4, 'abc', 'sdas', 1, 'zyx', 12, NULL, NULL, b'1', NULL, b'1');
+INSERT INTO `user` VALUES (5, 'hshd', '123', 1, 'Anh', 30, NULL, NULL, b'0', NULL, b'1');
 
 -- ----------------------------
 -- Procedure structure for add_custom_menu
@@ -291,6 +293,22 @@ BEGIN
 		INSERT into custommenu VALUES(useridd,foodidd,dtpk,numbercustom);
 	end if;
 END
+;;
+delimiter ;
+
+-- ----------------------------
+-- Procedure structure for delete_active_User
+-- ----------------------------
+DROP PROCEDURE IF EXISTS `delete_active_User`;
+delimiter ;;
+CREATE PROCEDURE `delete_active_User`(IN uname VARCHAR(20))
+begin
+	IF ((select isDelete from `user` where userName = uname)=true) THEN
+	Update `user` set isDelete=FALSE where userName = uname;
+ELSE
+	Update `user` set isDelete=true where userName = uname;
+END IF;
+end
 ;;
 delimiter ;
 
