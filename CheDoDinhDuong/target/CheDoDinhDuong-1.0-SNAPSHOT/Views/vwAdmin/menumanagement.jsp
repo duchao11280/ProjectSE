@@ -4,6 +4,17 @@
 
 <t:main>
     <jsp:body>
+        <section class="page-header page-header-xs">
+            <div class="container">
+                <h1>ADMIN PAGE</h1>
+                <ol class="breadcrumb">
+                    <li><a href="${pageContext.request.contextPath}/Admin">Admin page</a></li>
+                    <li><a href="${pageContext.request.contextPath}/Admin/FoodManagement">Food</a></li>
+                    <li class="active">Menu</li>
+                    <li><a href="${pageContext.request.contextPath}/Admin/UserManagement">User</a></li>
+                </ol>
+            </div>
+        </section>
         <div class="container mt-50">
             <div class="row m-50">
                 <div class="col">

@@ -19,6 +19,18 @@
         </style>
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <section class="page-header page-header-xs">
+            <div class="container">
+                <h1>ADMIN PAGE</h1>
+                <ol class="breadcrumb">
+                    <li><a href="${pageContext.request.contextPath}/Admin">Admin page</a></li>
+                    <li><a href="${pageContext.request.contextPath}/Admin/FoodManagement">Food</a></li>
+                    <li><a href="${pageContext.request.contextPath}/Admin/MenuManagement?conid=1">Menu</a></li>
+                    <li><a href="${pageContext.request.contextPath}/Admin/UserManagement">User</a></li>
+                </ol>
+            </div>
+        </section>
+
         <div class="container mt-50">
             <form id="frmAddIngre" method="post"
                   action="${pageContext.request.contextPath}/Admin/AddIngre?id=${food.getFoodID()}">

@@ -51,6 +51,9 @@ public class AdminServlet extends HttpServlet {
             case "/EditDetailsMenu":
                 editDetailsMenu(request,response);
                 break;
+            case "/ActiveUnActive":
+                doActiveUnactive(request,response);
+                break;
             default:
                 ServletUtils.redirect("/NotFound",request,response);
                 break;
@@ -165,6 +168,12 @@ public class AdminServlet extends HttpServlet {
         String foodname = FoodModel.getFoodNameByID(foodID);
         MenuModel.updateSuggestMenu(foodname,number,id);
         ServletUtils.redirect("/Admin/EditDetailsMenu?id="+id,request,response);
+    }
+
+    private void doActiveUnactive(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String username = request.getParameter("username");
+        UserModel.delete_activeUser(username);
+        ServletUtils.redirect("/Admin/UserManagement",request,response);
     }
 
 
@@ -304,6 +313,8 @@ public class AdminServlet extends HttpServlet {
     }
 
     private void doUserManagement(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        List<User> lstUsers = UserModel.getAllUser();
+        request.setAttribute("lstUsers",lstUsers);
         ServletUtils.forward("/Views/vwAdmin/usermanagement.jsp",request,response);
     }
 

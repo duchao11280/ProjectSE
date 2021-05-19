@@ -104,4 +104,18 @@ public class UserModel {
         }
     }
 
+    public static List<User> getAllUser(){
+        final String sql = "select * from user where role=1";
+        try(Connection con = DBUtils.getConnection()){
+            return con.createQuery(sql)
+                    .executeAndFetch(User.class);
+        }
+    }
+
+    public static void delete_activeUser(String username){
+        final String sql = "call delete_active_User(:username)";
+        try(Connection con = DBUtils.getConnection()){
+            con.createQuery(sql).addParameter("username",username).executeUpdate();
+        }
+    }
 }

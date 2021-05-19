@@ -290,6 +290,21 @@
                 cursor: pointer;
             }
         </style>
+        <section class="page-header page-header-xs">
+            <div class="container">
+
+                <h1>ADMIN PAGE</h1>
+
+                <!-- breadcrumbs -->
+                <ol class="breadcrumb">
+                    <li><a href="${pageContext.request.contextPath}/Admin">Admin page</a></li>
+                    <li class="active">Food</li>
+                    <li><a href="${pageContext.request.contextPath}/Admin/MenuManagement?conid=1">Menu</a></li>
+                    <li><a href="${pageContext.request.contextPath}/Admin/UserManagement">User</a></li>
+                </ol><!-- /breadcrumbs -->
+
+            </div>
+        </section>
         <form method="post" enctype="multipart/form-data">
             <div class="container">
                 <div class="row m-30">

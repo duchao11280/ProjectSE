@@ -4,6 +4,17 @@
 
 <t:main>
     <jsp:body>
+        <section class="page-header page-header-xs">
+            <div class="container">
+                <h1>ADMIN PAGE</h1>
+                <ol class="breadcrumb">
+                    <li><a href="${pageContext.request.contextPath}/Admin">Admin page</a></li>
+                    <li><a href="${pageContext.request.contextPath}/Admin/FoodManagement">Food</a></li>
+                    <li><a href="${pageContext.request.contextPath}/Admin/MenuManagement?conid=1">Menu</a></li>
+                    <li><a href="${pageContext.request.contextPath}/Admin/UserManagement">User</a></li>
+                </ol>
+            </div>
+        </section>
         <form method="post">
             <div class="container mt-50">
                 <div class="row m-50">
