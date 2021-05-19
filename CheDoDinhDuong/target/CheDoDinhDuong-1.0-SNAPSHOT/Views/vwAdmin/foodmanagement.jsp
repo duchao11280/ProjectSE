@@ -6,6 +6,119 @@
 <t:main>
     <jsp:body>
         <script>
+            function searchFood() {
+                var input, filter, table, tr, td, i, txtValue;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                table = document.getElementById("myTable");
+                tr = table.getElementsByTagName("tr");
+                for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[0];
+                    if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                    }
+                }
+            }
+            var asc = 0;
+            function sortTableByName(c) {
+                var table, rows, switching, i, x, y, shouldSwitch;
+                asc = asc + 1;
+                table = document.getElementById("myTable");
+                switching = true;
+                /*Make a loop that will continue until
+                no switching has been done:*/
+                while (switching) {
+                    //start by saying: no switching is done:
+                    switching = false;
+                    rows = table.rows;
+                    /*Loop through all table rows (except the
+                    first, which contains table headers):*/
+                    for (i = 1; i < (rows.length - 1); i++) {
+                        //start by saying there should be no switching:
+                        shouldSwitch = false;
+                        /*Get the two elements you want to compare,
+                        one from current row and one from the next:*/
+                        x = rows[i].getElementsByTagName("TD")[c];
+                        y = rows[i + 1].getElementsByTagName("TD")[c];
+                        //check if the two rows should switch place:
+                        if(asc % 2 == 0){
+                            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                                //if so, mark as a switch and break the loop:
+                                shouldSwitch = true;
+                                break;
+                            }
+                        }
+                        else
+                        {
+                            if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                                //if so, mark as a switch and break the loop:
+                                shouldSwitch = true;
+                                break;
+                            }
+                        }
+
+                    }
+                    if (shouldSwitch) {
+                        /*If a switch has been marked, make the switch
+                        and mark that a switch has been done:*/
+                        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                        switching = true;
+                    }
+
+                }
+            }
+            function sortTableByID(){
+                var table, rows, switching, i, x, y, shouldSwitch;
+                asc = asc + 1;
+                table = document.getElementById("myTable");
+                switching = true;
+                /*Make a loop that will continue until
+                no switching has been done:*/
+                while (switching) {
+                    //start by saying: no switching is done:
+                    switching = false;
+                    rows = table.rows;
+                    /*Loop through all table rows (except the
+                    first, which contains table headers):*/
+                    for (i = 1; i < (rows.length - 1); i++) {
+                        //start by saying there should be no switching:
+                        shouldSwitch = false;
+                        /*Get the two elements you want to compare,
+                        one from current row and one from the next:*/
+                        x = rows[i].getElementsByTagName("TH")[0];
+                        y = rows[i + 1].getElementsByTagName("TH")[0];
+                        //check if the two rows should switch place:
+                        if(asc % 2 == 0){
+                            if (parseInt(x.innerHTML) > parseInt(y.innerHTML)) {
+                                //if so, mark as a switch and break the loop:
+                                shouldSwitch = true;
+                                break;
+                            }
+                        }
+                        else
+                        {
+                            if (parseInt(x.innerHTML) < parseInt(y.innerHTML)) {
+                                //if so, mark as a switch and break the loop:
+                                shouldSwitch = true;
+                                break;
+                            }
+                        }
+
+                    }
+                    if (shouldSwitch) {
+                        /*If a switch has been marked, make the switch
+                        and mark that a switch has been done:*/
+                        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                        switching = true;
+                    }
+
+                }
+            }
             function readURL(input) {
                 if (input.files && input.files[0]) {
 
@@ -164,6 +277,18 @@
                 border: 0;
                 transition: all .2s ease;
             }
+
+            #myInput {
+                width: 50%;
+                font-size: 16px;
+                padding: 12px 20px 12px 12px;
+                border: 1px solid #ddd;
+                margin-bottom: 12px;
+            }
+
+            .sort:hover{
+                cursor: pointer;
+            }
         </style>
         <form method="post" enctype="multipart/form-data">
             <div class="container">
@@ -179,6 +304,9 @@
                         <i class="fa fa-plus-square-o" aria-hidden="true"></i>
                         Thêm món mới
                     </button>
+                </div>
+                <div class="row">
+                    <div style="font-size: 25px; padding: 5px 10px 5px 5px"><i class="fa fa-search" aria-hidden="true"></i></div><input type="text" id="myInput" onkeyup="searchFood()" placeholder="Search for names.." title="Type in a name">
                 </div>
                 <!-- Modal -->
                 <div class="modal fade" id="myModal" role="dialog">
@@ -314,12 +442,12 @@
                     </div>
                 </div>
                 <div class="row mb-50" style="overflow: auto; height: 550px">
-                    <table class="table mb-0">
+                    <table class="table mb-0" id="myTable">
                         <thead class="thead-dark">
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Thức ăn</th>
-                            <th scope="col">Thể loại</th>
+                            <th scope="col" onclick="sortTableByID()" class="sort">#</th>
+                            <th scope="col">Thức ăn <i onclick="sortTableByName(0)" class="fa fa-sort sort" aria-hidden="true"></i></th>
+                            <th scope="col">Thể loại <i onclick="sortTableByName(1)" class="fa fa-sort sort" aria-hidden="true"></i></th>
                             <th scope="col">&nbsp;</th>
                         </tr>
                         </thead>

@@ -87,7 +87,7 @@
                         <div class="mt-30">
                             <!-- <a href="#" class="btn btn-3d btn-lg btn-teal"><i class="glyphicon glyphicon-th-large"></i>FREE TRIAL</a> -->
                             <!-- <span class="fs-17 hidden-xs-down">&nbsp; OR &nbsp;</span> -->
-                            <a href="#" class="btn btn-3d btn-lg btn-red"><i class="glyphicon glyphicon-user"></i>START BEING A MEMBER</a>
+                            <a href="${pageContext.request.contextPath}/Account/Login" class="btn btn-3d btn-lg btn-red"><i class="glyphicon glyphicon-user"></i>START BEING A MEMBER</a>
                         </div>
 
                     </div>

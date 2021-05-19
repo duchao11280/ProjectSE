@@ -8,7 +8,8 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <title>Document</title>
+    <title>Chế Độ Dinh Dưỡng</title>
+    <link rel="icon" href="${pageContext.request.contextPath}/Public/images/logo.png" type="image/x-icon">
     <meta name="description" content=""/>
     <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0"/>
     <!--[if IE]>

@@ -225,6 +225,9 @@ public class AdminServlet extends HttpServlet {
             case "/EditDetailsMenu":
                 doEditDetailsMenu(request,response);
                 break;
+            case"/UserManagement":
+                doUserManagement(request,response);
+                break;
             default:
                 ServletUtils.redirect("/NotFound",request,response);
                 break;
@@ -299,4 +302,9 @@ public class AdminServlet extends HttpServlet {
             ServletUtils.redirect("/Admin/MenuManagement", request, response);
         }
     }
+
+    private void doUserManagement(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        ServletUtils.forward("/Views/vwAdmin/usermanagement.jsp",request,response);
+    }
+
 }

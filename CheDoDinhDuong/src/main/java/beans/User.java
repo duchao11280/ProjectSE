@@ -7,6 +7,7 @@ public class User {
     double height,weight;
     boolean sex;
     String urlImage;
+    boolean isDelete;
 
     public User() {
     }
@@ -22,6 +23,28 @@ public class User {
         this.weight = weight;
         this.sex = sex;
         this.urlImage = urlImage;
+    }
+
+    public User(int userID, int role, int age, String userName, String password, String fullName, double height, double weight, boolean sex, String urlImage, boolean isDelete) {
+        this.userID = userID;
+        this.role = role;
+        this.age = age;
+        this.userName = userName;
+        this.password = password;
+        this.fullName = fullName;
+        this.height = height;
+        this.weight = weight;
+        this.sex = sex;
+        this.urlImage = urlImage;
+        this.isDelete = isDelete;
+    }
+
+    public boolean isDelete() {
+        return isDelete;
+    }
+
+    public void setDelete(boolean delete) {
+        isDelete = delete;
     }
 
     public int getUserID() {
