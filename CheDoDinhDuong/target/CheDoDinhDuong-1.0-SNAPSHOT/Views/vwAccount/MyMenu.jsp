@@ -61,6 +61,13 @@
                                         <h2>My Menu</h2>
                                     </div>
                                 </div>
+                                <div class="col-md-1">
+                                    <a href="${pageContext.request.contextPath}/Food/BuildMenu">
+                                        <h2>
+                                            <i class="fa fa-plus-square" aria-hidden="true"></i>
+                                        </h2>
+                                    </a>
+                                </div>
                             </div>
                             <div class="overflow-auto " style="height: 600px">
                                 <c:choose>

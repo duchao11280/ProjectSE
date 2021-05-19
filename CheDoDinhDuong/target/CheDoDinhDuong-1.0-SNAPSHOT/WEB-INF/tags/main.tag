@@ -113,6 +113,7 @@
                                                     <%--                                            <li><a href="page-category.html">SUB SUB OPTION 2</a></li>--%>
                                                     <%--                                        </ul>--%>
                                             </li>
+
                                             <li>
                                                 <a href="javascript: $('#frmLogout').submit();">
                                                     Logout

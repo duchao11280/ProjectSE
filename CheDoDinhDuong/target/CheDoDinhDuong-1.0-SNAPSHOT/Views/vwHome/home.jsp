@@ -25,8 +25,10 @@
                     </div>
                     <div class="col-md-4 col-xs-6">
                         <div class="text-center">
-                            <i class="ico-light ico-lg ico-rounded ico-hover et-piechart"></i>
-                            <a href="#"> <h4>Diet by condition</h4></a>
+                            <a href="${pageContext.request.contextPath}/Menu/SuggestMenu">
+                                <i class="ico-light ico-lg ico-rounded ico-hover et-piechart"></i>
+                            </a>
+                            <a href="${pageContext.request.contextPath}/Menu/SuggestMenu"> <h4>Diet by condition</h4></a>
                             <p>Depending on the condition of the user that appropriate diets are given.</p>
                         </div>
                     </div>

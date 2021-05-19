@@ -69,7 +69,7 @@ public class FoodServlet extends HttpServlet {
 
 
         System.out.println(user.getUserID()+"     "+ date+"+"+foodID+"+"+number);
-        ServletUtils.forward("/Views/vwFood/BuildMenu.jsp",request,response);
+        ServletUtils.redirect("/Account/MyMenu",request,response);
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getPathInfo();
@@ -146,7 +146,6 @@ public class FoodServlet extends HttpServlet {
 
                 LocalDateTime date = LocalDateTime.now();
 
-                System.out.println(date.get(ChronoField.DAY_OF_WEEK));
                 break;
             default:
                 ServletUtils.redirect("/NotFound", request, response);
