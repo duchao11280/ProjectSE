@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : projectse
+ Source Server         : Duc Hao
  Source Server Type    : MySQL
- Source Server Version : 100418
+ Source Server Version : 100414
  Source Host           : localhost:3306
  Source Schema         : projectse
 
  Target Server Type    : MySQL
- Target Server Version : 100418
+ Target Server Version : 100414
  File Encoding         : 65001
 
- Date: 13/05/2021 14:58:12
+ Date: 19/05/2021 08:40:52
 */
 
 SET NAMES utf8mb4;
@@ -104,6 +104,7 @@ INSERT INTO `custommenu` VALUES (1, 12, '2021-05-31 13:10:00', 2);
 INSERT INTO `custommenu` VALUES (1, 12, '2021-06-02 19:00:00', 1);
 INSERT INTO `custommenu` VALUES (1, 30, '2021-05-13 14:16:00', 3);
 INSERT INTO `custommenu` VALUES (1, 30, '2021-05-17 14:17:00', 3);
+INSERT INTO `custommenu` VALUES (1, 30, '2021-05-31 22:23:00', 3);
 
 -- ----------------------------
 -- Table structure for food
@@ -272,6 +273,7 @@ CREATE TABLE `user`  (
 -- Records of user
 -- ----------------------------
 INSERT INTO `user` VALUES (1, 'an', '$2a$12$7BEOsKjqsbmfwMd1qPIHcuqbU7JX1vNWC5NyHUyPevTWTn2aeYRue', 1, 'Dinh Tuan An', 21, 99, 99, b'0', '/Public/Imgs/Avts/14.jpg');
+INSERT INTO `user` VALUES (2, 'haohao', '$2a$12$ojpT8.k7p13z4UBOCplS9.FLJDVrlGV1dgyDEEPfL6vNaN7sVkbFu', 1, 'Duc Hao', 21, 0, 0, b'0', NULL);
 
 -- ----------------------------
 -- Procedure structure for add_custom_menu
