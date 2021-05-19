@@ -50,12 +50,15 @@ public class FoodServlet extends HttpServlet {
     }
 
     private void postSearch(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String search = request.getParameter("search");
-        List<Food> lstFood = FoodModel.getFoodByString(search);
-        request.setAttribute("lstFood",lstFood);
+        String keysearch = request.getParameter("search");
+        List<Food> lstFood2 = FoodModel.getFoodByString(keysearch);
+
+
+        request.setAttribute("lstFood",lstFood2);
+
+
         List<Category> listcat = CategoryModel.getAll();
         request.setAttribute("categoriesWithDetails", listcat);
-        System.out.println(search);
         ServletUtils.forward("/Views/vwFood/Search.jsp",request,response);
     }
     private void postBuildMenu(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -83,19 +86,36 @@ public class FoodServlet extends HttpServlet {
                 break;
             case "/ByCat":
                 int catID = Integer.parseInt(request.getParameter("id"));
-                List<Food> list = FoodModel.findByCatID(catID);
+
+                request.setAttribute("currCatID",catID);
+                final int LIMIT=6;
+                int currentPage=1;
+                if(request.getParameter("page")!=null){
+                    currentPage=Integer.parseInt(request.getParameter("page"));
+                }
+                if(currentPage<1)
+                    currentPage=1;
+                request.setAttribute("currPage",currentPage);
+                int offset=(currentPage-1)*LIMIT;
+
+                int total=FoodModel.countfoodByCat(catID);
+                int nPages=total/LIMIT;
+                if(total%LIMIT>0)
+                    nPages++;
+                int[] pages=new int[nPages];
+                for (int i=0;i<nPages;i++)
+                {
+                    pages[i]=i+1;
+                }
+                request.setAttribute("maxPage",nPages);
+                request.setAttribute("pages", pages);
+                List<Food> list = FoodModel.findByCatIDWithLimit(catID,LIMIT,offset);
+
                 request.setAttribute("foods", list);
-
-
-
-                // List<Category> categories = (List<Category>) request.getAttribute("categoriesWithDetails");
-                // System.out.println(categories.size());
-
                 ServletUtils.forward("/Views/vwFood/ByCat.jsp", request, response);
                 break;
             case "/Search":
                 //String search = request.getParameter("search");
-
                 ServletUtils.forward("/Views/vwFood/Search.jsp",request,response);
                 break;
             case"/CalKcal":

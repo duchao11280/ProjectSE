@@ -23,6 +23,43 @@ public class FoodModel {
                     .executeAndFetch(Food.class);
         }
     }
+    public static List<Food> findByCatIDWithLimit(int catID, int LIMIT, int OFFSET) {
+        String sql = "select * from food where catID = :catID LIMIT :LIMIT OFFSET :OFFSET";
+        try (Connection con = DBUtils.getConnection()) {
+            return con.createQuery(sql)
+                    .addParameter("catID", catID)
+                    .addParameter("LIMIT",LIMIT)
+                    .addParameter("OFFSET",OFFSET)
+                    .executeAndFetch(Food.class);
+        }
+    }
+    public static int countfoodByCat(int id) {
+        final String sql = "Select count(*) from food WHERE food.catID=:cat_id";
+
+        try (Connection con = DBUtils.getConnection()) {
+            return con.createQuery(sql)
+                    .addParameter("cat_id", id)
+                    .executeScalar(Integer.class);
+
+        }
+    }
+
+    public static List<Food> getFoodByStringWithLimit(String search,int LIMIT, int OFFSET) {
+        final String sql = "select *"
+                + " from food"
+                + " where ( match(foodName) against (:search IN NATURAL LANGUAGE MODE) or foodName LIKE :search )"
+                + " group by foodID LIMIT :LIMIT OFFSET :OFFSET ";
+
+        try (Connection con = DBUtils.getConnection()) {
+            return con.createQuery(sql)
+                    .addParameter("search", "%"+ search + "%")
+                    .addParameter("LIMIT",LIMIT)
+                    .addParameter("OFFSET",OFFSET)
+                    .executeAndFetch(Food.class);
+
+        }
+
+    }
     public static List<Food> getFoodByString(String search) {
         final String sql = "select *"
                 + " from food"
@@ -37,7 +74,6 @@ public class FoodModel {
         }
 
     }
-
     public static List<Food> getListFoodHaveIngredient() {
         final String sql = "SELECT food.foodID,food.foodName,food.catID,food.glucozo,food.kcal,food.protein,food.lipit,food.vitA,food.vitB,food.vitC,food.vitD,food.vitE,food.kali,food.na,food.fe,food.urlImage,food.isDelete\n" +
                 "FROM (SELECT foodID as LFID\n" +

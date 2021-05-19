@@ -84,12 +84,79 @@
                                     </c:choose>
 
                                 </c:forEach>
+
                             </div>
                             </c:otherwise>
+
                         </c:choose>
+                            <div class="d-flex justify-content-center">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination">
+                                        <c:choose>
+                                            <c:when test="${maxPage==1}">
+
+                                            </c:when>
+                                            <c:otherwise>
+                                                <c:choose>
+                                                    <c:when test="${currPage==1}">
+                                                        <c:forEach var="d" items="${pages}">
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="?id=${currCatID}&page=${d}">${d}</a>
+                                                            </li>
+                                                        </c:forEach>
+
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="?id=${currCatID}&page=${currPage+1}" aria-label="Next">
+                                                                <span aria-hidden="true">&raquo;</span>
+                                                            </a>
+                                                        </li>
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        <c:choose>
+                                                            <c:when test="${currPage==maxPage}">
+                                                                <li class="page-item">
+                                                                    <a class="page-link" href="?id=${currCatID}&page=${currPage-1}" aria-label="Previous">
+                                                                        <span aria-hidden="true">&laquo;</span>
+                                                                    </a>
+                                                                </li>
+                                                                <c:forEach var="d" items="${pages}">
+                                                                    <li class="page-item">
+                                                                        <a class="page-link" href="?id=${currCatID}&page=${d}">${d}</a>
+                                                                    </li>
+                                                                </c:forEach>
+                                                            </c:when>
+                                                            <c:otherwise>
+                                                                <li class="page-item">
+                                                                    <a class="page-link" href="?id=${currCatID}&page=${currPage-1}" aria-label="Previous">
+                                                                        <span aria-hidden="true">&laquo;</span>
+                                                                    </a>
+                                                                </li>
+                                                                <c:forEach var="d" items="${pages}">
+                                                                    <li class="page-item">
+                                                                        <a class="page-link" href="?id=${currCatID}&page=${d}">${d}</a>
+                                                                    </li>
+                                                                </c:forEach>
+
+                                                                <li class="page-item">
+                                                                    <a class="page-link" href="?id=${currCatID}&page=${currPage+1}" aria-label="Next">
+                                                                        <span aria-hidden="true">&raquo;</span>
+                                                                    </a>
+                                                                </li>
+                                                            </c:otherwise>
+                                                        </c:choose>
+                                                    </c:otherwise>
+                                                </c:choose>
+                                            </c:otherwise>
+                                        </c:choose>
+
+
+                                    </ul>
+                                </nav>
+                            </div>
                     </div>
                 </div>
             </div>
+
         </div>
 
     </jsp:body>
