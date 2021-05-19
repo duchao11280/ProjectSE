@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : Duc Hao
+ Source Server         : MySQL
  Source Server Type    : MySQL
- Source Server Version : 100414
+ Source Server Version : 100417
  Source Host           : localhost:3306
  Source Schema         : projectse
 
  Target Server Type    : MySQL
- Target Server Version : 100414
+ Target Server Version : 100417
  File Encoding         : 65001
 
- Date: 19/05/2021 08:40:52
+ Date: 19/05/2021 11:17:00
 */
 
 SET NAMES utf8mb4;
@@ -266,14 +266,16 @@ CREATE TABLE `user`  (
   `weight` double NULL DEFAULT NULL,
   `sex` bit(1) NULL DEFAULT NULL,
   `urlImage` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `isDelete` bit(1) NULL DEFAULT b'0',
   PRIMARY KEY (`userID`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (1, 'an', '$2a$12$7BEOsKjqsbmfwMd1qPIHcuqbU7JX1vNWC5NyHUyPevTWTn2aeYRue', 1, 'Dinh Tuan An', 21, 99, 99, b'0', '/Public/Imgs/Avts/14.jpg');
-INSERT INTO `user` VALUES (2, 'haohao', '$2a$12$ojpT8.k7p13z4UBOCplS9.FLJDVrlGV1dgyDEEPfL6vNaN7sVkbFu', 1, 'Duc Hao', 21, 0, 0, b'0', NULL);
+INSERT INTO `user` VALUES (1, 'admin', '$2a$12$k7R6T5SFTn5SX5b4ymC3YOLaVr68PidMrbKZEojiOJYWbd6j9ICzi', 0, 'Adminitration', 0, 0, 0, b'0', '/Public/Imgs/Avts/14.jpg', b'0');
+INSERT INTO `user` VALUES (2, 'haohao', '$2a$12$ojpT8.k7p13z4UBOCplS9.FLJDVrlGV1dgyDEEPfL6vNaN7sVkbFu', 1, 'Duc Hao', 21, 0, 0, b'0', NULL, b'0');
+INSERT INTO `user` VALUES (3, 'ldthang7410', '$2a$12$qRHqc/Onk/q3hIyvaVAWs.0u.mxKpVlc8kG//jO3x4zBsdFtv8VVO', 1, '123', 21, 0, 0, b'0', NULL, b'0');
 
 -- ----------------------------
 -- Procedure structure for add_custom_menu
@@ -319,7 +321,7 @@ begin
     set uID = 1;
     while (exists (select * from user where userID = uID)) do set uID = uID + 1;
     end while;
-    insert into user values(uID, username, upassw, urole, ufulln, uage, uheight, uweight, usex,uurlimage);
+    insert into user values(uID, username, upassw, urole, ufulln, uage, uheight, uweight, usex,uurlimage,false);
 end
 ;;
 delimiter ;
