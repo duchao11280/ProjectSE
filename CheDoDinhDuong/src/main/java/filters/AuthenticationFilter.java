@@ -28,6 +28,10 @@ public class AuthenticationFilter implements Filter {
             ServletUtils.redirect("/Account/Login", request, (HttpServletResponse) resp);
             return;
         }
+        else{
+            session.setAttribute("retUrl", request.getRequestURI());
+
+        }
 
 
 

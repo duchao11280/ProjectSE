@@ -248,13 +248,12 @@
                     <!-- LEFT -->
                     <div class="col-lg-3 col-md-3 col-sm-4">
 
+
                         <div class="thumbnail text-center">
-                            <img  class="img-fluid" src="${pageContext.request.contextPath}${authUser.urlImage}" alt="" />
+                            <img style="width: 250px;height: 280px"  class="img-fluid" src="${pageContext.request.contextPath}${authUser.urlImage}" alt="where your personal picture will be showed" />
                             <h2 class="fs-18 mt-10 mb-0">${authUser.fullName}</h2>
                             <h3 class="fs-11 mt-0 mb-10 text-muted">USER</h3>
                         </div>
-
-
 
                         <!-- SIDE NAV -->
                         <ul class="side-nav list-group mb-60" id="sidebar-nav">
@@ -285,187 +284,142 @@
 
                     <!-- RIGHT -->
                     <div class="col-lg-9 col-md-9 col-sm-8 order-md-2 order-sm-2 mb-80">
+                        <div class="box-light">
+                            <ul class="nav nav-tabs nav-top-border">
+                                <li class="active"><a class="active" href="#info" data-toggle="tab">Personal Info</a></li>
+                                <li><a href="#avatar" data-toggle="tab">Avatar</a></li>
+                                <li><a href="#password" data-toggle="tab">Password</a></li>
 
-                        <ul class="nav nav-tabs nav-top-border">
-                            <li class="active"><a class="active" href="#info" data-toggle="tab">Personal Info</a></li>
-                            <li><a href="#avatar" data-toggle="tab">Avatar</a></li>
-                            <li><a href="#password" data-toggle="tab">Password</a></li>
+                            </ul>
 
-                        </ul>
+                            <div class="tab-content mt-20">
 
-                        <div class="tab-content mt-20">
+                                <!-- info tab -->
+                                <div class="tab-pane active" id="info">
+                                    <form action="#" method="post" id="frmProfilesetting">
+                                        <div class="form-group">
+                                            <label class="form-control-label">UserName</label>
+                                            <input readonly type="text" name="usernameinfo"  class="form-control" value="${authUser.userName}">
+                                        </div>
 
-                            <!-- info tab -->
-                            <div class="tab-pane active" id="info">
-                                <form action="#" method="post" id="frmProfilesetting">
-                                    <div class="form-group">
-                                        <label class="form-control-label">UserName</label>
-                                        <input readonly type="text" name="usernameinfo"  class="form-control" value="${authUser.userName}">
-                                    </div>
+                                        <div class="form-group">
+                                            <label class="form-control-label">Full Name</label>
+                                            <input type="text" name="fullnameinfo"  class="form-control" value="${authUser.fullName}">
+                                        </div>
 
-                                    <div class="form-group">
-                                        <label class="form-control-label">Full Name</label>
-                                        <input type="text" name="fullnameinfo"  class="form-control" value="${authUser.fullName}">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="form-control-label">Age</label>
-                                        <input type="number" name="ageinfo" class="form-control" value="${authUser.age}">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-control-label">Height</label>
-                                        <input type="number" step="0.5" min="0" name="heightinfo" value="${authUser.height}" class="form-control" >
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-control-label">Weight</label>
-                                        <input type="number" step="0.5" min="0" name="weightinfo" value="${authUser.weight}" class="form-control">
-                                    </div>
-
-
-                                    <c:choose>
-                                        <c:when test="${authUser.sex == false}">
-                                            <div class="form-group">
-                                                <label class="form-control-label">Sex</label>
-                                                <label class="select mb-10 mt-20">
-                                                    <select name="sexinfo">
-                                                        <option value="-1"  disabled>Gender</option>
-                                                        <option value="0" selected>Male</option>
-                                                        <option value="1">Female</option>
-                                                    </select>
-                                                    <i></i>
-                                                </label>
-                                            </div>
-                                        </c:when>
-
-                                        <c:otherwise>
-                                            <div class="form-group">
-                                                <label class="form-control-label">Sex</label>
-                                                <label class="select mb-10 mt-20">
-                                                    <select name="sexinfo" >
-                                                        <option value="-1"  disabled>Gender</option>
-                                                        <option value="0">Male</option>
-                                                        <option value="1" selected>Female</option>
-                                                    </select>
-                                                    <i></i>
-                                                </label>
-                                            </div>
-                                        </c:otherwise>
-                                    </c:choose>
+                                        <div class="form-group">
+                                            <label class="form-control-label">Age</label>
+                                            <input type="number" name="ageinfo" class="form-control" value="${authUser.age}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-control-label">Height</label>
+                                            <input type="number" step="0.5" min="0" name="heightinfo" value="${authUser.height}" class="form-control" >
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-control-label">Weight</label>
+                                            <input type="number" step="0.5" min="0" name="weightinfo" value="${authUser.weight}" class="form-control">
+                                        </div>
 
 
+                                        <c:choose>
+                                            <c:when test="${authUser.sex == false}">
+                                                <div class="form-group">
+                                                    <label class="form-control-label">Sex</label>
+                                                    <label class="select mb-10 mt-20">
+                                                        <select name="sexinfo">
+                                                            <option value="-1"  disabled>Gender</option>
+                                                            <option value="0" selected>Male</option>
+                                                            <option value="1">Female</option>
+                                                        </select>
+                                                        <i></i>
+                                                    </label>
+                                                </div>
+                                            </c:when>
 
-                                    <div class="form-group">
-                                        <label class="form-control-label">About</label>
-                                        <textarea class="form-control" rows="3" placeholder="About Me..."></textarea>
-                                    </div>
+                                            <c:otherwise>
+                                                <div class="form-group">
+                                                    <label class="form-control-label">Sex</label>
+                                                    <label class="select mb-10 mt-20">
+                                                        <select name="sexinfo" >
+                                                            <option value="-1"  disabled>Gender</option>
+                                                            <option value="0">Male</option>
+                                                            <option value="1" selected>Female</option>
+                                                        </select>
+                                                        <i></i>
+                                                    </label>
+                                                </div>
+                                            </c:otherwise>
+                                        </c:choose>
 
-                                    <!--2 cai nut -->
-                                    <div class="d-flex justify-content-start">
-                                        <button type="submit" class="btn btn-primary" style="margin-right: 10px;" formaction="${pageContext.request.contextPath}/Account/Update">
-                                            <i class="fa fa-check" aria-hidden="true"></i>
-                                            Save Changes
-                                        </button>
 
-                                        <button type="button" class="btn btn-default" formaction="#" href="${pageContext.request.contextPath}/Account/Profile">
-                                            Cancel
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
 
-                            <!-- avatar tab -->
-                            <div class="tab-pane fade" id="avatar">
 
-                                <%--<form id="frmAvatar" class="clearfix" action="#" method="post" enctype="multipart/form-data">
-
-                                    <input type="text" name="test"  class="form-control" value="">
-
-                                    <div class="form-group">
-                                        <label class="form-control-label">Username</label>
-                                        <input type="text" name="usernameimage" readonly class="form-control" value="${authUser.userName}">
-                                    </div>
-                                    <!-- drag image content-->
-                                    <div class="form-group row">
-                                        <div class="file-upload">
-                                            <button class="file-upload-btn" type="button"
-                                                    onclick="$('.file-upload-input').trigger( 'click' )">Add Image
+                                        <!--2 cai nut -->
+                                        <div class="d-flex justify-content-start">
+                                            <button type="submit" class="btn btn-primary" style="margin-right: 10px;" formaction="${pageContext.request.contextPath}/Account/Update">
+                                                <i class="fa fa-check" aria-hidden="true"></i>
+                                                Save Changes
                                             </button>
 
-                                            <div class="image-upload-wrap">
+                                            <button type="button" class="btn btn-default" formaction="#" href="${pageContext.request.contextPath}/Account/Profile">
+                                                Cancel
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <!-- avatar tab -->
+                                <div class="tab-pane fade" id="avatar">
+
+                                    <%--<form id="frmAvatar" class="clearfix" action="#" method="post" enctype="multipart/form-data">
+
+                                        <input type="text" name="test"  class="form-control" value="">
+
+                                        <div class="form-group">
+                                            <label class="form-control-label">Username</label>
+                                            <input type="text" name="usernameimage" readonly class="form-control" value="${authUser.userName}">
+                                        </div>
+                                        <!-- drag image content-->
+                                        <div class="form-group row">
+                                            <div class="file-upload">
+                                                <button class="file-upload-btn" type="button"
+                                                        onclick="$('.file-upload-input').trigger( 'click' )">Add Image
+                                                </button>
+
+                                                <div class="image-upload-wrap">
 
 
-                                                <input id="imgurl" class="file-upload-input" type='file' onchange="readURL(this);"
-                                                       accept="image/*" name="imagefile"/>
+                                                    <input id="imgurl" class="file-upload-input" type='file' onchange="readURL(this);"
+                                                           accept="image/*" name="imagefile"/>
 
 
-                                                <div class="drag-text">
-                                                    <h3>Drag and drop a file or select add Image</h3>
+                                                    <div class="drag-text">
+                                                        <h3>Drag and drop a file or select add Image</h3>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="file-upload-content">
-                                                <img class="file-upload-image" src="#" alt="your image"/>
-                                                <div class="image-title-wrap">
-                                                        &lt;%&ndash;                                                <button type="button" onclick="removeUpload()" class="remove-image">&ndash;%&gt;
-                                                        &lt;%&ndash;                                                    Remove <span class="image-title" name="imagename">Uploaded Image</span></button>&ndash;%&gt;
+                                                <div class="file-upload-content">
+                                                    <img class="file-upload-image" src="#" alt="your image"/>
+                                                    <div class="image-title-wrap">
+                                                            &lt;%&ndash;                                                <button type="button" onclick="removeUpload()" class="remove-image">&ndash;%&gt;
+                                                            &lt;%&ndash;                                                    Remove <span class="image-title" name="imagename">Uploaded Image</span></button>&ndash;%&gt;
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <!--2 cai nut -->
-                                    <div class="d-flex justify-content-start">
-                                        <button id="btnAdd" type="submit" class="btn btn-primary" style="margin-right: 10px;" formaction="${pageContext.request.contextPath}/Account/AddImage">
-                                            <i class="fa fa-check" aria-hidden="true"></i>
-                                            Save Changes
-                                        </button>
-
-                                        <button type="button" class="btn btn-default" formaction="#" href="${pageContext.request.contextPath}/Account/Profile">
-                                            Cancel
-                                        </button>
-                                    </div>
-
-                                </form>
-                                <script>
-                                    $("#btnAdd").click(function (e){
-
-                                        if($("#imgurl").val().length == 0){
-                                            alert("Bạn chưa chọn hình ảnh")
-                                            e.preventDefault();
-                                        }
-                                    })
-                                </script>
---%>
-                                <form method="post" enctype="multipart/form-data">
-                                    <input type="text" name="test"  readonly class="form-control" value="${authUser.userName}">
-
-                                    <div class="form-group row">
-                                        <div class="file-upload">
-                                            <button class="file-upload-btn" type="button"
-                                                    onclick="$('.file-upload-input').trigger( 'click' )">Add Image
+                                        <!--2 cai nut -->
+                                        <div class="d-flex justify-content-start">
+                                            <button id="btnAdd" type="submit" class="btn btn-primary" style="margin-right: 10px;" formaction="${pageContext.request.contextPath}/Account/AddImage">
+                                                <i class="fa fa-check" aria-hidden="true"></i>
+                                                Save Changes
                                             </button>
 
-                                            <div class="image-upload-wrap">
-
-
-                                                <input id="imgurl" class="file-upload-input" type='file' onchange="readURL(this);"
-                                                       accept="image/*" name="imagefile"/>
-
-
-                                                <div class="drag-text">
-                                                    <h3>Drag and drop a file or select add Image</h3>
-                                                </div>
-                                            </div>
-                                            <div class="file-upload-content">
-                                                <img class="file-upload-image" src="#" alt="your image"/>
-                                            </div>
+                                            <button type="button" class="btn btn-default" formaction="#" href="${pageContext.request.contextPath}/Account/Profile">
+                                                Cancel
+                                            </button>
                                         </div>
-                                    </div>
 
-                                    <button id="btnAdd" type="submit" class="btn btn-primary" style="margin-right: 10px;" formaction="${pageContext.request.contextPath}/Account/AddImage">
-                                        <i class="fa fa-check" aria-hidden="true"></i>
-                                        Save Changes
-                                    </button>
-                                </form>
+                                    </form>
                                     <script>
                                         $("#btnAdd").click(function (e){
 
@@ -475,61 +429,102 @@
                                             }
                                         })
                                     </script>
+    --%>
+                                    <form method="post" enctype="multipart/form-data">
+                                        <input type="text" name="test"  readonly class="form-control" value="${authUser.userName}">
 
-                            </div>
+                                        <div class="form-group row">
+                                            <div class="file-upload">
+                                                <button class="file-upload-btn" type="button"
+                                                        onclick="$('.file-upload-input').trigger( 'click' )">Add Image
+                                                </button>
 
-                            <!-- password tab -->
-                            <div class="tab-pane fade" id="password">
+                                                <div class="image-upload-wrap">
 
-                                <form action="#" method="post" id="frmChangePassword">
 
-                                    <c:if test="${hasError}">
-                                        <!-- ALERT -->
-                                        <div class="alert alert-mini alert-danger mb-30" role="alert">
-                                            <strong>Mat khau hien tai nhap sai</strong> ${errorMessage}
-                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div><!-- /ALERT -->
+                                                    <input id="imgurl" class="file-upload-input" type='file' onchange="readURL(this);"
+                                                           accept="image/*" name="imagefile"/>
 
-                                    </c:if>
-                                    <div class="form-group">
-                                        <label class="form-control-label">Username</label>
-                                        <input type="text" name="curusername" id="txtCurusername" readonly class="form-control" value="${authUser.userName}">
-                                    </div>
 
-                                    <div class="form-group">
-                                        <label class="form-control-label">Current Password</label>
-                                        <input type="password" name="curpassword" class="form-control" id="txtCurpassword">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-control-label">New Password</label>
-                                        <input type="password" name="newpassword" class="form-control" id="txtNewpassword">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-control-label">Re-type New Password</label>
-                                        <input type="password" name="renewpassword" class="form-control" id="txtRenewpassword">
-                                    </div>
+                                                    <div class="drag-text">
+                                                        <h3>Drag and drop a file or select add Image</h3>
+                                                    </div>
+                                                </div>
+                                                <div class="file-upload-content">
+                                                    <img class="file-upload-image" src="#" alt="your image"/>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                                    <!--2 cai nut -->
-                                    <div class="d-flex justify-content-start">
-                                        <button type="submit" class="btn btn-primary" style="margin-right: 10px;" formaction="${pageContext.request.contextPath}/Account/ChangePassword">
+                                        <button id="btnAdd" type="submit" class="btn btn-primary" style="margin-right: 10px;" formaction="${pageContext.request.contextPath}/Account/AddImage">
                                             <i class="fa fa-check" aria-hidden="true"></i>
-                                            Change Password
+                                            Save Changes
                                         </button>
+                                    </form>
+                                        <script>
+                                            $("#btnAdd").click(function (e){
 
-                                        <button type="button" class="btn btn-default" formaction="#" href="${pageContext.request.contextPath}/Account/Profile">
-                                            Cancel
-                                        </button>
-                                    </div>
+                                                if($("#imgurl").val().length == 0){
+                                                    alert("Bạn chưa chọn hình ảnh")
+                                                    e.preventDefault();
+                                                }
+                                            })
+                                        </script>
 
-                                </form>
+                                </div>
+
+                                <!-- password tab -->
+                                <div class="tab-pane fade" id="password">
+
+                                    <form action="#" method="post" id="frmChangePassword">
+
+                                        <c:if test="${hasError}">
+                                            <!-- ALERT -->
+                                            <div class="alert alert-mini alert-danger mb-30" role="alert">
+                                                <strong>Mat khau hien tai nhap sai</strong> ${errorMessage}
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div><!-- /ALERT -->
+
+                                        </c:if>
+                                        <div class="form-group">
+                                            <label class="form-control-label">Username</label>
+                                            <input type="text" name="curusername" id="txtCurusername" readonly class="form-control" value="${authUser.userName}">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="form-control-label">Current Password</label>
+                                            <input type="password" name="curpassword" class="form-control" id="txtCurpassword">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-control-label">New Password</label>
+                                            <input type="password" name="newpassword" class="form-control" id="txtNewpassword">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-control-label">Re-type New Password</label>
+                                            <input type="password" name="renewpassword" class="form-control" id="txtRenewpassword">
+                                        </div>
+
+                                        <!--2 cai nut -->
+                                        <div class="d-flex justify-content-start">
+                                            <button type="submit" class="btn btn-primary" style="margin-right: 10px;" formaction="${pageContext.request.contextPath}/Account/ChangePassword">
+                                                <i class="fa fa-check" aria-hidden="true"></i>
+                                                Change Password
+                                            </button>
+
+                                            <button type="button" class="btn btn-default" formaction="#" href="${pageContext.request.contextPath}/Account/Profile">
+                                                Cancel
+                                            </button>
+                                        </div>
+
+                                    </form>
+
+                                </div>
+
 
                             </div>
-
-
                         </div>
-
                     </div>
 
                 </div>
