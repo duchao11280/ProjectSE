@@ -52,7 +52,7 @@
             <div class="row m-50">
                 <div class="col">
                     <div class="text-center">
-                        <h2>XÂY DỰNG THỰC ĐƠN CHO BẠN</h2>
+                        <h2>BUILD MENU FOR YOU</h2>
                     </div>
                 </div>
             </div>
