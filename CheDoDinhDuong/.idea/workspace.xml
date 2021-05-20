@@ -64,6 +64,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -212,6 +213,7 @@
       <workItem from="1621387118862" duration="1101000" />
       <workItem from="1621390743719" duration="6741000" />
       <workItem from="1621408476124" duration="6658000" />
+      <workItem from="1621480496358" duration="1675000" />
     </task>
     <servers />
   </component>
@@ -235,7 +237,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Controllers/AdminServlet.java</url>
-          <line>284</line>
+          <line>293</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
