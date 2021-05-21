@@ -252,7 +252,7 @@ public class AccountServlet extends HttpServlet {
         double height = 0;
         double weight = 0;
         int role=1;
-        String urlImage = null;
+        String urlImage = "/Public/Imgs/Avts/user-alt-512.png";
         User user = new User(-1,role,age,username,bcryptHashString,name,height,weight,sex,urlImage);
 
         UserModel.add(user);
