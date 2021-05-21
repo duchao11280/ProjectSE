@@ -99,6 +99,13 @@
                                 <c:when test="${auth}">
                                     <form style="display: inline-block" id="frmLogout" method="post" action="${pageContext.request.contextPath}/Account/Logout"></form>
 
+                                    <c:if test="${authUser.getRole()==0}">
+                                        <li class="active">
+                                            <a href="${pageContext.request.contextPath}/Admin">
+                                                ADMIN PAGE
+                                            </a>
+                                        </li>
+                                    </c:if>
                                         <li class="dropdown"><!-- PAGES -->
                                         <a class="dropdown-toggle" href="#" name="nametag">
                                             Hi, <b>${authUser.fullName} </b>

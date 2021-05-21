@@ -19,7 +19,7 @@
             <div class="row m-50">
                 <div class="col">
                     <div class="text-center">
-                        <h2>QUẢN LÝ THỰC ĐƠN</h2>
+                        <h2>SIMPLE MENU MANAGEMENT</h2>
                     </div>
                 </div>
             </div>
@@ -27,7 +27,7 @@
                 <div class="col-6">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                            <label class="input-group-text" for="condition">Tình trạng</label>
+                            <label class="input-group-text" for="condition">Condition</label>
                         </div>
                         <select class="custom-select" id="condition" name="condition"
                                 onchange="window.location.href=this.value;">
@@ -51,16 +51,16 @@
                     <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Bữa sáng</th>
-                        <th scope="col">Bữa trưa</th>
-                        <th scope="col">Bữa phụ</th>
-                        <th scope="col">Bữa tối</th>
+                        <th scope="col">Beakfast</th>
+                        <th scope="col">Lunch</th>
+                        <th scope="col">Tea</th>
+                        <th scope="col">Dinner</th>
                         <th scope="col">&nbsp;</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <th scope="row">Ngày 1</th>
+                        <th scope="row">Day 1</th>
                         <td>
                             <c:forEach var="m" items="${lstMenu1}">
                                 <c:if test="${m.getSession() == '1'}">
@@ -108,7 +108,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row">Ngày 2</th>
+                        <th scope="row">Day 2</th>
                         <td>
                             <c:forEach var="m" items="${lstMenu2}">
                                 <c:if test="${m.getSession() == '1'}">
@@ -156,7 +156,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row">Ngày 3</th>
+                        <th scope="row">Day 3</th>
                         <td>
                             <c:forEach var="m" items="${lstMenu3}">
                                 <c:if test="${m.getSession() == '1'}">
@@ -204,7 +204,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row">Ngày 4</th>
+                        <th scope="row">Day 4</th>
                         <td>
                             <c:forEach var="m" items="${lstMenu4}">
                                 <c:if test="${m.getSession() == '1'}">
@@ -252,7 +252,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row">Ngày 5</th>
+                        <th scope="row">Day 5</th>
                         <td>
                             <c:forEach var="m" items="${lstMenu5}">
                                 <c:if test="${m.getSession() == '1'}">
@@ -300,7 +300,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row">Ngày 6</th>
+                        <th scope="row">Day 6</th>
                         <td>
                             <c:forEach var="m" items="${lstMenu6}">
                                 <c:if test="${m.getSession() == '1'}">
@@ -348,7 +348,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row">Ngày 7</th>
+                        <th scope="row">Day 7</th>
                         <td>
                             <c:forEach var="m" items="${lstMenu7}">
                                 <c:if test="${m.getSession() == '1'}">

@@ -20,19 +20,19 @@
                 <div class="row m-50">
                     <div class="col">
                         <div class="text-center">
-                            <h2>QUẢN LÝ THỰC ĐƠN</h2>
+                            <h2>SAMPLE MENU MANAGEMENT</h2>
                         </div>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="condition" class="col-sm-2 col-form-label bold">Tình trạng:</label>
+                    <label for="condition" class="col-sm-2 col-form-label bold">Condition:</label>
                     <div class="col-sm">
                         <input type="text" class="form-control" id="condition" name="condition"
                                readonly value="${conditionName}">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="day" class="col-sm-2 col-form-label bold">Ngày:</label>
+                    <label for="day" class="col-sm-2 col-form-label bold">Day:</label>
                     <div class="col-sm">
                         <input type="text" class="form-control" id="day" name="day"
                                readonly value="${day}">
@@ -40,7 +40,7 @@
                 </div>
                 <div class="row">
                     <button type="button" class="btn btn-outline-dark ml-5" data-toggle="modal"
-                            data-target="#myModal">Thêm món ăn
+                            data-target="#myModal">Add food
                         <i class="fa fa-plus" aria-hidden="true"></i>
                     </button>
                 </div>
@@ -48,7 +48,7 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <th scope="col" colspan="3">Bữa sáng
+                            <th scope="col" colspan="3">Breakfast
                             </th>
                         </tr>
                         </thead>
@@ -76,7 +76,7 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <th scope="col" colspan="3">Bữa trưa</th>
+                            <th scope="col" colspan="3">Lunch</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -103,7 +103,7 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <th scope="col" colspan="3">Bữa phụ</th>
+                            <th scope="col" colspan="3">Tea</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -130,7 +130,7 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <th scope="col" colspan="3">Bữa tối</th>
+                            <th scope="col" colspan="3">Dinner</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -160,11 +160,11 @@
                     <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title">Thêm nguyên liệu</h4>
+                            <h4 class="modal-title">Add Food</h4>
                         </div>
                         <div class="modal-body">
                             <div class="form-group row">
-                                <label for="con" class="col-sm-4 col-form-label">Tính trạng:</label>
+                                <label for="con" class="col-sm-4 col-form-label">Condition:</label>
                                 <div class="col-sm">
                                     <input  class="form-control" id="con" name="con" readonly value="${conditionName}">
                                 </div>
@@ -172,13 +172,13 @@
                             <div class="form-group row ml-1 mr-1">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <label class="input-group-text" for="session">Thời gian:</label>
+                                        <label class="input-group-text" for="session">Time:</label>
                                     </div>
                                     <select class="custom-select" id="session" name="session">
-                                        <option value="1">Bữa sáng</option>
-                                        <option value="2">Bữa trưa</option>
-                                        <option value="3">Bữa phụ</option>
-                                        <option value="4">Bữa tối</option>
+                                        <option value="1">Breakfash</option>
+                                        <option value="2">Lunch</option>
+                                        <option value="3">Tea</option>
+                                        <option value="4">Dinner</option>
                                     </select>
                                 </div>
                             </div>
@@ -219,7 +219,7 @@
                             <div class="modal-footer">
                                 <button id="btnAddMenu" type="submit"
                                         formaction="${pageContext.request.contextPath}/Admin/AddMenu?conid=${conid}&day=${day}"
-                                        class="btn btn-default">Thêm
+                                        class="btn btn-default">Add
                                 </button>
                             </div>
                         </div>

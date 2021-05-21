@@ -26,23 +26,23 @@
                 <div class="col-md-4 col-xs-6">
                     <div class="text-center">
                         <i class="ico-light ico-lg ico-rounded ico-hover fa fa-cutlery" aria-hidden="true"></i>
-                        <a href="${pageContext.request.contextPath}/Admin/FoodManagement"><h4>QUẢN LÝ MÓN ĂN</h4></a>
-                        <p>Thêm, chỉnh sửa hoặc xóa những món ăn, thực phẩm của bạn</p>
+                        <a href="${pageContext.request.contextPath}/Admin/FoodManagement"><h4>FOODMANAGEMENT</h4></a>
+                        <p>Insert, edit or delete your food</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-xs-6">
                     <div class="text-center">
                         <i class="ico-light ico-lg ico-rounded ico-hover fa fa-table" aria-hidden="true"></i>
-                        <a href="${pageContext.request.contextPath}/Admin/MenuManagement?conid=1"> <h4>QUẢN LÝ THỰC ĐƠN</h4></a>
-                        <p>Thêm, chỉnh sửa hoặc xóa thực đơn mẫu cho người dùng tham khảo</p>
+                        <a href="${pageContext.request.contextPath}/Admin/MenuManagement?conid=1"> <h4>SAMPLE MENU MANAGEMENT</h4></a>
+                        <p>Insert, edit or delete sample menu for member to refer</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-xs-6">
-<%--                    <div class="text-center">--%>
-<%--                        <i class="ico-light ico-lg ico-rounded ico-hover et-compass"></i>--%>
-<%--                        <a href="#"><h4>Calculate calories in the meal</h4></a>--%>
-<%--                        <p>Provide a table of nutrition statistics for your meals.</p>--%>
-<%--                    </div>--%>
+                    <div class="text-center">
+                        <i class="ico-light ico-lg ico-rounded ico-hover fa fa-users" aria-hidden="true"></i>
+                        <a href="${pageContext.request.contextPath}/Admin/UserManagement"><h4>USERS MANAGEMENT</h4></a>
+                        <p>Manage all member of your website</p>
+                    </div>
                 </div>
             </div>
         </div>

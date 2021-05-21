@@ -44,7 +44,7 @@
                     <div class="col-md">
                         <div>
                             <div class="row">
-                                <div style="font-weight: bold; font-size: 20px">Nguyên liệu</div>
+                                <div style="font-weight: bold; font-size: 20px">Ingredient</div>
                                 <button type="button" class="btn btn-outline-dark ml-5"
                                         style="height: 25px; width: 40px" data-toggle="modal"
                                         data-target="#myModal">
@@ -58,7 +58,7 @@
                                     <!-- Modal content-->
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h4 class="modal-title">Thêm nguyên liệu</h4>
+                                            <h4 class="modal-title">Add ingredient</h4>
                                         </div>
                                         <div class="modal-body">
                                             <div class="row">
@@ -100,7 +100,7 @@
                                                 </table>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="gram" class="col-sm-6 col-form-label">Khối lượng
+                                                <label for="gram" class="col-sm-6 col-form-label">Amougts
                                                     (gram)</label>
                                                 <div class="col-sm">
                                                     <input type="number" class="form-control" id="gram" name="gram"
@@ -109,7 +109,7 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button id="btnAddIngre" type="button"
-                                                        class="btn btn-default">Thêm
+                                                        class="btn btn-default">Add
                                                 </button>
                                             </div>
                                         </div>
@@ -159,14 +159,14 @@
             </form>
             <form method="post">
                 <div class="form-group row">
-                    <label for="foodname" class="col-sm-2 col-form-label">Tên món ăn</label>
+                    <label for="foodname" class="col-sm-2 col-form-label">Food name</label>
                     <div class="col-sm">
                         <input type="text" class="form-control" id="foodname" name="foodname"
                                value="${food.getFoodName()}">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="catname" class="col-sm-2 col-form-label">Thể loại</label>
+                    <label for="catname" class="col-sm-2 col-form-label">Category</label>
                     <div class="col-sm">
                         <select class="form-control" id="catname" name="catname">
                             <c:forEach var="c" items="${lstCat}">

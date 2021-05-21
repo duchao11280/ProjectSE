@@ -151,7 +151,7 @@
                 <div class="row m-30">
                     <div class="col">
                         <div class="text-center">
-                            <h2 class="tt">QUẢN LÝ NGƯỜI DÙNG</h2>
+                            <h2 class="tt">USERS MANAGEMENT</h2>
                         </div>
                     </div>
                 </div>
@@ -190,32 +190,32 @@
 
                                 <c:choose>
                                     <c:when test="${u.isSex()==false}">
-                                        <td style="color: blue"><i class="fa fa-user" aria-hidden="true"> Nam</i></td>
+                                        <td style="color: blue"><i class="fa fa-user" aria-hidden="true"> Male</i></td>
                                     </c:when>
                                     <c:otherwise>
-                                        <td style="color: plum"><i class="fa fa-user" aria-hidden="true"> Nữ</i></td>
+                                        <td style="color: plum"><i class="fa fa-user" aria-hidden="true"> Female</i></td>
                                     </c:otherwise>
                                 </c:choose>
                                 <c:choose>
                                     <c:when test="${u.isDelete()==true}">
                                         <td>
-                                            Bị xóa
+                                            Blocked
                                         </td>
                                         <th scope="row">
-                                            <button type="submit" class="btn btn-outline-success pr-6 btndelete"
+                                            <button type="submit" class="btn btn-outline-success pr-6 btnActive"
                                                     formaction="${pageContext.request.contextPath}/Admin/ActiveUnActive?username=${u.getUserName()}">
-                                                <i class="fa fa-check" aria-hidden="true"></i>
+                                                Active
                                             </button>
                                         </th>
                                     </c:when>
                                     <c:otherwise>
                                         <td>
-                                            Đang hoạt động
+                                            Activating
                                         </td>
                                         <th scope="row">
-                                            <button type="submit" class="btn btn-outline-danger pr-6 btndelete" style="font-size: 22px"
+                                            <button type="submit" class="btn btn-outline-danger btnBlock" style="padding-right: 10px"
                                                     formaction="${pageContext.request.contextPath}/Admin/ActiveUnActive?username=${u.getUserName()}">
-                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                                Block
                                             </button>
                                         </th>
                                     </c:otherwise>
@@ -227,5 +227,21 @@
                 </div>
             </div>
         </form>
+        <script>
+            $('.btnBlock').click(function (e) {
+                if (confirm('Bạn có chắc chắn đình chỉ tài khoản này?')) {
+
+                } else {
+                    e.preventDefault();
+                }
+            })
+            $('.btnActive').click(function (e) {
+                if (confirm('Bạn có chắc chắn kích hoạt tài khoản này?')) {
+
+                } else {
+                    e.preventDefault();
+                }
+            })
+        </script>
     </jsp:body>
 </t:main>

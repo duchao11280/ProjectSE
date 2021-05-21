@@ -310,14 +310,14 @@
                 <div class="row m-30">
                     <div class="col">
                         <div class="text-center">
-                            <h2 class="tt">QUẢN LÝ MÓN ĂN</h2>
+                            <h2 class="tt">FOOD MANAGEMENT</h2>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <button type="button" class="btn btn-secondary mb-30" data-toggle="modal" data-target="#myModal">
                         <i class="fa fa-plus-square-o" aria-hidden="true"></i>
-                        Thêm món mới
+                        Add new food
                     </button>
                 </div>
                 <div class="row">
@@ -330,18 +330,18 @@
                         <!-- Modal content-->
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h4 class="modal-title">Thêm món ăn mới</h4>
+                                <h4 class="modal-title">New food</h4>
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                             </div>
                             <div class="modal-body">
                                 <div class="form-group row">
-                                    <label for="foodname" class="col-sm-4 col-form-label">Tên món ăn</label>
+                                    <label for="foodname" class="col-sm-4 col-form-label">Food name</label>
                                     <div class="col-sm">
                                         <input type="text" class="form-control" id="foodname" name="foodname">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="catname" class="col-sm-4 col-form-label">Thể loại</label>
+                                    <label for="catname" class="col-sm-4 col-form-label">Category</label>
                                     <div class="col-sm">
                                         <select class="form-control" id="catname" name="catname">
                                             <c:forEach var="c" items="${lstCat}">

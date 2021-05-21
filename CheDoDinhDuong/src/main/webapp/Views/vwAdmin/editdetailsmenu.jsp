@@ -20,7 +20,7 @@
                 <div class="row m-50">
                     <div class="col">
                         <div class="text-center">
-                            <h2>CHỈNH SỬA THỰC ĐƠN</h2>
+                            <h2>EDIT SAMPLE MENU</h2>
                         </div>
                     </div>
                 </div>
