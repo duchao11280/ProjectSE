@@ -206,24 +206,33 @@ public class AccountServlet extends HttpServlet {
 
         if (user.isPresent()) {
             BCrypt.Result resultlogin = BCrypt.verifyer().verify(passwordlogin.toCharArray(), user.get().getPassword());
-            if (resultlogin.verified) {
 
-                HttpSession session = request.getSession();
-                session.setAttribute("auth",true);
-                session.setAttribute("authUser",user.get());
-
-                String url = (String) session.getAttribute("retUrl");
-                if(url ==null){
-                    url = "/Home";
-                }
-//                request.setAttribute("userafterlogin",user);
-                ServletUtils.redirect(url,request,response);
-
-            }else {
+            if(user.get().isDelete()==true)
+            {
                 request.setAttribute("hasError",true);
-                request.setAttribute("errorMessage","Invalid password");
+                request.setAttribute("errorMessage","Your account has been disabled");
                 ServletUtils.forward("/Views/vwAccount/login.jsp",request,response);
+            }else {
+                if (resultlogin.verified) {
+
+                    HttpSession session = request.getSession();
+                    session.setAttribute("auth",true);
+                    session.setAttribute("authUser",user.get());
+
+                    String url = (String) session.getAttribute("retUrl");
+                    if(url ==null){
+                        url = "/Home";
+                    }
+//                request.setAttribute("userafterlogin",user);
+                    ServletUtils.redirect(url,request,response);
+
+                }else {
+                    request.setAttribute("hasError",true);
+                    request.setAttribute("errorMessage","Invalid password");
+                    ServletUtils.forward("/Views/vwAccount/login.jsp",request,response);
+                }
             }
+
         }else {
             request.setAttribute("hasError",true);
             request.setAttribute("errorMessage","Invalid login");
