@@ -54,6 +54,12 @@ public class AdminServlet extends HttpServlet {
             case "/ActiveUnActive":
                 doActiveUnactive(request,response);
                 break;
+            case "/Restore":
+                doRestore(request,response);
+                break;
+            case "/DeleteFoodRB":
+                doDeleteFoodRB(request,response);
+                break;
             default:
                 ServletUtils.redirect("/NotFound",request,response);
                 break;
@@ -176,6 +182,18 @@ public class AdminServlet extends HttpServlet {
         ServletUtils.redirect("/Admin/UserManagement",request,response);
     }
 
+    private void doDeleteFoodRB(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String foodID = request.getParameter("id");
+        FoodModel.deleteFoodRB(foodID);
+        ServletUtils.redirect("/Admin/RecycleBin",request,response);
+    }
+
+    private void doRestore(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String foodID = request.getParameter("id");
+        FoodModel.restoreFood(foodID);
+        ServletUtils.redirect("/Admin/RecycleBin",request,response);
+    }
+
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getPathInfo();
@@ -192,6 +210,13 @@ public class AdminServlet extends HttpServlet {
                 List<Category> lstCat = CategoryModel.getAll();
                 request.setAttribute("lstCat", lstCat);
                 ServletUtils.forward("/Views/vwAdmin/foodmanagement.jsp",request,response);
+                break;
+            case "/RecycleBin":
+                List<Food> lstFoodDelete = FoodModel.getAll();
+                request.setAttribute("lstFood", lstFoodDelete);
+                List<Category> lstCategory = CategoryModel.getAll();
+                request.setAttribute("lstCat", lstCategory);
+                ServletUtils.forward("/Views/vwAdmin/recyclebin.jsp",request,response);
                 break;
             case "/MenuManagement":
                 doMenuManagement(request,response);

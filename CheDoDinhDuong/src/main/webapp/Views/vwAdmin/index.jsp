@@ -44,6 +44,13 @@
                         <p>Manage all member of your website</p>
                     </div>
                 </div>
+                <div class="col-md-4 col-xs-6">
+                    <div class="text-center">
+                        <i class="ico-light ico-lg ico-rounded ico-hover fa fa-recycle" aria-hidden="true"></i>
+                        <a href="${pageContext.request.contextPath}/Admin/RecycleBin"><h4>RECYCLE BIN</h4></a>
+                        <p>Manage all food which is deleted</p>
+                    </div>
+                </div>
             </div>
         </div>
     </jsp:body>

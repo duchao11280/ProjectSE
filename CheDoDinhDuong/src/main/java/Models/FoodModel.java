@@ -156,6 +156,24 @@ public class FoodModel {
         }
     }
 
+    public static void restoreFood(String foodID){
+        String sql = " UPDATE food set isDelete=0 where foodID=:foodID";
+        try(Connection con = DBUtils.getConnection()){
+            con.createQuery(sql)
+                    .addParameter("foodID",foodID)
+                    .executeUpdate();
+        }
+    }
+
+    public static void deleteFoodRB(String foodID){
+        String sql = "call sp_deleteFood(:foodID)";
+        try(Connection con = DBUtils.getConnection()){
+            con.createQuery(sql)
+                    .addParameter("foodID",foodID)
+                    .executeUpdate();
+        }
+    }
+
     public static void updateFood(String foodID, String foodName, int catID, String glu, String kcal, String lipit, String protein,
                                   String vitA, String vitB, String vitC, String vitD, String vitE, String kali,
                                   String fe, String natri, String url){
