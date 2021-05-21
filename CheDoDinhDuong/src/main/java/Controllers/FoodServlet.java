@@ -136,8 +136,9 @@ public class FoodServlet extends HttpServlet {
             case "/CollectFood":
                 response.setContentType("text/html;charset=UTF-8");
 
+                
                 int catIDCal = Integer.parseInt(request.getParameter("id"));
-                List<Food> listfoodforcal = FoodModel.findByCatID(catIDCal);
+                List<Food> listfoodforcal = FoodModel.findByCatIDwithisDelete(catIDCal);
                 request.setAttribute("foodsCal", listfoodforcal);
 //                System.out.println(listfoodforcal);
 //                System.out.println("id ="+ catIDCal);

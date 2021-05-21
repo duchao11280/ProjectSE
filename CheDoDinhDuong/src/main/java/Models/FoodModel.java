@@ -23,6 +23,14 @@ public class FoodModel {
                     .executeAndFetch(Food.class);
         }
     }
+    public static List<Food> findByCatIDwithisDelete(int catID) {
+        String sql = "select * from food where catID = :catID and isDelete =0";
+        try (Connection con = DBUtils.getConnection()) {
+            return con.createQuery(sql)
+                    .addParameter("catID", catID)
+                    .executeAndFetch(Food.class);
+        }
+    }
     public static List<Food> findByCatIDWithLimit(int catID, int LIMIT, int OFFSET) {
         String sql = "select * from food where catID = :catID LIMIT :LIMIT OFFSET :OFFSET";
         try (Connection con = DBUtils.getConnection()) {
