@@ -374,9 +374,7 @@ public class AccountServlet extends HttpServlet {
                 out.print(!user.isPresent());
                 out.flush();
                 break;
-            case "/Nutrients":
-                ServletUtils.forward("/Views/vwAccount/nutrients.jsp",request,response);
-                break;
+
             case "/FeedBack":
 
                 ServletUtils.forward("/Views/vwAccount/feedback.jsp",request,response);

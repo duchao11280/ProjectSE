@@ -41,8 +41,8 @@
                     </div>
                     <div class="col-md-3 col-xs-6">
                         <div class="text-center">
-                            <a href="${pageContext.request.contextPath}/Account/Nutrients"><i class="ico-light ico-lg ico-rounded ico-hover et-ribbon"></i></a>
-                            <a href="${pageContext.request.contextPath}/Account/Nutrients"><h4>Nutrients</h4></a>
+                            <a href="${pageContext.request.contextPath}/Nutrients/View"><i class="ico-light ico-lg ico-rounded ico-hover et-ribbon"></i></a>
+                            <a href="${pageContext.request.contextPath}/Nutrients/View"><h4>Nutrients</h4></a>
                             <p>Information of Nutrients.</p>
                         </div>
                     </div>

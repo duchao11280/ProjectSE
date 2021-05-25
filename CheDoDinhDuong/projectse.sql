@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : localhost
+ Source Server         : Duc Hao
  Source Server Type    : MySQL
- Source Server Version : 100418
+ Source Server Version : 100414
  Source Host           : localhost:3306
  Source Schema         : projectse
 
  Target Server Type    : MySQL
- Target Server Version : 100418
+ Target Server Version : 100414
  File Encoding         : 65001
 
- Date: 25/05/2021 18:22:23
+ Date: 25/05/2021 21:42:21
 */
 
 SET NAMES utf8mb4;
@@ -118,12 +118,11 @@ CREATE TABLE `feedback`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `fk_feedback_user`(`userID`) USING BTREE,
   CONSTRAINT `fk_feedback_user` FOREIGN KEY (`userID`) REFERENCES `user` (`userID`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of feedback
 -- ----------------------------
-INSERT INTO `feedback` VALUES (3, 'dayla2', 'deptrai', 3);
 INSERT INTO `feedback` VALUES (4, 'hello', 'dddd', 3);
 INSERT INTO `feedback` VALUES (5, 'gg', 'tt', 3);
 
@@ -241,21 +240,24 @@ INSERT INTO `ingredient` VALUES (31, 5, 100, NULL);
 INSERT INTO `ingredient` VALUES (31, 6, 100, NULL);
 
 -- ----------------------------
--- Table structure for nutrition
+-- Table structure for nutrients
 -- ----------------------------
-DROP TABLE IF EXISTS `nutrition`;
-CREATE TABLE `nutrition`  (
+DROP TABLE IF EXISTS `nutrients`;
+CREATE TABLE `nutrients`  (
   `nutritionID` int NOT NULL AUTO_INCREMENT,
   `nutritionName` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `source` varchar(5000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `benefit` varchar(5000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `advice` varchar(5000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   PRIMARY KEY (`nutritionID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
--- Records of nutrition
+-- Records of nutrients
 -- ----------------------------
+INSERT INTO `nutrients` VALUES (1, 'Protein', 'Trứng, thịt, cá, sữa và các sản phẩm từ sữa, quả bơ, các loại hạt, ngũ cốc, đậu nành...', 'Cung cấp axit amin không thay thế, là đơn vị cấu trúc cơ thể, cơ bắp... cung cấp khoảng 20% năng lượng.', 'Theo các nhà khoa học, trẻ em trong giai đoạn phát triển rất cần bổ sung protein. Vì thế các bà mẹ nên chú ý bổ sung thực phẩm chứa nhiều protein cho trẻ nhé.');
+INSERT INTO `nutrients` VALUES (2, 'Lipit', 'Nguồn gốc động vật như mỡ (mỡ cá, mỡ thịt), sữa và chất béo có nguồn gốc thực vật như dầu (dầu có trong các loại hạt, loại quả)', 'Nguồn sinh ra năng lượng quan trọng, là dung môi tốt để hòa tan các vitamin, là thành phần cấu tạo màng tế bào, các tổ chức liên kết. Giúp cho sự phát triển sớm về trí tuệ và thể lực của trẻ em.', 'Ăn nhiều thực phẩm có chất béo sẽ dễ gây ra các bệnh xơ vữa động mạch hoặc thoái hóa chức năng gan. Chính vì vậy cơ thể người khỏe mạnh nên cân nhắc chỉ số bổ sung ít hoặc vừa đủ chất béo cần thiết.');
+INSERT INTO `nutrients` VALUES (3, 'Carbohydrate', 'Tinh bột, chất xơ, pectin, glycogen (bánh mì, đậu, ngũ cốc...). Trái cây, sữa, kẹo và bánh ngọt.', 'Cải thiện tiêu hóa. Giúp tăng trưởng cơ bắp (nhờ glycogen)', 'Người mắc bệnh tiểu đường không nên ăn quá 200 gram carbs 1 ngày. Trong khi phụ nữ mang thai cần ít nhất 175 gram.');
 
 -- ----------------------------
 -- Table structure for suggestmenu
@@ -334,6 +336,22 @@ END
 delimiter ;
 
 -- ----------------------------
+-- Procedure structure for delete_active_User
+-- ----------------------------
+DROP PROCEDURE IF EXISTS `delete_active_User`;
+delimiter ;;
+CREATE PROCEDURE `delete_active_User`(IN uname VARCHAR(20))
+begin
+	IF ((select isDelete from `user` where userName = uname)=true) THEN
+	Update `user` set isDelete=FALSE where userName = uname;
+ELSE
+	Update `user` set isDelete=true where userName = uname;
+END IF;
+end
+;;
+delimiter ;
+
+-- ----------------------------
 -- Procedure structure for sp_addNewFood
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `sp_addNewFood`;
@@ -361,6 +379,20 @@ begin
     while (exists (select * from user where userID = uID)) do set uID = uID + 1;
     end while;
     insert into user values(uID, username, upassw, urole, ufulln, uage, uheight, uweight, usex,uurlimage,false);
+end
+;;
+delimiter ;
+
+-- ----------------------------
+-- Procedure structure for sp_deleteFood
+-- ----------------------------
+DROP PROCEDURE IF EXISTS `sp_deleteFood`;
+delimiter ;;
+CREATE PROCEDURE `sp_deleteFood`(in fID int)
+begin
+	delete from ingredient where foodID = fID;
+	delete from custommenu where foodID = fID;
+	delete from food where foodID = fID;
 end
 ;;
 delimiter ;

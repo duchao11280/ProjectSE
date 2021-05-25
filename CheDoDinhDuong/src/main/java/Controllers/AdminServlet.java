@@ -30,7 +30,7 @@ public class AdminServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         String path = request.getPathInfo();
         switch (path){
-            case "/DeleteFeedBack":
+            case "/Feedback":
                 deleteFeedback(request,response);
                 break;
             case "/AddFood":
@@ -72,8 +72,8 @@ public class AdminServlet extends HttpServlet {
 
         int id = Integer.parseInt(request.getParameter("idfeed"));
         System.out.println(id);
-//        FeedbackModel.deleteFeed(id);
-//        ServletUtils.redirect("/Admin/Feedback",request,response);
+        FeedbackModel.deleteFeed(id);
+        ServletUtils.redirect("/Admin/Feedback",request,response);
     }
 
 

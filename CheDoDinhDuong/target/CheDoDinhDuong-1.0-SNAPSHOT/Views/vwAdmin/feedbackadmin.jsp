@@ -37,15 +37,14 @@
                                             <div class="col-md-11">
                                                     ${c.getTitle()}
                                             </div>
-                                            <div>
-                                                <input name="idfeed" style="display: none" type="text"
-                                                       class="form-control" value="${c.getId()}"/>
+                                            <div class="form-group">
+                                                <input name="idfeed" style="display: none" type="number"
+                                                        value="${c.getId()}"/>
 
                                             </div>
                                             <div>
                                                 <button type="submit" class="btn btn-primary"
-                                                        style="margin-right: 10px;"
-                                                        formaction="${pageContext.request.contextPath}/Account/DeleteFeedBack">
+                                                        style="margin-right: 10px;">
                                                     <i class="fa fa-trash" aria-hidden="true"></i>
                                                 </button>
                                             </div>
