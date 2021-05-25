@@ -51,6 +51,14 @@
                         <p>Manage all food which is deleted</p>
                     </div>
                 </div>
+
+                <div class="col-md-4 col-xs-6">
+                    <div class="text-center">
+                        <i class="ico-light ico-lg ico-rounded ico-hover et-chat" aria-hidden="true"></i>
+                        <a href="${pageContext.request.contextPath}/Admin/Feedback"><h4>Feedback</h4></a>
+                        <p>Your feedback</p>
+                    </div>
+                </div>
             </div>
         </div>
     </jsp:body>

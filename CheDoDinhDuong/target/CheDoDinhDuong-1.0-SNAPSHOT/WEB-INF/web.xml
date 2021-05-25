@@ -40,4 +40,8 @@
         <filter-name>AdminAuthenticationFilter</filter-name>
         <url-pattern>/Admin/*</url-pattern>
     </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <url-pattern>/Account/FeedBack</url-pattern>
+    </filter-mapping>
 </web-app>

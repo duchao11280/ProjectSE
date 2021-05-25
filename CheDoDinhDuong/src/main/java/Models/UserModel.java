@@ -118,4 +118,13 @@ public class UserModel {
             con.createQuery(sql).addParameter("username",username).executeUpdate();
         }
     }
+
+    public static String getUsernamebyID(int id){
+        final String sql="select userName from user where userID=:id";
+        try (Connection con = DBUtils.getConnection()){
+            return con.createQuery(sql)
+                    .addParameter("id",id)
+                    .executeScalar(String.class);
+        }
+    }
 }

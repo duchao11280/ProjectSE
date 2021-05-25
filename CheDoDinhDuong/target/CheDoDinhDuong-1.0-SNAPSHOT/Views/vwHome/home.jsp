@@ -16,14 +16,14 @@
 
                 <!--Chuc nang Hang 1 -->
                 <div class="row">
-                    <div class="col-md-4 col-xs-6">
+                    <div class="col-md-3 col-xs-6">
                         <div class="text-center">
                             <a href="${pageContext.request.contextPath}/Calculate/All"><i class="ico-light ico-lg ico-rounded ico-hover et-tools"></i></a>
                             <a href="${pageContext.request.contextPath}/Calculate/All"><h4>BMI & Calo calculation</h4></a>
                             <p>Check body index, thereby suggesting the right nutritional diet.</p>
                         </div>
                     </div>
-                    <div class="col-md-4 col-xs-6">
+                    <div class="col-md-3 col-xs-6">
                         <div class="text-center">
                             <a href="${pageContext.request.contextPath}/Menu/SuggestMenu">
                                 <i class="ico-light ico-lg ico-rounded ico-hover et-piechart"></i>
@@ -32,14 +32,20 @@
                             <p>Depending on the condition of the user that appropriate diets are given.</p>
                         </div>
                     </div>
-                    <div class="col-md-4 col-xs-6">
+                    <div class="col-md-3 col-xs-6">
                         <div class="text-center">
                             <a href="${pageContext.request.contextPath}/Food/CalKcal"><i class="ico-light ico-lg ico-rounded ico-hover et-compass"></i></a>
                             <a href="${pageContext.request.contextPath}/Food/CalKcal"><h4>Calculate calories in the meal</h4></a>
                             <p>Energy absorbed after eating food.</p>
                         </div>
                     </div>
-
+                    <div class="col-md-3 col-xs-6">
+                        <div class="text-center">
+                            <a href="${pageContext.request.contextPath}/Account/Nutrients"><i class="ico-light ico-lg ico-rounded ico-hover et-ribbon"></i></a>
+                            <a href="${pageContext.request.contextPath}/Account/Nutrients"><h4>Nutrients</h4></a>
+                            <p>Information of Nutrients.</p>
+                        </div>
+                    </div>
 
 
                 </div>
@@ -47,25 +53,32 @@
 
                 <!--Chuc nang Hang 2 -->
                 <div class="row">
-                    <div class="col-md-4 col-xs-6">
+                    <div class="col-md-3 col-xs-6">
                         <div class="text-center">
                             <a href="${pageContext.request.contextPath}/Food/Nutrition"><i class="ico-light ico-lg ico-rounded ico-hover et-search"></i></a>
                             <a href="${pageContext.request.contextPath}/Food/Nutrition"><h4>Nutritional information</h4></a>
                             <p>Information of proteins, fats, vitamins, ....</p>
                         </div>
                     </div>
-                    <div class="col-md-4 col-xs-6">
+                    <div class="col-md-3 col-xs-6">
                         <div class="text-center">
                             <a href="${pageContext.request.contextPath}/Food/BuildMenu"><i class="ico-light ico-lg ico-rounded ico-hover et-presentation"></i></a>
                             <a href="${pageContext.request.contextPath}/Food/BuildMenu"> <h4>Build Menu </h4></a>
                             <p>Develop a menu to calculate and plan deployment to meet your nutritional needs</p>
                         </div>
                     </div>
-                    <div class="col-md-4 col-xs-6">
+                    <div class="col-md-3 col-xs-6">
                         <div class="text-center">
                             <a href="${pageContext.request.contextPath}/Account/MyMenu"><i class="ico-light ico-lg ico-rounded ico-hover et-alarmclock"></i></a>
                             <a href="${pageContext.request.contextPath}/Account/MyMenu"> <h4>Today what do eat</h4></a>
                             <p>Suggestions for meals today.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-xs-6">
+                        <div class="text-center">
+                            <a href="${pageContext.request.contextPath}/Account/FeedBack"><i class="ico-light ico-lg ico-rounded ico-hover et-chat"></i></a>
+                            <a href="${pageContext.request.contextPath}/Account/FeedBack"> <h4>Feed back</h4></a>
+                            <p>Write feedback to us.</p>
                         </div>
                     </div>
 

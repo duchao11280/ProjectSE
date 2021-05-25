@@ -30,6 +30,9 @@ public class AdminServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         String path = request.getPathInfo();
         switch (path){
+            case "/DeleteFeedBack":
+                deleteFeedback(request,response);
+                break;
             case "/AddFood":
                 addNewFood(request,response);
                 break;
@@ -65,6 +68,14 @@ public class AdminServlet extends HttpServlet {
                 break;
         }
     }
+    private void deleteFeedback(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        int id = Integer.parseInt(request.getParameter("idfeed"));
+        System.out.println(id);
+//        FeedbackModel.deleteFeed(id);
+//        ServletUtils.redirect("/Admin/Feedback",request,response);
+    }
+
 
     private void addNewFood(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -201,6 +212,11 @@ public class AdminServlet extends HttpServlet {
             path="/Home";
         }
         switch (path){
+            case "/Feedback":
+                List<Feedback> lst = FeedbackModel.getAllFeedback();
+                request.setAttribute("lstFeedback",lst);
+                ServletUtils.forward("/Views/vwAdmin/feedbackadmin.jsp",request,response);
+                break;
             case "/Home":
                 ServletUtils.forward("/Views/vwAdmin/index.jsp",request,response);
                 break;

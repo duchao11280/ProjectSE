@@ -1,14 +1,12 @@
 package Controllers;
 
 import Models.CustomMenuModel;
+import Models.FeedbackModel;
 import Models.UserModel;
 import Utilties.ServletUtils;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
-import beans.Category;
-import beans.CustomMenu;
-import beans.History;
-import beans.User;
+import beans.*;
 import com.google.gson.Gson;
 
 import javax.servlet.ServletException;
@@ -54,12 +52,28 @@ public class AccountServlet extends HttpServlet {
             case "/AddImage":
                 addImage(request, response);
                 break;
+            case "/Send":
+                sendFeedback(request, response);
+                break;
             default:
                 ServletUtils.redirect("/NotFound", request, response);
                 break;
         }
 
     }
+
+    private void sendFeedback(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        String title = request.getParameter("title");
+        String content = request.getParameter("content");
+        HttpSession session = request.getSession();
+        User u = (User)  session.getAttribute("authUser");
+        Feedback feedback = new Feedback(-1,u.getUserID(),title,content);
+        FeedbackModel.add(feedback);
+        ServletUtils.redirect("/Home",request,response);
+    }
+
+
     private void addImage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 //        String usernameimage = request.getParameter("usernameimage");
@@ -335,10 +349,10 @@ public class AccountServlet extends HttpServlet {
             case "/Register":
 
                 request.setAttribute("hasError", false);
-                HttpSession session3 = request.getSession();
-                boolean auth2 = (boolean) session3.getAttribute("auth");
+                HttpSession session4 = request.getSession();
+                boolean auth2 = (boolean) session4.getAttribute("auth");
                 if(auth2==true){
-                    String url = (String) session3.getAttribute("retUrl");
+                    String url = (String) session4.getAttribute("retUrl");
                     if(url ==null){
                         url = "/Home";
                     }
@@ -359,6 +373,14 @@ public class AccountServlet extends HttpServlet {
                 response.setCharacterEncoding("utf-8");
                 out.print(!user.isPresent());
                 out.flush();
+                break;
+            case "/Nutrients":
+                ServletUtils.forward("/Views/vwAccount/nutrients.jsp",request,response);
+                break;
+            case "/FeedBack":
+
+                ServletUtils.forward("/Views/vwAccount/feedback.jsp",request,response);
+
                 break;
             default:
                 ServletUtils.redirect("/NotFound",request,response);
