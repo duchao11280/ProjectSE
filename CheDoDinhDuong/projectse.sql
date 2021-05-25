@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : MySQL
+ Source Server         : localhost
  Source Server Type    : MySQL
- Source Server Version : 100417
+ Source Server Version : 100418
  Source Host           : localhost:3306
  Source Schema         : projectse
 
  Target Server Type    : MySQL
- Target Server Version : 100417
+ Target Server Version : 100418
  File Encoding         : 65001
 
- Date: 21/05/2021 14:46:44
+ Date: 25/05/2021 18:22:23
 */
 
 SET NAMES utf8mb4;
@@ -105,6 +105,27 @@ INSERT INTO `custommenu` VALUES (1, 12, '2021-06-02 19:00:00', 1);
 INSERT INTO `custommenu` VALUES (1, 30, '2021-05-13 14:16:00', 3);
 INSERT INTO `custommenu` VALUES (1, 30, '2021-05-17 14:17:00', 3);
 INSERT INTO `custommenu` VALUES (1, 30, '2021-05-31 22:23:00', 3);
+
+-- ----------------------------
+-- Table structure for feedback
+-- ----------------------------
+DROP TABLE IF EXISTS `feedback`;
+CREATE TABLE `feedback`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `content` varchar(999) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `userID` int NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `fk_feedback_user`(`userID`) USING BTREE,
+  CONSTRAINT `fk_feedback_user` FOREIGN KEY (`userID`) REFERENCES `user` (`userID`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of feedback
+-- ----------------------------
+INSERT INTO `feedback` VALUES (3, 'dayla2', 'deptrai', 3);
+INSERT INTO `feedback` VALUES (4, 'hello', 'dddd', 3);
+INSERT INTO `feedback` VALUES (5, 'gg', 'tt', 3);
 
 -- ----------------------------
 -- Table structure for food
@@ -220,6 +241,23 @@ INSERT INTO `ingredient` VALUES (31, 5, 100, NULL);
 INSERT INTO `ingredient` VALUES (31, 6, 100, NULL);
 
 -- ----------------------------
+-- Table structure for nutrition
+-- ----------------------------
+DROP TABLE IF EXISTS `nutrition`;
+CREATE TABLE `nutrition`  (
+  `nutritionID` int NOT NULL AUTO_INCREMENT,
+  `nutritionName` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `source` varchar(5000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `benefit` varchar(5000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `advice` varchar(5000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`nutritionID`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of nutrition
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for suggestmenu
 -- ----------------------------
 DROP TABLE IF EXISTS `suggestmenu`;
@@ -233,7 +271,7 @@ CREATE TABLE `suggestmenu`  (
   PRIMARY KEY (`ID`) USING BTREE,
   INDEX `FK_suggestmenu_condition`(`conID`) USING BTREE,
   CONSTRAINT `FK_suggestmenu_condition` FOREIGN KEY (`conID`) REFERENCES `condition` (`conID`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of suggestmenu
@@ -250,8 +288,6 @@ INSERT INTO `suggestmenu` VALUES (9, 2, '2', 'Miếng đậu hũ chiên', 1, '2'
 INSERT INTO `suggestmenu` VALUES (10, 2, '2', 'Bát canh rau cải', 1, '2');
 INSERT INTO `suggestmenu` VALUES (11, 2, '2', 'Ly chè', 1, '3');
 INSERT INTO `suggestmenu` VALUES (12, 2, '2', 'Bún đậu mắm tôm', 1, '4');
-INSERT INTO `suggestmenu` VALUES (13, 1, '1', 'Bún bò huế', 1, '1');
-INSERT INTO `suggestmenu` VALUES (14, 2, '3', 'Thanh long', 1, '3');
 
 -- ----------------------------
 -- Table structure for user
@@ -276,10 +312,9 @@ CREATE TABLE `user`  (
 -- Records of user
 -- ----------------------------
 INSERT INTO `user` VALUES (1, 'admin', '$2a$12$k7R6T5SFTn5SX5b4ymC3YOLaVr68PidMrbKZEojiOJYWbd6j9ICzi', 0, 'Adminitration', 0, 0, 0, b'0', '/Public/Imgs/Avts/14.jpg', b'0');
-INSERT INTO `user` VALUES (2, 'zhaohao', '$2a$12$ojpT8.k7p13z4UBOCplS9.FLJDVrlGV1dgyDEEPfL6vNaN7sVkbFu', 1, 'Duc Hao', 15, 0, 0, b'0', NULL, b'1');
+INSERT INTO `user` VALUES (2, 'haohao', '$2a$12$ojpT8.k7p13z4UBOCplS9.FLJDVrlGV1dgyDEEPfL6vNaN7sVkbFu', 1, 'Duc Hao', 21, 0, 0, b'0', NULL, b'0');
 INSERT INTO `user` VALUES (3, 'ldthang7410', '$2a$12$qRHqc/Onk/q3hIyvaVAWs.0u.mxKpVlc8kG//jO3x4zBsdFtv8VVO', 1, '123', 21, 0, 0, b'0', NULL, b'0');
-INSERT INTO `user` VALUES (4, 'abc', 'sdas', 1, 'zyx', 12, NULL, NULL, b'1', NULL, b'1');
-INSERT INTO `user` VALUES (5, 'hshd', '123', 1, 'Anh', 30, NULL, NULL, b'0', NULL, b'1');
+INSERT INTO `user` VALUES (4, 'an', '$2a$12$jQhbMST6QGOg56u9NE9OKunwc9QrbSXtFaKgPMf7HKRLoO6OXlJqW', 1, 'dinh tuan an', 21, 0, 0, b'0', '/Public/Imgs/Avts/user-alt-512.png', b'0');
 
 -- ----------------------------
 -- Procedure structure for add_custom_menu
@@ -295,22 +330,6 @@ BEGIN
 		INSERT into custommenu VALUES(useridd,foodidd,dtpk,numbercustom);
 	end if;
 END
-;;
-delimiter ;
-
--- ----------------------------
--- Procedure structure for delete_active_User
--- ----------------------------
-DROP PROCEDURE IF EXISTS `delete_active_User`;
-delimiter ;;
-CREATE PROCEDURE `delete_active_User`(IN uname VARCHAR(20))
-begin
-	IF ((select isDelete from `user` where userName = uname)=true) THEN
-	Update `user` set isDelete=FALSE where userName = uname;
-ELSE
-	Update `user` set isDelete=true where userName = uname;
-END IF;
-end
 ;;
 delimiter ;
 
@@ -342,20 +361,6 @@ begin
     while (exists (select * from user where userID = uID)) do set uID = uID + 1;
     end while;
     insert into user values(uID, username, upassw, urole, ufulln, uage, uheight, uweight, usex,uurlimage,false);
-end
-;;
-delimiter ;
-
--- ----------------------------
--- Procedure structure for sp_deleteFood
--- ----------------------------
-DROP PROCEDURE IF EXISTS `sp_deleteFood`;
-delimiter ;;
-CREATE PROCEDURE `sp_deleteFood`(in fID int)
-begin
-	delete from ingredient where foodID = fID;
-	delete from custommenu where foodID = fID;
-	delete from food where foodID = fID;
 end
 ;;
 delimiter ;
