@@ -81,19 +81,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Tomcat 9.0.40" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.40" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/CheDoDinhDuong/Home" />
       <option name="UPDATING_POLICY" value="update-resources" />
@@ -231,7 +218,9 @@
       <workItem from="1621558004812" duration="2185000" />
       <workItem from="1621563405888" duration="273000" />
       <workItem from="1621565801001" duration="626000" />
-      <workItem from="1621942788500" duration="8678000" />
+      <workItem from="1621942788500" duration="8847000" />
+      <workItem from="1621994935046" duration="12000" />
+      <workItem from="1622021349840" duration="1802000" />
     </task>
     <servers />
   </component>

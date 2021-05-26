@@ -22,7 +22,7 @@
                                 </button>
                             </h2>
                         </div>
-                        <div id="${c.getNutritionID()}" class="collapse" aria-labelledby="${c.getNutritionName()}" data-parent="#accordionExample">
+                        <div id="${c.getNutritionID()}" class="collapse show" aria-labelledby="${c.getNutritionName()}" data-parent="#accordionExample">
                             <div class="card-body">
                                 <p>Nguồn: ${c.getSource()}</p>
                                 <p>Lợi ích: ${c.getBenefit()}</p>
