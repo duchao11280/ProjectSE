@@ -29,10 +29,10 @@ public class FeedbackModel {
     }
 
     public static void deleteFeed(int id){
-        final String sql = "delete from feedback WHERE id=:cc";
+        final String sql = "delete from feedback WHERE id=:fb";
         try (Connection con = DBUtils.getConnection()) {
             con.createQuery(sql)
-                    .addParameter("cc", id)
+                    .addParameter("fb", id)
                     .executeUpdate();
         }
     }

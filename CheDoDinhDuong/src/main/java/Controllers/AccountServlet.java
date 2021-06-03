@@ -63,7 +63,7 @@ public class AccountServlet extends HttpServlet {
     }
 
     private void sendFeedback(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        request.setCharacterEncoding("UTF-8");
         String title = request.getParameter("title");
         String content = request.getParameter("content");
         HttpSession session = request.getSession();
@@ -84,8 +84,6 @@ public class AccountServlet extends HttpServlet {
 
         for (Part part : request.getParts()) {
             String contentDisp = part.getHeader("content-disposition");
-            System.out.println(contentDisp);
-
             String[] items = contentDisp.split(";");
             for(String s : items){
                 String tmp = s.trim();
@@ -139,7 +137,6 @@ public class AccountServlet extends HttpServlet {
             postLogout(request,response);
         }
         else {
-            System.out.println("ok mat khau khong giong nhau");
             request.setAttribute("hasError",true);
             request.setAttribute("errorMessage","Invalid password");
             ServletUtils.forward("/Views/vwAccount/profilesetting.jsp",request,response);
@@ -163,7 +160,6 @@ public class AccountServlet extends HttpServlet {
 
         History history = new History(-1,olduserid,oldweight,oldheight,dtnow);
 
-        System.out.println(history);
 
 
         UserModel.addHistorytodb(history);

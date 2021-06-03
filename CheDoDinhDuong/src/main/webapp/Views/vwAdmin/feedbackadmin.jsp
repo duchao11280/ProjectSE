@@ -28,9 +28,9 @@
                 <div class="row">
 
                     <div class="col-12">
-                        <form method="post">
-                            <c:forEach var="c" items="${lstFeedback}">
 
+                            <c:forEach var="c" items="${lstFeedback}">
+                                <form method="post">
                                 <div class="card">
                                     <div class="card-header ">
                                         <div class="row">
@@ -59,9 +59,9 @@
                                     </div>
                                 </div>
 
-
+                                </form>
                             </c:forEach>
-                        </form>
+
 
                     </div>
 
