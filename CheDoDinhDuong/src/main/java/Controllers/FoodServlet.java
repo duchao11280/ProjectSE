@@ -52,10 +52,8 @@ public class FoodServlet extends HttpServlet {
     private void postSearch(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String keysearch = request.getParameter("search");
         List<Food> lstFood2 = FoodModel.getFoodByString(keysearch);
-
-
+        
         request.setAttribute("lstFood",lstFood2);
-
 
         List<Category> listcat = CategoryModel.getAll();
         request.setAttribute("categoriesWithDetails", listcat);

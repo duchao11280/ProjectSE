@@ -11,7 +11,7 @@
  Target Server Version : 100417
  File Encoding         : 65001
 
- Date: 03/06/2021 18:56:58
+ Date: 08/06/2021 16:29:42
 */
 
 SET NAMES utf8mb4;
@@ -105,6 +105,10 @@ INSERT INTO `custommenu` VALUES (1, 12, '2021-06-02 19:00:00', 1);
 INSERT INTO `custommenu` VALUES (1, 30, '2021-05-13 14:16:00', 3);
 INSERT INTO `custommenu` VALUES (1, 30, '2021-05-17 14:17:00', 3);
 INSERT INTO `custommenu` VALUES (1, 30, '2021-05-31 22:23:00', 3);
+INSERT INTO `custommenu` VALUES (2, 8, '2021-06-05 13:21:00', 1);
+INSERT INTO `custommenu` VALUES (2, 12, '2021-06-05 13:21:00', 3);
+INSERT INTO `custommenu` VALUES (2, 30, '2021-06-07 11:21:00', 1);
+INSERT INTO `custommenu` VALUES (2, 30, '2021-06-09 19:11:00', 1);
 
 -- ----------------------------
 -- Table structure for feedback
@@ -118,12 +122,11 @@ CREATE TABLE `feedback`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `fk_feedback_user`(`userID`) USING BTREE,
   CONSTRAINT `fk_feedback_user` FOREIGN KEY (`userID`) REFERENCES `user` (`userID`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 19 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 21 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of feedback
 -- ----------------------------
-INSERT INTO `feedback` VALUES (18, 'Đánh Giá', '', 1);
 
 -- ----------------------------
 -- Table structure for food
@@ -175,7 +178,7 @@ INSERT INTO `food` VALUES (16, 'Củ sắn', 4, 11.1, 52, 0, 1.9, NULL, NULL, NU
 INSERT INTO `food` VALUES (17, 'Dâu tây', 4, 2, 11, 0.1, 0.5, NULL, NULL, 15, NULL, NULL, NULL, 0.17, NULL, '/Public/Imgs/Food/17.jpg', b'0');
 INSERT INTO `food` VALUES (18, 'Hồng đỏ', 4, 5.6, 25, 0, 0.6, 0, 0, 0, 0, 0, 192.6, 0.18, 3.6, '/Public/Imgs/Food/18.jpg', b'0');
 INSERT INTO `food` VALUES (19, 'Lê', 4, 20.6, 91, 0.4, 1.4, NULL, NULL, NULL, NULL, NULL, 177.8, 4.65, 10.1, '/Public/Imgs/Food/19.jpg', b'0');
-INSERT INTO `food` VALUES (20, 'Hồng xiêm', 4, 11.5, 55, 0.8, 0.6, NULL, NULL, NULL, NULL, NULL, 0, 2.64, 0, '/Public/Imgs/Food/20.jpg', b'0');
+INSERT INTO `food` VALUES (20, 'Saboche', 4, 11.5, 55, 0.8, 0.6, NULL, NULL, NULL, NULL, NULL, 0, 2.64, 0, '/Public/Imgs/Food/20.jpg', b'0');
 INSERT INTO `food` VALUES (21, 'Mận', 4, 2.5, 11, 0, 0.3, NULL, NULL, 21, NULL, NULL, NULL, 0.35, 0, '/Public/Imgs/Food/21.jpg', b'0');
 INSERT INTO `food` VALUES (22, 'Nhãn', 4, 0.9, 4, 0, 0.1, NULL, NULL, 4.52, NULL, NULL, 17, 0.03, 1.7, '/Public/Imgs/Food/22.jpg', b'0');
 INSERT INTO `food` VALUES (23, 'Ổi', 4, 12.3, 53, 0, 1, NULL, NULL, 99.9, NULL, NULL, 465.6, 2.15, 6.6, '/Public/Imgs/Food/23.jpg', b'0');
@@ -201,7 +204,7 @@ CREATE TABLE `historyuserbmi`  (
   PRIMARY KEY (`historyID`) USING BTREE,
   INDEX `FK_historyuserbmi_user`(`userID`) USING BTREE,
   CONSTRAINT `FK_historyuserbmi_user` FOREIGN KEY (`userID`) REFERENCES `user` (`userID`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of historyuserbmi
@@ -214,6 +217,7 @@ INSERT INTO `historyuserbmi` VALUES (12, 1, 999, 999, '2021-05-13 14:55:49');
 INSERT INTO `historyuserbmi` VALUES (13, 1, 77, 77, '2021-05-13 14:56:19');
 INSERT INTO `historyuserbmi` VALUES (14, 1, 99, 99, '2021-05-13 14:56:34');
 INSERT INTO `historyuserbmi` VALUES (15, 1, 99, 99, '2021-05-13 14:56:41');
+INSERT INTO `historyuserbmi` VALUES (16, 2, 0, 0, '2021-06-08 09:31:04');
 
 -- ----------------------------
 -- Table structure for ingredient
@@ -272,7 +276,7 @@ CREATE TABLE `suggestmenu`  (
   PRIMARY KEY (`ID`) USING BTREE,
   INDEX `FK_suggestmenu_condition`(`conID`) USING BTREE,
   CONSTRAINT `FK_suggestmenu_condition` FOREIGN KEY (`conID`) REFERENCES `condition` (`conID`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 70 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of suggestmenu
@@ -289,6 +293,61 @@ INSERT INTO `suggestmenu` VALUES (9, 2, '2', 'Miếng đậu hũ chiên', 1, '2'
 INSERT INTO `suggestmenu` VALUES (10, 2, '2', 'Bát canh rau cải', 1, '2');
 INSERT INTO `suggestmenu` VALUES (11, 2, '2', 'Ly chè', 1, '3');
 INSERT INTO `suggestmenu` VALUES (12, 2, '2', 'Bún đậu mắm tôm', 1, '4');
+INSERT INTO `suggestmenu` VALUES (13, 1, '1', 'Phở bò tái', 1, '1');
+INSERT INTO `suggestmenu` VALUES (15, 1, '1', 'Cơm', 2, '2');
+INSERT INTO `suggestmenu` VALUES (17, 1, '1', 'Thịt bò nạc', 1, '2');
+INSERT INTO `suggestmenu` VALUES (18, 1, '1', 'Táo tây', 2, '3');
+INSERT INTO `suggestmenu` VALUES (19, 1, '1', 'Cơm trứng', 2, '4');
+INSERT INTO `suggestmenu` VALUES (20, 1, '1', 'Cam', 1, '4');
+INSERT INTO `suggestmenu` VALUES (21, 1, '1', 'Trứng gà', 1, '1');
+INSERT INTO `suggestmenu` VALUES (22, 1, '2', 'Bún bò huế', 1, '1');
+INSERT INTO `suggestmenu` VALUES (23, 1, '2', 'Cơm', 3, '2');
+INSERT INTO `suggestmenu` VALUES (24, 1, '2', 'Thịt heo', 2, '2');
+INSERT INTO `suggestmenu` VALUES (25, 1, '2', 'Vải', 5, '3');
+INSERT INTO `suggestmenu` VALUES (26, 1, '2', 'Bún thịt nướng', 1, '4');
+INSERT INTO `suggestmenu` VALUES (27, 1, '2', 'Cơm trứng', 1, '4');
+INSERT INTO `suggestmenu` VALUES (28, 1, '3', 'Bún cá', 1, '1');
+INSERT INTO `suggestmenu` VALUES (29, 1, '3', 'Ly sữa', 1, '1');
+INSERT INTO `suggestmenu` VALUES (30, 1, '3', 'Cơm', 2, '2');
+INSERT INTO `suggestmenu` VALUES (31, 1, '3', 'Cá thu chiên', 2, '2');
+INSERT INTO `suggestmenu` VALUES (32, 1, '3', 'Táo tây', 2, '2');
+INSERT INTO `suggestmenu` VALUES (33, 1, '3', 'Ngũ cốc', 1, '3');
+INSERT INTO `suggestmenu` VALUES (34, 1, '3', 'Cơm', 2, '4');
+INSERT INTO `suggestmenu` VALUES (35, 1, '3', 'Cá lóc kho tộ', 1, '4');
+INSERT INTO `suggestmenu` VALUES (36, 1, '3', 'Canh rau dền', 1, '4');
+INSERT INTO `suggestmenu` VALUES (37, 1, '4', 'Cơm sườn', 1, '1');
+INSERT INTO `suggestmenu` VALUES (38, 1, '4', 'Ly sữa', 1, '1');
+INSERT INTO `suggestmenu` VALUES (39, 1, '4', 'Cơm', 2, '2');
+INSERT INTO `suggestmenu` VALUES (40, 1, '4', 'Canh chua', 1, '2');
+INSERT INTO `suggestmenu` VALUES (41, 1, '4', 'Thịt kho tàu', 1, '2');
+INSERT INTO `suggestmenu` VALUES (42, 1, '4', 'Cam ép', 1, '3');
+INSERT INTO `suggestmenu` VALUES (43, 1, '4', 'Cơm', 2, '4');
+INSERT INTO `suggestmenu` VALUES (44, 1, '4', 'Thịt bò', 2, '4');
+INSERT INTO `suggestmenu` VALUES (45, 1, '4', 'Canh bí xanh', 1, '4');
+INSERT INTO `suggestmenu` VALUES (46, 1, '5', 'Bánh mì', 1, '1');
+INSERT INTO `suggestmenu` VALUES (47, 1, '5', 'Trứng gà', 1, '1');
+INSERT INTO `suggestmenu` VALUES (48, 1, '5', 'Chuối', 2, '1');
+INSERT INTO `suggestmenu` VALUES (49, 1, '5', 'Cơm', 2, '2');
+INSERT INTO `suggestmenu` VALUES (50, 1, '5', 'Canh bắp cải', 1, '2');
+INSERT INTO `suggestmenu` VALUES (51, 1, '5', 'Cá diêu hồng chiên', 1, '2');
+INSERT INTO `suggestmenu` VALUES (52, 1, '5', 'Bánh ngọt', 1, '3');
+INSERT INTO `suggestmenu` VALUES (53, 1, '5', 'Cơm', 2, '4');
+INSERT INTO `suggestmenu` VALUES (54, 1, '5', 'Canh chua', 1, '4');
+INSERT INTO `suggestmenu` VALUES (55, 1, '5', 'Dâu tây', 1, '4');
+INSERT INTO `suggestmenu` VALUES (56, 1, '6', 'Bún riêu', 1, '1');
+INSERT INTO `suggestmenu` VALUES (57, 1, '6', 'Cơm', 2, '2');
+INSERT INTO `suggestmenu` VALUES (58, 1, '6', 'Thịt heo', 1, '2');
+INSERT INTO `suggestmenu` VALUES (59, 1, '6', 'Ngô', 1, '3');
+INSERT INTO `suggestmenu` VALUES (60, 1, '6', 'Mì xào', 1, '4');
+INSERT INTO `suggestmenu` VALUES (61, 1, '6', 'Thịt bò', 1, '4');
+INSERT INTO `suggestmenu` VALUES (62, 1, '6', 'Ngũ cốc', 1, '4');
+INSERT INTO `suggestmenu` VALUES (63, 1, '7', 'Bò tít tết', 1, '1');
+INSERT INTO `suggestmenu` VALUES (64, 1, '7', 'Cơm', 2, '2');
+INSERT INTO `suggestmenu` VALUES (65, 1, '7', 'Thịt kho tàu', 1, '2');
+INSERT INTO `suggestmenu` VALUES (66, 1, '7', 'Saboche', 2, '3');
+INSERT INTO `suggestmenu` VALUES (67, 1, '7', 'Cơm', 2, '4');
+INSERT INTO `suggestmenu` VALUES (68, 1, '7', 'Đậu hũ', 2, '4');
+INSERT INTO `suggestmenu` VALUES (69, 1, '7', 'Canh mồng tơi', 1, '4');
 
 -- ----------------------------
 -- Table structure for user
@@ -313,7 +372,7 @@ CREATE TABLE `user`  (
 -- Records of user
 -- ----------------------------
 INSERT INTO `user` VALUES (1, 'admin', '$2a$12$k7R6T5SFTn5SX5b4ymC3YOLaVr68PidMrbKZEojiOJYWbd6j9ICzi', 0, 'Adminitration', 0, 0, 0, b'0', '/Public/Imgs/Avts/14.jpg', b'0');
-INSERT INTO `user` VALUES (2, 'haohao', '$2a$12$ojpT8.k7p13z4UBOCplS9.FLJDVrlGV1dgyDEEPfL6vNaN7sVkbFu', 1, 'Duc Hao', 21, 0, 0, b'0', NULL, b'0');
+INSERT INTO `user` VALUES (2, 'haohao', '$2a$12$ojpT8.k7p13z4UBOCplS9.FLJDVrlGV1dgyDEEPfL6vNaN7sVkbFu', 1, 'Duc Hao', 21, 176, 58, b'0', '/Public/Imgs/Avts/stretched-1366-768-613924.jpg', b'0');
 INSERT INTO `user` VALUES (3, 'ldthang7410', '$2a$12$qRHqc/Onk/q3hIyvaVAWs.0u.mxKpVlc8kG//jO3x4zBsdFtv8VVO', 1, '123', 21, 0, 0, b'0', NULL, b'0');
 INSERT INTO `user` VALUES (4, 'an', '$2a$12$jQhbMST6QGOg56u9NE9OKunwc9QrbSXtFaKgPMf7HKRLoO6OXlJqW', 1, 'dinh tuan an', 21, 0, 0, b'0', '/Public/Imgs/Avts/user-alt-512.png', b'0');
 
