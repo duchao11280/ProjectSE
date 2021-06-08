@@ -105,30 +105,30 @@
                             <fieldset class="m-0">
                                 <label class="input mb-10">
                                     <i class="ico-append fa fa-envelope"></i>
-                                    <input type="text" placeholder="Username" name="username" id="txtUsername">
+                                    <input type="text" placeholder="Username" name="username" id="txtUsername" maxlength="20">
                                     <b class="tooltip tooltip-bottom-right">Needed to verify your account</b>
                                 </label>
 
                                 <label class="input mb-10">
                                     <i class="ico-append fa fa-lock"></i>
-                                    <input type="password" placeholder="Password" name="password" id="txtPassword">
+                                    <input type="password" placeholder="Password" name="password" id="txtPassword" maxlength="250">
                                     <b class="tooltip tooltip-bottom-right">Only latin characters and numbers</b>
                                 </label>
 
                                 <label class="input mb-10">
                                     <i class="ico-append fa fa-lock"></i>
-                                    <input type="password" placeholder="Confirm password" name="confirm" id="txtConfirm">
+                                    <input type="password" placeholder="Confirm password" name="confirm" id="txtConfirm" maxlength="250">
                                     <b class="tooltip tooltip-bottom-right">Only latin characters and numbers</b>
                                 </label>
 
                                 <label class="input mb-10">
                                     <i class="ico-append fa fa-envelope"></i>
-                                    <input type="text" placeholder="FullName" name="name" id="txtFullname">
+                                    <input type="text" placeholder="FullName" name="name" id="txtFullname" maxlength="250">
                                     <b class="tooltip tooltip-bottom-right">Needed to verify your account</b>
                                 </label>
                                 <label class="input mb-10">
                                     <i class="ico-append fa fa-envelope"></i>
-                                    <input type="number" placeholder="Age" name="age" id="txtAge">
+                                    <input type="number" placeholder="Age" name="age" id="txtAge" maxlength="10">
                                     <b class="tooltip tooltip-bottom-right">Needed to verify your account</b>
                                 </label>
 

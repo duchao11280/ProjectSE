@@ -68,12 +68,12 @@
 
                                     <!-- Email -->
                                     <div class="form-group">
-                                        <input type="text" name="emaillogin" class="form-control" placeholder="Username" required="">
+                                        <input type="text" name="emaillogin" class="form-control" placeholder="Username" required="" maxlength="20">
                                     </div>
 
                                     <!-- Password -->
                                     <div class="form-group">
-                                        <input type="password" name="passwordlogin" class="form-control" placeholder="Password" required="">
+                                        <input type="password" name="passwordlogin" class="form-control" placeholder="Password" required="" maxlength="250">
                                     </div>
 
                                 </div>

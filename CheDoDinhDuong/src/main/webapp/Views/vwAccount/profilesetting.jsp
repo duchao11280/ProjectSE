@@ -304,12 +304,12 @@
 
                                         <div class="form-group">
                                             <label class="form-control-label">Full Name</label>
-                                            <input type="text" name="fullnameinfo"  class="form-control" value="${authUser.getFullName()}">
+                                            <input type="text" name="fullnameinfo"  class="form-control" value="${authUser.getFullName()}" maxlength="250">
                                         </div>
 
                                         <div class="form-group">
                                             <label class="form-control-label">Age</label>
-                                            <input type="number" name="ageinfo" class="form-control" value="${authUser.getAge()}">
+                                            <input type="number" name="ageinfo" class="form-control" value="${authUser.getAge()}" maxlength="10">
                                         </div>
                                         <div class="form-group">
                                             <label class="form-control-label">Height</label>
@@ -361,8 +361,8 @@
                                                 Save Changes
                                             </button>
 
-                                            <button type="button" class="btn btn-default" formaction="#" href="${pageContext.request.contextPath}/Account/Profile">
-                                                Cancel
+                                            <button type="button" class="btn btn-default" formaction="#" >
+                                                <a style="color: #0b0b0b" href="${pageContext.request.contextPath}/Account/Profile">Cancel</a>
                                             </button>
                                         </div>
                                     </form>
@@ -495,15 +495,15 @@
 
                                         <div class="form-group">
                                             <label class="form-control-label">Current Password</label>
-                                            <input type="password" name="curpassword" class="form-control" id="txtCurpassword">
+                                            <input type="password" name="curpassword" class="form-control" id="txtCurpassword" maxlength="250">
                                         </div>
                                         <div class="form-group">
                                             <label class="form-control-label">New Password</label>
-                                            <input type="password" name="newpassword" class="form-control" id="txtNewpassword">
+                                            <input type="password" name="newpassword" class="form-control" id="txtNewpassword" maxlength="250">
                                         </div>
                                         <div class="form-group">
                                             <label class="form-control-label">Re-type New Password</label>
-                                            <input type="password" name="renewpassword" class="form-control" id="txtRenewpassword">
+                                            <input type="password" name="renewpassword" class="form-control" id="txtRenewpassword" maxlength="250">
                                         </div>
 
                                         <!--2 cai nut -->
@@ -513,8 +513,8 @@
                                                 Change Password
                                             </button>
 
-                                            <button type="button" class="btn btn-default" formaction="#" href="${pageContext.request.contextPath}/Account/Profile">
-                                                Cancel
+                                            <button type="button" class="btn btn-default" formaction="#" >
+                                                <a style="color: #0b0b0b" href="${pageContext.request.contextPath}/Account/Profile">Cancel</a>
                                             </button>
                                         </div>
 
