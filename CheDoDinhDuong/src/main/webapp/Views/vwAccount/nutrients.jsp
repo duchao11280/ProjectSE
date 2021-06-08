@@ -10,31 +10,47 @@
 
 
     <jsp:body>
+        <section class="page-header page-header-xs">
+            <div class="container">
 
-        <div class="container">
-            <div class="accordion" id="accordionExample">
-                <c:forEach var="c" items="${lstNutrients}">
-                    <div class="card">
-                        <div class="card-header" id="${c.getNutritionName()}">
-                            <h2 class="mb-0">
-                                <button class="btn btn-link btn-block text-left " type="button" data-toggle="collapse" data-target="#${c.getNutritionID()}" aria-expanded="true" aria-controls="${c.getNutritionName()}">
-                                        ${c.getNutritionName()}
-                                </button>
-                            </h2>
-                        </div>
-                        <div id="${c.getNutritionID()}" class="collapse show" aria-labelledby="${c.getNutritionName()}" data-parent="#accordionExample">
-                            <div class="card-body">
-                                <p>Nguồn: ${c.getSource()}</p>
-                                <p>Lợi ích: ${c.getBenefit()}</p>
-                                <p>Lời khuyên: ${c.getAdvice()}</p>
-                            </div>
-                        </div>
-                    </div>
-                </c:forEach>
+                <h1>NUTRIENTS</h1>
 
+                <ol class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Pages</a></li>
+                    <li class="active">Nutrients</li>
+                </ol>
 
             </div>
-        </div>
+        </section>
+        <section>
+
+
+            <div class="container">
+                <div class="accordion" id="accordionExample">
+                    <c:forEach var="c" items="${lstNutrients}">
+                        <div class="card">
+                            <div class="card-header" id="${c.getNutritionName()}">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left " type="button" data-toggle="collapse" data-target="#${c.getNutritionID()}" aria-expanded="true" aria-controls="${c.getNutritionName()}">
+                                            ${c.getNutritionName()}
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="${c.getNutritionID()}" class="collapse show" aria-labelledby="${c.getNutritionName()}" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <p>Nguồn: ${c.getSource()}</p>
+                                    <p>Lợi ích: ${c.getBenefit()}</p>
+                                    <p>Lời khuyên: ${c.getAdvice()}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </c:forEach>
+
+
+                </div>
+            </div>
+        </section>
 
     </jsp:body>
 

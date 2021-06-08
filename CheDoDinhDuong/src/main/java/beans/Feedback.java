@@ -4,8 +4,8 @@ import Models.UserModel;
 
 public class Feedback {
 
-    int id,userID;
-    String title,content;
+    private int id,userID;
+    private String title,content;
 
     public Feedback() {
     }
