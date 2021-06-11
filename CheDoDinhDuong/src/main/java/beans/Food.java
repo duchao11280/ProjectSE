@@ -178,5 +178,26 @@ public class Food {
         isDelete = delete;
     }
 
-
+    @Override
+    public String toString() {
+        return "Food{" +
+                "foodID=" + foodID +
+                ", foodName='" + foodName + '\'' +
+                ", urlImage='" + urlImage + '\'' +
+                ", catID=" + catID +
+                ", glucozo=" + glucozo +
+                ", kcal=" + kcal +
+                ", lipit=" + lipit +
+                ", protein=" + protein +
+                ", vitA=" + vitA +
+                ", vitB=" + vitB +
+                ", vitC=" + vitC +
+                ", vitD=" + vitD +
+                ", vitE=" + vitE +
+                ", kali=" + kali +
+                ", fe=" + fe +
+                ", na=" + na +
+                ", isDelete=" + isDelete +
+                '}';
+    }
 }

@@ -80,7 +80,79 @@
       <recent name="D:\Project\ProjectSe\ProjectSE\CheDoDinhDuong\src\main\webapp\Views\Public" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.BuildMenuTest">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BuildMenuTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CheDoDinhDuong" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Controllers" />
+      <option name="MAIN_CLASS_NAME" value="Controllers.BuildMenuTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BuildMenuTest.getMyMenu" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CheDoDinhDuong" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Controllers" />
+      <option name="MAIN_CLASS_NAME" value="Controllers.BuildMenuTest" />
+      <option name="METHOD_NAME" value="getMyMenu" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FoodDetailsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CheDoDinhDuong" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Controllers" />
+      <option name="MAIN_CLASS_NAME" value="Controllers.FoodDetailsTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MenuSuggestTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CheDoDinhDuong" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Controllers" />
+      <option name="MAIN_CLASS_NAME" value="Controllers.MenuSuggestTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 9.0.40" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.40" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/CheDoDinhDuong/Home" />
       <option name="UPDATING_POLICY" value="update-resources" />
@@ -169,6 +241,14 @@
         </option>
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.BuildMenuTest" />
+        <item itemvalue="JUnit.FoodDetailsTest" />
+        <item itemvalue="JUnit.MenuSuggestTest" />
+        <item itemvalue="JUnit.BuildMenuTest.getMyMenu" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

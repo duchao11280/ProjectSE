@@ -68,7 +68,6 @@ public class FoodServlet extends HttpServlet {
         int number = Integer.parseInt(request.getParameter("numberBuild"));
         CustomMenuModel.addCustomMenu(user.getUserID(),foodID,date,number);
 
-
         System.out.println(user.getUserID()+"     "+ date+"+"+foodID+"+"+number);
         ServletUtils.redirect("/Account/MyMenu",request,response);
     }
@@ -133,8 +132,6 @@ public class FoodServlet extends HttpServlet {
                 break;
             case "/CollectFood":
                 response.setContentType("text/html;charset=UTF-8");
-
-                
                 int catIDCal = Integer.parseInt(request.getParameter("id"));
                 List<Food> listfoodforcal = FoodModel.findByCatIDwithisDelete(catIDCal);
                 request.setAttribute("foodsCal", listfoodforcal);
@@ -148,27 +145,28 @@ public class FoodServlet extends HttpServlet {
                 out.flush();
                 break;
             case "/Detail":
-                int foodID = Integer.parseInt(request.getParameter("id"));
-                Optional<Food> c = FoodModel.findByID(foodID);
-                List<Ingredient> ingredientList = IngredientModel.findIngredientByFoodID(foodID);
-
-                if (c.isPresent()) {
-                    request.setAttribute("food", c.get());
-                    request.setAttribute("ingredientoffood",ingredientList);
-                    ServletUtils.forward("/Views/vwFood/Detail.jsp", request, response);
-                } else {
-                    ServletUtils.redirect("/Home", request, response);
-                }
+                getDetailsFood(request,response);
                 break;
             case "/BuildMenu":
                 ServletUtils.forward("/Views/vwFood/BuildMenu.jsp",request,response);
-
                 LocalDateTime date = LocalDateTime.now();
-
                 break;
             default:
                 ServletUtils.redirect("/NotFound", request, response);
                 break;
+        }
+    }
+
+    public void getDetailsFood(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int foodID = Integer.parseInt(request.getParameter("id"));
+        Optional<Food> c = FoodModel.findByID(foodID);
+        List<Ingredient> ingredientList = IngredientModel.findIngredientByFoodID(foodID);
+        if (c.isPresent()) {
+            request.setAttribute("food", c.get());
+            request.setAttribute("ingredientoffood",ingredientList);
+            ServletUtils.forward("/Views/vwFood/Detail.jsp", request, response);
+        } else {
+            ServletUtils.redirect("/Home", request, response);
         }
     }
 

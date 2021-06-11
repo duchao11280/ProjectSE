@@ -70,4 +70,16 @@ public class SuggestMenu {
     public int getFoodIDByName(){
         return FoodModel.getFoodIDByName(foodName);
     }
+
+    @Override
+    public String toString() {
+        return "SuggestMenu{" +
+                "id=" + id +
+                ", conID=" + conID +
+                ", dayofweek='" + dayofweek + '\'' +
+                ", foodName='" + foodName + '\'' +
+                ", number=" + number +
+                ", session='" + session + '\'' +
+                '}';
+    }
 }
